@@ -5,6 +5,8 @@ config:
   dotpath: .
   keepdot: false
   longkey: false
+  link_dotfile_default: link
+  link_on_import: link
 dotfiles:
   f_vimrc:
     src: vimrc
@@ -30,6 +32,18 @@ dotfiles:
   f_sxhkdrc:
     src: config/sxhkd/sxhkdrc
     dst: ~/.config/sxhkd/sxhkdrc
+  f_zshenv:
+    src: zshenv
+    dst: ~/.zshenv
+  f_zprofile:
+    src: config/zsh/.zprofile
+    dst: ~/.config/zsh/.zprofile
+  f_zshrc:
+    src: config/zsh/.zshrc
+    dst: ~/.config/zsh/.zshrc
+  f_aliases:
+    src: config/zsh/aliases
+    dst: ~/.config/zsh/aliases
 profiles:
   hp:
     dotfiles:
@@ -41,3 +55,7 @@ profiles:
     - f_autostart
     - f_bspwmrc
     - f_sxhkdrc
+    - f_zshenv
+    - f_zprofile
+    - f_zshrc
+    - f_aliases

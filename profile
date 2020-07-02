@@ -16,8 +16,8 @@ export TERMINAL=/usr/bin/urxvt
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
-export ZDOTDIR=~/.config/zsh
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export DOTDROP_CONFIG=/home/llday/.config/dotfiles/config.yaml
 
 # Load profiles from /etc/profile.d
 if test -d /etc/profile.d/; then

@@ -57,19 +57,6 @@ alt + Return
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} ^{1-9,10}
 
-## Alternative: i3 style behavior (focus nth, desktop of the focused monitor)
-#super + {1-9,0}
-	#focusdesktopofthismonitor {1-9}
-#super + shift + {1-9,0}
-	#movetodesktopofthismonitor {1-9,10}
-
-## Another alternative: xmonad style desktops. You have 10 desktops shared between all monitors,
-## and focusing a desktop focuses it on the currently focused monitor
-#super + {1-9,0}
-#	summondesktop.sh {1-9,10}
-#super + shift + {1-9,0}
-#	bspc node -d ^{1-9,10}
-
 # Go to specific window
 super + Tab
 	WindowSelector
@@ -230,6 +217,11 @@ super + shift + v
 
 super + shift + m
     mailspring
+
+super + shift + s
+    xdg-open ~/.config/sxhkd/sxhkdrc    
+
+
     
 super + e
 	thunar

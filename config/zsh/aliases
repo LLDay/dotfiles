@@ -1,0 +1,5 @@
+alias sp='sudo pacman'
+alias pa='pacaur'
+alias upd='pacaur -Syu'
+alias add='pacaur -S'
+alias ls='ls --color=auto'
