@@ -1,0 +1,43 @@
+config:
+  backup: true
+  banner: false
+  create: true
+  dotpath: .
+  keepdot: false
+  longkey: false
+dotfiles:
+  f_vimrc:
+    src: vimrc
+    dst: ~/.vimrc
+  f_profile:
+    src: profile
+    dst: ~/.profile
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+  f_xresources:
+    src: Xresources
+    dst: ~/.Xresources
+  f_picom.conf:
+    src: config/picom.conf
+    dst: ~/.config/picom.conf
+  f_autostart:
+    src: config/bspwm/autostart
+    dst: ~/.config/bspwm/autostart
+  f_bspwmrc:
+    src: config/bspwm/bspwmrc
+    dst: ~/.config/bspwm/bspwmrc
+  f_sxhkdrc:
+    src: config/sxhkd/sxhkdrc
+    dst: ~/.config/sxhkd/sxhkdrc
+profiles:
+  hp:
+    dotfiles:
+    - f_vimrc
+    - f_profile
+    - f_bashrc
+    - f_xresources
+    - f_picom.conf
+    - f_autostart
+    - f_bspwmrc
+    - f_sxhkdrc
