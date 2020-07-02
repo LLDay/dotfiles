@@ -1,0 +1,22 @@
+[user]
+        name = LLDay
+        email = ssdenis99@gmail.com
+[filter "lfs"]
+        required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+[core]
+        excludesfile = ~/.gitignore
+        editor = /usr/bin/vim
+	autocrlf = input
+[pretty]
+        my = format:%C(yellow)%h %C(green)%cd %C(magenta)%an%C(reset) | %C(cyan)%s %C(blue)%d
+[format]
+        pretty = my
+[log]
+        date = format-local:%F %R
+[commit]
+        verbose = true
+[grep]
+        patternType = perl

@@ -44,6 +44,9 @@ dotfiles:
   f_aliases:
     src: config/zsh/aliases
     dst: ~/.config/zsh/aliases
+  f_gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
 profiles:
   hp:
     dotfiles:
@@ -59,3 +62,4 @@ profiles:
     - f_zprofile
     - f_zshrc
     - f_aliases
+    - f_gitconfig
