@@ -19,8 +19,8 @@ super + t
 	{bspc node -t floating && window-placer $(bspc query -T -d | grep -o '"state":"floating"' | wc -l),bspc node -t tiled}
 
 # Toggle fullscreen
-super + shift + f 
-	bspc node -t {fullscreen,tiled}	
+super + shift + f
+	bspc node -t {fullscreen,tiled}
 
 # Try to keep size and position of the selected window
 super + o
@@ -32,11 +32,11 @@ super + i
 
 # Lock a window from closing
 super + Escape
-	bspc node -g locked 
+	bspc node -g locked
 
 #
 # Window moving and splitting
-# ______________    
+# ______________
 
 # Presel window for splitting in certain direction
 alt + ctrl + {h,j,k,l}
@@ -44,7 +44,7 @@ alt + ctrl + {h,j,k,l}
 
 alt + ctrl + {1-9}
 	bspc node -o 0.{1-9}
-		
+
 # Move current window to largest space or preselected area if there is one.
 super + shift + Return
     windowpromoter
@@ -52,7 +52,7 @@ super + shift + Return
 # Create a new "master area", splitting the whole desktop instead of just windows.
 alt + Return
 	bspc node -n @/
-	
+
 # go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} ^{1-9,10}
@@ -60,7 +60,7 @@ super + {_,shift + }{1-9,0}
 # Go to specific window
 super + Tab
 	WindowSelector
-	
+
 #Focus windows by direction, works with multihead
 #super +  {a,s,w,d}
 #    focusmover {west,south,north,east}
@@ -71,12 +71,12 @@ super + {h,j,k,l}
 super + {Left,Down,Up,Right}
     focusmover {west,south,north,east}
 
-# Move tiled windows. Moving a tiled window to 
-# preselected one moves into preselection instead. 
+# Move tiled windows. Moving a tiled window to
+# preselected one moves into preselection instead.
 # Moving out of the screen should move the window to next monitor if possible
 super + shift + {h,j,k,l}
 	euclid_mover {west,south,north,east}
-	
+
 # Different style of movement: transplant into window in chosen direction
 super + shift + {Left,Down,Up,Right}
 	euclid_mover {west,south,north,east}
@@ -84,18 +84,18 @@ super + shift + {Left,Down,Up,Right}
 #resize windows
 super + ctrl + {h,j,k,l}
 	bspwm_resize.sh {west,south,north,east}
-	
+
 super + ctrl + {Left,Down,Up,Right}
 	bspwm_resize.sh {west,south,north,east}
 
 #
 # Layout manipulation/desktop level controls
-# ______________    
+# ______________
 
 # Toggle monocle mode
-super + f 
+super + f
 	bspc desktop -l next
-	
+
 # Balance tree
 super + b
 	bspc node @/ -B
@@ -103,7 +103,7 @@ super + b
 # Balance brother node. If you do this on biggest window of the desktop, it usually means balancing all windows with except the biggest.
 super + alt + b
 	bspc node @brother -B
-	
+
 # Undo balancing (equalize windows)
 super + ctrl + b
 	bspc node @/ -E
@@ -115,7 +115,7 @@ alt + b
 # Mirror and flip leaves of tree
 super + {comma,period}
 	bspc node @/ -F {horizontal,vertical}
-	
+
 # Rotate leaves of tree
 super + shift + {comma,period}
 	bspc node @/ -R {90,270}
@@ -132,12 +132,12 @@ super + button{4,5}
 # __________________
 
 ~button1
-	DidIClickDesktop.sh && gapgrab	
+	DidIClickDesktop.sh && gapgrab
 
 ~button2
 	DidIClickDesktop.sh && mygtkmenui -- .config/GTKmenu/BspwmDesktopMenui
 #DidIClickDesktop.sh && mygtkmenui -- .config/GTKmenu/BspwmWindowMenui
-		
+
 ~button3
 	DidIClickDesktop.sh && mygtkmenui -- .config/GTKmenu/LaunchMenu
 
@@ -146,7 +146,7 @@ super + button{4,5}
 #	DidIClickDesktop.sh && bspc desktop -f next
 #~button5
 #	DidIClickDesktop.sh && bspc desktop -f prev
-	
+
 ### Add or remove desktops by scrolling
 super + ctrl + button5
     bspcp dsktp rm
@@ -154,10 +154,10 @@ super + ctrl + button5
 super + ctrl + button4
     bspcp dsktp add
 
-# Spawn applications popup menu and manually tile selected 
+# Spawn applications popup menu and manually tile selected
 # app where your mouse was when you opened the menu. Smartsplit only chooses
 # biggest dimension of the window, MouseLaunch only cares which edge is closer.
-# mod5 is alt_gr (first key right from space) on most keyboards. 
+# mod5 is alt_gr (first key right from space) on most keyboards.
 mod5 + @button1
     MouseLaunch ; mygtkmenui -- .config/GTKmenu/LaunchMenu
 #	smartsplit ; dboxmenu
@@ -172,7 +172,7 @@ mod1 + @button1
 #
 # Touchpad "gestures" (depend on your touchpad driver, very likely to be unavailable)
 #_____________________
-    
+
 #
 # spawn programs
 #
@@ -192,7 +192,7 @@ super + shift + space + z
 # Launch fzf Pacsearch
 super + p
 	$TERMINAL -e pacfzf
-	
+
 # Launch fzf Yaysearch
 super + y
 	$TERMINAL -e yayfzf
@@ -202,27 +202,28 @@ super + Return
 
 super + shift + z
 	open-terminal-here
-	
+
 super + r
 	rofi-finder.sh
-	
+
 super + shift + b
 	$BROWSER
-    		
+
 super + shift + t
 	telegram-desktop
 
 super + shift + v
     code
 
+super + shift + w
+    libreoffice --writer
+
 super + shift + m
     mailspring
 
 super + shift + s
-    xdg-open ~/.config/sxhkd/sxhkdrc    
+    sxhkdrc
 
-
-    
 super + e
 	thunar
 
@@ -245,9 +246,9 @@ XF86AudioLowerVolume
 
 XF86AudioMute
     amixer -q sset Master toggle
-	
+
 XF86MonBrightness{Down,Up}
-    light {-U,-A} 20 && light -O 
+    light {-U,-A} 20 && light -O
 
 XF86Sleep
 	systemctl suspend
