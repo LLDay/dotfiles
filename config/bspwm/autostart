@@ -5,9 +5,9 @@
 xsetroot -cursor_name left_ptr &
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
 xrdb merge .Xresources &
-## Wallpaper. Nitrogen just draws wallpaper, 
+## Wallpaper. Nitrogen just draws wallpaper,
 sh ~/.fehbg &
-## compositing. Required for shadows, transparency and stuff. 
+## compositing. Required for shadows, transparency and stuff.
 # Alter compton settings if using intel graphics
 GRAPHIC_CARD=$(lspci | grep -i "vga" | sed 's/.*://' | sed 's/(.*//' | sed 's/^[ \t]*//')
 if [[ $(echo $GRAPHIC_CARD | grep -i 'intel\|lenovo') != "" ]]; then MCODE='initrd=\intel-ucode.img'
@@ -22,7 +22,6 @@ picom -b &
 for f in /usr/share/fonts/*; do
     xset +fp $f
 done
-xset +fp ~/.fonts &
 xset fp rehash &
 fc-cache -fv &
 

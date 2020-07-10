@@ -46,13 +46,13 @@ bspc monitor -d I II III IV V VI VII VIII IX X
 #bspc monitor -d          
 
 ###This creates and names desktops for multiple monitors.
-workspaces_multimonitor &
+#workspaces_multimonitor &
 
 ## Scripts
 setxkbmap -option grp:alt_shift_toggle us,ru &
-source ~/.fehbg
-source ~/.config/polybar/launch.sh
-source ~/Documents/scripts/autoconf.sh
+source ~/.fehbg &
+source ~/.config/polybar/launch.sh &
+update_edited &
 
 bspc rule -a screenkey --unmanage
 bspc rule -a gcolor2 state=floating center=true
@@ -78,7 +78,7 @@ bspc rule -a dockbarx layer=above
 bspc rule -a google-chrome-unstable private=on
 bspc rule -a google-chrome-stable private=on
 bspc rule -a chromium private=on
-bspc rule -a firefox private=on
+bspc rule -a firefox private=on desktop=I follow=on
 bspc rule -a code private=on
 bspc rule -a midori private=on
 bspc rule -a gnome-pie border=off manage=off
@@ -86,7 +86,6 @@ bspc rule -a wpa_gui state=pseudo_tiled
 bspc rule -a libreoffice state=tiled
 bspc rule -a '*:libreofficedev' state=tiled
 bspc rule -a '*:soffice' state=tiled
-#bspc rule -a firefox desktop=I
 #bspc rule -a calibre desktop=II
 #bspc rule -a geany desktop=II
 #bspc rule -a deluge desktop=III
