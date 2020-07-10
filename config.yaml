@@ -47,6 +47,12 @@ dotfiles:
   f_gitconfig:
     src: gitconfig
     dst: ~/.gitconfig
+  f_clang-format:
+    src: clang-format
+    dst: ~/.clang-format
+  f_xinitrc:
+    src: xinitrc
+    dst: ~/.xinitrc
 profiles:
   hp:
     dotfiles:
@@ -63,3 +69,5 @@ profiles:
     - f_zshrc
     - f_aliases
     - f_gitconfig
+    - f_clang-format
+    - f_xinitrc

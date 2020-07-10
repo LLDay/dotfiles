@@ -1,0 +1,12 @@
+Language: Cpp
+BasedOnStyle: Chromium
+
+IndentWidth: 4
+AccessModifierOffset: -4
+PointerAlignment: Middle
+AlignEscapedNewlines: Left
+AlignTrailingComments: true
+AlignAfterOpenBracket: AlwaysBreak
+AlignConsecutiveAssignments: false
+AllowShortFunctionsOnASingleLine: Empty
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
