@@ -7,7 +7,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'The-NERD-Commenter'
-Plugin 'christoomey/vim-system-copy'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'preservim/nerdtree'
 call vundle#end()
@@ -33,12 +32,13 @@ set ignorecase
 set incsearch
 set smartcase
 set showcmd
-set clipboard=unnamedplus,unnamed
+set clipboard=unnamedplus
 
 syntax enable
 set number
 set relativenumber
 set title
 set laststatus=2
+
 let g:lightline = {'colorscheme': 'jellybeans' }
 let g:multi_cursor_select_all_word_key = '<C-L>'
