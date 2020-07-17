@@ -8,9 +8,6 @@ config:
   link_dotfile_default: link
   link_on_import: link
 dotfiles:
-  f_vimrc:
-    src: vimrc
-    dst: ~/.vimrc
   f_profile:
     src: profile
     dst: ~/.profile
@@ -53,10 +50,15 @@ dotfiles:
   f_xinitrc:
     src: xinitrc
     dst: ~/.xinitrc
+  f_init.vim:
+    src: config/nvim/init.vim
+    dst: ~/.config/nvim/init.vim
+  f_plugins.vim:
+    src: config/nvim/vim-plug/plugins.vim
+    dst: ~/.config/nvim/vim-plug/plugins.vim
 profiles:
   hp:
     dotfiles:
-    - f_vimrc
     - f_profile
     - f_bashrc
     - f_xresources
@@ -71,3 +73,5 @@ profiles:
     - f_gitconfig
     - f_clang-format
     - f_xinitrc
+    - f_init.vim
+    - f_plugins.vim
