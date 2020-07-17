@@ -1,7 +1,5 @@
-# $HOME/.profile
+﻿#!/bin/bash
 
-#Set our umask
-umask 022
 
 # Set our default path
 PATH="/usr/local/sbin:/usr/local/bin:/usr/bin/core_perl:/usr/bin:$HOME/.config/bspwm/panel:$HOME/.bin:$HOME/Documents/scripts"
@@ -14,8 +12,8 @@ export GUI_EDITOR=/usr/bin/code
 export BROWSER=/usr/bin/firefox
 export TERMINAL=/usr/bin/urxvt
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export DOTDROP_CONFIG=/home/llday/.config/dotfiles/config.yaml
 
