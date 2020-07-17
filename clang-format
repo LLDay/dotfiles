@@ -9,4 +9,5 @@ AlignTrailingComments: true
 AlignAfterOpenBracket: AlwaysBreak
 AlignConsecutiveAssignments: false
 AllowShortFunctionsOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: true
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
