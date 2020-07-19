@@ -68,6 +68,9 @@ dotfiles:
   f_config.ini:
     src: config/polybar/config.ini
     dst: ~/.config/polybar/config.ini
+  f_modules.ini:
+    src: config/polybar/modules.ini
+    dst: ~/.config/polybar/modules.ini
 profiles:
   hp:
     dotfiles:
@@ -91,3 +94,4 @@ profiles:
     - f_update_edited
     - f_lfrc
     - f_config.ini
+    - f_modules.ini
