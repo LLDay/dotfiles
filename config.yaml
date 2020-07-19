@@ -56,6 +56,15 @@ dotfiles:
   f_plugins.vim:
     src: config/nvim/vim-plug/plugins.vim
     dst: ~/.config/nvim/vim-plug/plugins.vim
+  f_dmenu_run:
+    src: Documents/scripts/dmenu_run
+    dst: ~/Documents/scripts/dmenu_run
+  f_update_edited:
+    src: Documents/scripts/update_edited
+    dst: ~/Documents/scripts/update_edited
+  f_lfrc:
+    src: config/lf/lfrc
+    dst: ~/.config/lf/lfrc
 profiles:
   hp:
     dotfiles:
@@ -75,3 +84,6 @@ profiles:
     - f_xinitrc
     - f_init.vim
     - f_plugins.vim
+    - f_dmenu_run
+    - f_update_edited
+    - f_lfrc
