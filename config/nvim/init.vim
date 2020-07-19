@@ -13,6 +13,8 @@ set clipboard=unnamed
 set encoding=utf-8
 
 map <C-o> :NERDTreeToggle<CR>
+map <A-o> :TagbarOpenAutoClose<CR>
+nmap gd :YcmCompleter GoToDeclaration<CR>
 
 set hlsearch
 set ignorecase
