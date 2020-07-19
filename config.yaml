@@ -65,6 +65,9 @@ dotfiles:
   f_lfrc:
     src: config/lf/lfrc
     dst: ~/.config/lf/lfrc
+  f_config.ini:
+    src: config/polybar/config.ini
+    dst: ~/.config/polybar/config.ini
 profiles:
   hp:
     dotfiles:
@@ -87,3 +90,4 @@ profiles:
     - f_dmenu_run
     - f_update_edited
     - f_lfrc
+    - f_config.ini
