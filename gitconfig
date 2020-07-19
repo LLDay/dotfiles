@@ -8,7 +8,6 @@
         process = git-lfs filter-process
 [core]
         excludesfile = ~/.gitignore
-        editor = /usr/bin/vim
 	autocrlf = input
 [pretty]
         my = format:%C(yellow)%h %C(green)%cd %C(magenta)%an%C(reset) | %C(cyan)%s %C(blue)%d
