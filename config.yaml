@@ -23,9 +23,6 @@ dotfiles:
   f_autostart:
     src: config/bspwm/autostart
     dst: ~/.config/bspwm/autostart
-  f_bspwmrc:
-    src: config/bspwm/bspwmrc
-    dst: ~/.config/bspwm/bspwmrc
   f_sxhkdrc:
     src: config/sxhkd/sxhkdrc
     dst: ~/.config/sxhkd/sxhkdrc
@@ -71,15 +68,26 @@ dotfiles:
   f_modules.ini:
     src: config/polybar/modules.ini
     dst: ~/.config/polybar/modules.ini
+  f_bspwm_resize:
+    src: Documents/scripts/bspwm_resize
+    dst: ~/Documents/scripts/bspwm_resize
+  f_euclid_mover:
+    src: Documents/scripts/euclid_mover
+    dst: ~/Documents/scripts/euclid_mover
+  f_wallpaper_changer:
+    src: Documents/scripts/wallpaper_changer
+    dst: ~/Documents/scripts/wallpaper_changer
+  f_windowpromoter:
+    src: Documents/scripts/windowpromoter
+    dst: ~/Documents/scripts/windowpromoter
 profiles:
-  hp:
+  arch:
     dotfiles:
     - f_profile
     - f_bashrc
     - f_xresources
     - f_picom.conf
     - f_autostart
-    - f_bspwmrc
     - f_sxhkdrc
     - f_zshenv
     - f_zprofile
@@ -95,3 +103,7 @@ profiles:
     - f_lfrc
     - f_config.ini
     - f_modules.ini
+    - f_bspwm_resize
+    - f_euclid_mover
+    - f_wallpaper_changer
+    - f_windowpromoter

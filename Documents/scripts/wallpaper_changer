@@ -1,0 +1,40 @@
+#!/bin/python3
+
+import requests
+import json
+import re
+
+from datetime import date, timedelta
+
+prompt = 'WALLPAPER:'
+
+def get_wallpaper(index=0, mkt='ru-RU', path=None):
+    day = date.today() - timedelta(days=index);
+    bing_url = 'https://www.bing.com'
+    bing_wal = '/HPImageArchive.aspx?format=js&idx={0}&n=1&mkt={1}'.format(index, mkt)
+
+    print(prompt, 'using market', mkt, 'for date', day)
+
+    req = requests.get(bing_url + bing_wal)
+    if req.status_code == 200:
+        json_response = json.loads(req.text)
+        wallpaper_path = json_response['images'][0]['url']
+        wallpaper_uri = bing_url + wallpaper_path
+
+        response = requests.get(wallpaper_uri)
+        if response.status_code == 200:
+            print(prompt, 'wallpaper downloaded successfully')
+            if path == None:
+                urlbase = json_response['images'][0]['urlbase']
+                path = re.findall(r'(?<=\.)[a-zA-Z0-9]+', urlbase)[0]
+
+            with open(path, 'wb') as f:
+                f.write(response.content)
+                print(prompt, 'wallpaper installed in', f.name)
+                return
+
+    print(prompt, "cannot download wallpaper")
+
+if  __name__ == "__main__":
+        get_wallpaper(0, path='/usr/share/backgrounds/lighdm-background')
+
