@@ -17,10 +17,13 @@ set shellopts '-eu'
 # commands accordingly.
 set ifs "\n"
 set ignorecase
+set incsearch
+set color256
 set hidden
 set ratios 2:3
 set number
 set relativenumber
+set previewer /usr/bin/pistol
 
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
@@ -32,9 +35,16 @@ map <enter> shell
 map x $$f
 map X !$f
 
+map e $$EDITOR $f
+map E $sudo $EDITOR $f
+
 # dedicated keys for file opener actions
-map o &mimeopen $f
-map O $mimeopen --ask $f
+map o &xdg-open $f
+
+map n
+map nd push $mkdir<space>
+map nf push $$EDITOR<space>
+map D :delete
 
 map gC cd ~/.config/
 map gdc cd ~/Documents
@@ -46,11 +56,16 @@ map gcz cd ~/.config/zsh/
 map gcd cd ~/.config/dotfiles/
 map gcp cd ~/.config/polybar/
 map gcn cd ~/.config/nvim
+map gus cd /usr/share
+map gul cd /usr/local
+map gub cd /usr/bin
+map gvl cd /var/log
+map gs cd ~/Documents/scripts
+map gb cd /bin/
 map ge cd /etc/
-map gu cd /usr/
-map gl cd /usr/local
+map gU cd /usr/
+map gV cd /var/
 map gm cd /mnt
-map gb cd /usr/bin/
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
