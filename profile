@@ -1,8 +1,6 @@
-﻿#!/bin/bash
-
-
+#!/bin/bash
 # Set our default path
-PATH="/usr/local/sbin:/usr/local/bin:/usr/bin/core_perl:/usr/bin:$HOME/.config/bspwm/panel:$HOME/.bin:$HOME/Documents/scripts"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/bin/core_perl:/usr/bin:$HOME/.local/bin:$HOME/Documents/scripts"
 export PANEL_FIFO="/tmp/panel-fifo"
 export PATH
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -14,7 +12,6 @@ export TERMINAL=/usr/bin/urxvt
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export DOTDROP_CONFIG=/home/llday/.config/dotfiles/config.yaml
 
 # Load profiles from /etc/profile.d
