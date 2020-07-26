@@ -1,9 +1,11 @@
 #!/bin/bash
 pkill -f 'entr -p sh -c pkill -USR1 -x sxhkd'
+pkill -f 'entr -p sh -c source $HOME/.fehbg'
 pkill -f 'entr -p sh -c /home/llday/.config/bspwm/bspwmrc'
 pkill -f 'entr -p sh -c xrdb /_ && source'
 
 echo ~/.config/sxhkd/sxhkdrc | entr -p sh -c 'pkill -USR1 -x sxhkd' &
+echo ~/.fehbg | entr -p sh -c 'source $HOME/.fehbg' &
 echo ~/.Xresources | entr -p sh -c 'xrdb /_ && source ~/.config/bspwm/bspwmrc' &
 
 BSPWM_DIRS="$HOME/.config/bspwm/bspwmrc"
