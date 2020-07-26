@@ -1,0 +1,46 @@
+#!/bin/python3
+
+from subprocess import run, PIPE
+from os import environ
+
+
+dmenu_command = 'dmenu_colored'
+dmenu_action_names = ['install', 'remove']
+
+package_getters = ['pacman -Ssq', 'pacman -Qq']
+package_actions = ['sudo pacman -S', 'sudo pacman -Rsn']
+
+prompts = ['Install', 'Remove']
+
+terminal = environ['TERMINAL']
+shell = environ['SHELL']
+
+
+def dmenu_choose(items_list, prompt=''):
+    dmenu_process = run([dmenu_command, '-p', prompt], input='\n'.join(items_list),
+                        stdout=PIPE, text=True)
+    dmenu_output = dmenu_process.stdout.strip()
+    if dmenu_output in items_list:
+        return dmenu_output
+
+
+def run_action(package_getter, action, prompt):
+    packages_process = run(package_getter.split(), stdout=PIPE, text=True)
+    packages = packages_process.stdout.strip().split('\n')
+    package = dmenu_choose(packages, prompt)
+    if package not in packages:
+        return
+    run(f'{terminal} -e {shell} -ic "{action} {package}"', shell=True)
+
+
+def choose_actions():
+    choose = dmenu_choose(dmenu_action_names)
+    if choose is None:
+        return
+
+    index = dmenu_action_names.index(choose)
+    run_action(package_getters[index], package_actions[index], prompts[index])
+
+
+if __name__ == "__main__":
+    choose_actions()

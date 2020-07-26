@@ -1,0 +1,16 @@
+#!/bin/bash
+
+SITES=(
+    gmail.com
+    google.com
+    vk.com
+    yandex.com
+    yandex.ru
+    youtube.com
+)
+
+chosen=$(printf '%s\n' ${SITES[@]} | dmenu_colored)
+
+if [[ ! -z "$chosen" ]]; then
+    $BROWSER "$chosen"
+fi
