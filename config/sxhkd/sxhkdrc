@@ -38,28 +38,13 @@ super + Escape
 # Window moving and splitting
 # ______________
 
-# Presel window for splitting in certain direction
-alt + ctrl + {h,j,k,l}
-	bspc node -p \~{west,south,north,east}
-
-alt + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-
 # Move current window to largest space or preselected area if there is one.
 super + shift + Return
     windowpromoter
 
-# Create a new "master area", splitting the whole desktop instead of just windows.
-alt + Return
-	bspc node -n @/
-
 # go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} ^{1-9,10}
-
-# Go to specific window
-super + Tab
-	WindowSelector
 
 #Focus windows by direction, works with multihead
 super + {h,j,k,l}
@@ -94,15 +79,7 @@ super + f
 
 # Balance tree
 super + b
-	bspc node @/ -B
-
-# Balance brother node. If you do this on biggest window of the desktop, it usually means balancing all windows with except the biggest.
-super + alt + b
-	bspc node @brother -B
-
-# Undo balancing (equalize windows)
-super + ctrl + b
-	bspc node @/ -E
+	bspc node @/ {-B,-E}
 
 # Mirror and flip leaves of tree
 super + {comma,period}
@@ -118,19 +95,19 @@ super + button{4,5}
 
 # run applications
 super + space
-    dmenu_run
+    dmenu_open_app
 
 super + Return
 	$TERMINAL
 
-super + shift + z
-	open-terminal-here
-
-super + r
-	rofi-finder.sh
+super + shift + s
+	dmenu_open_site
 
 super + shift + b
-	$BROWSER
+    $BROWSER
+
+super + shift + p
+    dmenu_pacman
 
 super + shift + t
 	telegram-desktop
@@ -143,9 +120,6 @@ super + shift + w
 
 super + shift + m
     mailspring
-
-super + shift + s
-    sxhkdrc
 
 super + shift + o
     $TERMINAL -e $SHELL -ic "lfcd; $SHELL"
@@ -169,18 +143,3 @@ XF86AudioMute
 XF86MonBrightness{Down,Up}
     light {-U,-A} 20 && light -O
 
-XF86Sleep
-	systemctl suspend
-
-#edit this file
-alt + ctrl + space
-	mimeopen ~/.config/sxhkd/sxhkdrc
-
-# Toggle compositing
-super + ctrl + space
-	{pkill picom ,\
-	picom -b }
-
-# Remove receptacles
-super + BackSpace
-  for i in $(bspc query -N -n .leaf.!window.local); do bspc node $i -k; done
