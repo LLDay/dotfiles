@@ -1,0 +1,3 @@
+#!/bin/sh
+source $HOME/.cache/wal/colors.sh
+dmenu_path | dmenu_colored | ${SHELL:-"/bin/sh"} &
