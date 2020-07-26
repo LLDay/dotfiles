@@ -53,9 +53,9 @@ dotfiles:
   f_plugins.vim:
     src: config/nvim/vim-plug/plugins.vim
     dst: ~/.config/nvim/vim-plug/plugins.vim
-  f_dmenu_run:
-    src: Documents/scripts/dmenu_run
-    dst: ~/Documents/scripts/dmenu_run
+  f_dmenu_colored:
+    src: Documents/scripts/dmenu_colored
+    dst: ~/Documents/scripts/dmenu_colored
   f_update_edited:
     src: Documents/scripts/update_edited
     dst: ~/Documents/scripts/update_edited
@@ -80,6 +80,15 @@ dotfiles:
   f_windowpromoter:
     src: Documents/scripts/windowpromoter
     dst: ~/Documents/scripts/windowpromoter
+  f_dmenu_open_app:
+    src: Documents/scripts/dmenu_open_app
+    dst: ~/Documents/scripts/dmenu_open_app
+  f_dmenu_open_site:
+    src: Documents/scripts/dmenu_open_site
+    dst: ~/Documents/scripts/dmenu_open_site
+  f_dmenu_pacman:
+    src: Documents/scripts/dmenu_pacman
+    dst: ~/Documents/scripts/dmenu_pacman
 profiles:
   arch:
     dotfiles:
@@ -98,7 +107,7 @@ profiles:
     - f_xinitrc
     - f_init.vim
     - f_plugins.vim
-    - f_dmenu_run
+    - f_dmenu_colored
     - f_update_edited
     - f_lfrc
     - f_config.ini
@@ -107,3 +116,6 @@ profiles:
     - f_euclid_mover
     - f_wallpaper_changer
     - f_windowpromoter
+    - f_dmenu_open_app
+    - f_dmenu_open_site
+    - f_dmenu_pacman
