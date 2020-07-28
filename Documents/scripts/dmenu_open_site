@@ -1,16 +1,19 @@
 #!/bin/bash
 
 SITES=(
+    duckduckgo.com
+    github.com
     gmail.com
     google.com
     vk.com
-    yandex.com
     yandex.ru
     youtube.com
 )
 
 chosen=$(printf '%s\n' ${SITES[@]} | dmenu_colored)
-
-if [[ ! -z "$chosen" ]]; then
+if [[ $chosen =~ ^[[:alnum:]._]+\.[[:alnum:]]{1,5}$ ]]; then
     $BROWSER "$chosen"
+elif [ ! -z $chosen ]; then
+    $BROWSER --search "$chosen"
 fi
+
