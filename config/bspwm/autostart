@@ -16,11 +16,9 @@ devmon &
 wallpaper_changer &
 
 ## powersaving options
-xset s off &
+xset dpms 0 0 300 &
 xset s noblank &
 xset s noexpose &
-xset c on &
-xset -dpms &
 
 ## Run screenlock when suspending
 light-locker &
