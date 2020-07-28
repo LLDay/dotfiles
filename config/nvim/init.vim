@@ -8,9 +8,11 @@ set shiftwidth=4
 set scrolloff=4
 set smarttab
 set tabstop=4
+set softtabstop=4
 set showcmd
 set clipboard=unnamed
 set encoding=utf-8
+set splitright
 
 map <C-o> :NERDTreeToggle<CR>
 map <A-o> :TagbarOpenAutoClose<CR>
