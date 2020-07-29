@@ -89,6 +89,9 @@ dotfiles:
   f_dmenu_pacman:
     src: Documents/scripts/dmenu_pacman
     dst: ~/Documents/scripts/dmenu_pacman
+  f_config:
+    src: config/bat/config
+    dst: ~/.config/bat/config
 profiles:
   arch:
     dotfiles:
@@ -119,3 +122,4 @@ profiles:
     - f_dmenu_open_app
     - f_dmenu_open_site
     - f_dmenu_pacman
+    - f_config
