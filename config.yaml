@@ -92,6 +92,12 @@ dotfiles:
   f_config:
     src: config/bat/config
     dst: ~/.config/bat/config
+  f_fonts.conf:
+    src: config/fontconfig/fonts.conf
+    dst: ~/.config/fontconfig/fonts.conf
+  f_dunstrc:
+    src: config/dunst/dunstrc
+    dst: ~/.config/dunst/dunstrc
 profiles:
   arch:
     dotfiles:
@@ -123,3 +129,5 @@ profiles:
     - f_dmenu_open_site
     - f_dmenu_pacman
     - f_config
+    - f_fonts.conf
+    - f_dunstrc
