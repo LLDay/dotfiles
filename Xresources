@@ -6,11 +6,12 @@ Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
 ! URxvt Appearance
-URxvt.font: xft:Fira Code:style=Retina:size=10
-URxvt.boldFont: xft:Fira Code:style=Bold:size=10
-URxvt.italicFont: xft:Fira Code:style=Italic:size=10
-URxvt.boldItalicFont: xft:Fira Code:style=Bold Italic:size=10
-URxvt.letterSpace: 0
+URxvt.termName: rxvt-unicode-256color
+URxvt.font: xft:FuraCode Nerd Font:style=Retina:size=10,Font Awesome 5 Free:size=10
+URxvt.boldFont: xft:FuraCode Nerd Font:style=Bold:size=10
+URxvt.italicFont: xft:FuraCode Nerd Font:style=Italic:size=10
+URxvt.boldItalicFont: xft:FuraCode Nerd Font:style=Bold Italic:size=10
+URxvt.letterSpace: 1
 URxvt.lineSpace: 0
 URxvt.internalBorder: 3
 URxvt.cursorBlink: true

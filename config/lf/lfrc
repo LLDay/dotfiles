@@ -11,22 +11,24 @@ set number
 set relativenumber
 set previewer /usr/bin/bat
 set scrolloff 10
+set icons
 :reload
 
 map <enter> shell
 
 map x $$f
-map X !$f
 
 map e $$EDITOR $f
 map E $sudo $EDITOR $f
 
-map o &mimeopen $f
+map o $mimeopen $f
 map O $mimeopen -a $f
 
 map c
 map cd push $mkdir<space>
 map cf push $$EDITOR<space>
+map ce push $touch<space>
+map cm chmod
 
 map D :delete
 
@@ -47,35 +49,23 @@ map gvl cd /var/log
 map gs cd ~/Documents/scripts
 map gb cd /bin/
 map ge cd /etc/
+map gp cd ~/Pictures
 map gU cd /usr/
 map gV cd /var/
 map gm cd /mnt
 
-# define a custom 'rename' command without prompt for overwrite
-# cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
-# map r push :rename<space>
+cmd open $$OPENER $f
 
-# make sure trash folder exists
-# %mkdir -p ~/.trash
-
-
-# define a custom 'delete' command
-# cmd delete ${{
-#     set -f
-#     printf "$fx\n"
-#     printf "delete?[y/n]"
-#     read ans
-#     [ $ans = "y" ] && rm -rf $fx
-# }}
+cmd chmod %{{
+    set -f
+    ls -l --color=never $f | awk '{print $9,"("$1"):"}'
+    read mod
+    chmod "$mod" $f
+    lf -remote 'send reload'
+}}
 
 cmd trash %trash -- $fx
 
-# use '<delete>' key for either 'trash' or 'delete' command
-# map <delete> trash
-# map <delete> delete
-
-# extract the current file with the right command
-# (xkcd link: https://xkcd.com/1168/)
 cmd extract ${{
     set -f
     case $f in
@@ -88,7 +78,6 @@ cmd extract ${{
     esac
 }}
 
-# compress current file or selected files with tar and gunzip
 cmd tar ${{
     set -f
     mkdir $1
@@ -97,7 +86,6 @@ cmd tar ${{
     rm -rf $1
 }}
 
-# compress current file or selected files with zip
 cmd zip ${{
     set -f
     mkdir $1

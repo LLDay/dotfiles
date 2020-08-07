@@ -10,6 +10,7 @@ setopt numericglobsort                                          # Sort filenames
 setopt nobeep                                                   # No beep
 setopt appendhistory                                            # Immediately append history instead of overwriting
 setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
+setopt HIST_IGNORE_SPACE
 setopt autocd                                                   # if only directory path is entered, cd there.
 setopt correct
 
@@ -44,7 +45,7 @@ zle -N edit-command-line
 bindkey '^[[8~' end-of-line                                     # End key
 bindkey '^[[F' end-of-line                                     # End key
 bindkey '^e' edit-command-line
-bindkey -s '^o' 'lfcd\n'
+bindkey -s '^o' ' lfcd\n'
 
 if [[ "${terminfo[kend]}" != "" ]]; then
   bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
