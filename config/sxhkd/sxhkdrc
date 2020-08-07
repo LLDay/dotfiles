@@ -1,7 +1,7 @@
 # bspwm hotkeys
 #
 # Cleanly quit bspwm
-super + shift + x
+super + shift + Escape
 	bspc quit 1
 #
 # Window manipulation
@@ -45,6 +45,15 @@ super + shift + Return
 # go (Shift=move) to desktop (and focus the monitor that the desktop is located on. Bspwm style)
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} ^{1-9,10}
+
+super + alt  + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+super + alt + {1-9}
+	bspc node -o 0.{1-9}
+
+super + alt + space
+    bspc node -p cancel
 
 #Focus windows by direction, works with multihead
 super + {h,j,k,l}
@@ -122,7 +131,7 @@ super + shift + m
     mailspring
 
 super + shift + o
-    $TERMINAL -e $SHELL -ic "lfcd; $SHELL"
+    $TERMINAL -e $SHELL -ic " lfcd; $SHELL"
 
 Print
 	flameshot gui
