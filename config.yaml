@@ -98,6 +98,9 @@ dotfiles:
   f_dunstrc:
     src: config/dunst/dunstrc
     dst: ~/.config/dunst/dunstrc
+  f_coc-settings.json:
+    src: config/nvim/coc-settings.json
+    dst: ~/.config/nvim/coc-settings.json
 profiles:
   arch:
     dotfiles:
@@ -131,3 +134,4 @@ profiles:
     - f_config
     - f_fonts.conf
     - f_dunstrc
+    - f_coc-settings.json
