@@ -56,6 +56,8 @@ map gU cd /usr/
 map gV cd /var/
 map gm cd /mnt
 
+map git $lazygit
+
 cmd open $$OPENER $f
 
 cmd chmod %{{
