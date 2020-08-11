@@ -1,12 +1,16 @@
 source $HOME/.config/nvim/vim-plug/plugins.vim
+
 let mapleader=" "
 
+set updatetime=500
 set autoindent
-set clipboard=unnamed
 set clipboard=unnamedplus
 set completeopt=longest,menuone
+set termguicolors
+set cursorline
 set encoding=utf-8
 set expandtab
+set hidden
 set hlsearch
 set ignorecase
 set incsearch
@@ -16,7 +20,6 @@ set relativenumber
 set scrolloff=4
 set shiftwidth=4
 set showcmd
-set showcmd
 set smartcase
 set smarttab
 set softtabstop=4
@@ -25,42 +28,40 @@ set tabstop=4
 set title
 set wildmode=longest:full,full
 
-map <silent> <M-o> :TagbarToggle<CR>
-map <silent> <C-b> :CocCommand explorer --position right<CR>
+colorscheme ayu
 
-inoremap <silent><expr> <c-space> coc#refresh()
+map <silent> <C-b> :CocCommand explorer --position right<CR>
+map <silent> <C-j> :Ttoggle<CR>
 
 nmap <F2> <Plug>(coc-rename)
-nmap <leader> gq  <Plug>(coc-format-selected)
-nmap <silent> <C-j> <Plug>(coc-terminal-toggle)
-nmap <silent> g[ <Plug>(coc-diagnostic-prev)
-nmap <silent> g] <Plug>(coc-diagnostic-next)
+nmap <silent> <F7> <Plug>(coc-diagnostic-prev)
+nmap <silent> <F8> <Plug>(coc-diagnostic-next)
+nmap <leader> gq <Plug>(coc-format-selected)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gy <Plug>(coc-type-definition)
-
+nmap <silent> gs :CocCommand clangd.switchSourceHeader<CR>
+nmap <silent> go :CocList outline<CR>
 nmap <silent> <leader>fr :Rg!<CR>
-nmap <silent> <leader>fo :Files!<CR>
-
-xmap <leader> gq  <Plug>(coc-format-selected)
+nmap <silent> <leader>fs :CocList symbols<CR>
+nmap <silent> <leader>o :Files!<CR>
 
 tnoremap <Esc> <C-\><C-n>
+inoremap <silent><expr> <c-space> coc#refresh()
 
 let g:fzf_preview_grep_cmd = 'rg -i --line-number --no-heading -w'
 let g:indentLine_char = '¦'
 let g:lightline = {'colorscheme': 'jellybeans' }
 let g:multi_cursor_select_all_word_key = '<C-L>'
-let g:rainbow_active = 1
-let g:tmuxline_powerline_separators = 0
-
-highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+let g:neoterm_default_mod = 'botright'
+let g:neoterm_size = 12
+let g:neoterm_autoinsert = 1
 
 autocmd TermOpen * setlocal nonumber norelativenumber
-autocmd FileType help,coc-explorer IndentLinesDisable
+autocmd FileType help,neoterm IndentLinesDisable
+autocmd CursorHold * call CocActionAsync('doHover')
+autocmd InsertEnter * silent call CocActionAsync('showSignatureHelp')
 
 command! -nargs=0 Format :call CocAction('format')
+
