@@ -33,7 +33,9 @@ map cm chmod
 map D :delete
 map w
 map sw :set_wallpaper
+map sf push :fzf<space>
 
+map gr cd /
 map gC cd ~/.config/
 map gdc cd ~/Documents
 map gdw cd ~/Downloads
@@ -60,12 +62,22 @@ map git $lazygit
 
 cmd open $$OPENER $f
 
+cmd fzf ${{
+    res="$(fd --hidden $1 | fzf --reverse --header='Jump to location')"
+    if [ -f "$res" ]; then
+        cmd="select"
+    elif [ -d "$res" ]; then
+         cmd="cd"
+    fi
+    lf -remote "send $id $cmd \"$res\""
+}}
+
 cmd chmod %{{
     set -f
     ls -l --color=never $f | awk '{print $9,"("$1"):"}'
     read mod
     chmod "$mod" $f
-    lf -remote 'send reload'
+    lf -remote 'send $id reload'
 }}
 
 cmd trash %trash -- $fx
