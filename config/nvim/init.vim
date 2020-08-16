@@ -1,7 +1,7 @@
 source $HOME/.config/nvim/vim-plug/plugins.vim
+source $HOME/.config/nvim/coc.vim
 
 let mapleader=" "
-
 set updatetime=500
 set autoindent
 set clipboard=unnamedplus
@@ -30,25 +30,9 @@ set wildmode=longest:full,full
 
 colorscheme ayu
 
-map <silent> <C-b> :CocCommand explorer --position right<CR>
 map <silent> <C-j> :Ttoggle<CR>
-
-nmap <F2> <Plug>(coc-rename)
-nmap <silent> <F7> <Plug>(coc-diagnostic-prev)
-nmap <silent> <F8> <Plug>(coc-diagnostic-next)
-nmap <leader> gq <Plug>(coc-format-selected)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gs :CocCommand clangd.switchSourceHeader<CR>
-nmap <silent> go :CocList outline<CR>
 nmap <silent> <leader>fr :Rg!<CR>
-nmap <silent> <leader>fs :CocList symbols<CR>
-nmap <silent> <leader>o :Files!<CR>
-
 tnoremap <Esc> <C-\><C-n>
-inoremap <silent><expr> <c-space> coc#refresh()
 
 let g:fzf_preview_grep_cmd = 'rg -i --line-number --no-heading -w'
 let g:indentLine_char = '¦'
@@ -57,11 +41,10 @@ let g:multi_cursor_select_all_word_key = '<C-L>'
 let g:neoterm_default_mod = 'botright'
 let g:neoterm_size = 12
 let g:neoterm_autoinsert = 1
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+let g:asyncrun_open = 12
+let g:asynctasks_config_name = '.tasks.ini'
 
 autocmd TermOpen * setlocal nonumber norelativenumber
 autocmd FileType help,neoterm IndentLinesDisable
-autocmd CursorHold * call CocActionAsync('doHover')
-autocmd InsertEnter * silent call CocActionAsync('showSignatureHelp')
-
-command! -nargs=0 Format :call CocAction('format')
 

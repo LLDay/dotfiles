@@ -7,6 +7,13 @@
     "explorer.quitOnOpen": true,
     "explorer.icon.enableVimDevicons": true,
     "explorer.file.column.indent.indentLine": true,
-    "cSpell.diagnosticLevel":"Hint",
-    "diagnostic.virtualText": true
+    "cSpell.diagnosticLevel": "Hint",
+    "diagnostic.virtualText": true,
+    "python.linting.enabled": true,
+    "python.linting.banditEnabled": true,
+    "python.linting.pep8Enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyArgs": ["--cache-dir=/home/llday/.cache/mypy/"],
+    "coc.source.dictionary.enable": true
 }

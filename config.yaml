@@ -101,6 +101,9 @@ dotfiles:
   f_coc-settings.json:
     src: config/nvim/coc-settings.json
     dst: ~/.config/nvim/coc-settings.json
+  f_coc.vim:
+    src: config/nvim/coc.vim
+    dst: ~/.config/nvim/coc.vim
 profiles:
   arch:
     dotfiles:
@@ -135,3 +138,4 @@ profiles:
     - f_fonts.conf
     - f_dunstrc
     - f_coc-settings.json
+    - f_coc.vim
