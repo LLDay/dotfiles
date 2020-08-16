@@ -7,7 +7,7 @@ Xft.hintstyle:  hintfull
 
 ! URxvt Appearance
 URxvt.termName: rxvt-unicode-256color
-URxvt.font: xft:FuraCode Nerd Font:style=Retina:pixelsize=14
+URxvt.font: xft:FuraCode Nerd Font:pixelsize=14
 URxvt.letterSpace: 1
 URxvt.lineSpace: 1
 URxvt.internalBorder: 1
