@@ -104,6 +104,9 @@ dotfiles:
   f_coc.vim:
     src: config/nvim/coc.vim
     dst: ~/.config/nvim/coc.vim
+  f_lightline.vim:
+    src: config/nvim/lightline.vim
+    dst: ~/.config/nvim/lightline.vim
 profiles:
   arch:
     dotfiles:
@@ -139,3 +142,4 @@ profiles:
     - f_dunstrc
     - f_coc-settings.json
     - f_coc.vim
+    - f_lightline.vim

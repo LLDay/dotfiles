@@ -1,6 +1,5 @@
 {
     "clangd.enabled": true,
-    "clangd.semanticHighlighting": true,
     "explorer.width": 30,
     "explorer.icon.enableNerdfont": true,
     "explorer.previewAction.onHover": false,
@@ -14,6 +13,5 @@
     "python.linting.pep8Enabled": true,
     "python.linting.pylintEnabled": true,
     "python.linting.mypyEnabled": true,
-    "python.linting.mypyArgs": ["--cache-dir=/home/llday/.cache/mypy/"],
-    "coc.source.dictionary.enable": true
+    "python.linting.mypyArgs": ["--cache-dir=/home/llday/.cache/mypy/"]
 }
