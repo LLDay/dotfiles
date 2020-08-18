@@ -1,7 +1,7 @@
 alias sp='sudo pacman'
 alias pas='sudo pacman -S'
 alias pass='pacman -Ss'
-alias upd='yay -Syu'
+alias upd='yay -Syu --noconfirm'
 alias add='yay -S'
 alias ls='ls --color=always'
 alias sv='sudo nvim'
