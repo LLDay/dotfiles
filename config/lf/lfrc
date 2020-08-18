@@ -30,10 +30,12 @@ map cf push $$EDITOR<space>
 map ce push $touch<space>
 map cm chmod
 
+map S :symlink
 map D :delete
 map w
 map sw :set_wallpaper
 map sf push :fzf<space>
+map sl push :rg<space>
 
 map gr cd /
 map gC cd ~/.config/
@@ -72,12 +74,23 @@ cmd fzf ${{
     lf -remote "send $id $cmd \"$res\""
 }}
 
+cmd rg ${{
+    res=$(rg --hidden -ilw $1 | fzf --header='Jump to location' \
+        --preview "bat {} | rg --color always -B5 -A5 $1")
+    if [ -f "$res" ]; then
+        cmd="select"
+    elif [ -d "$res" ]; then
+         cmd="cd"
+    fi
+    lf -remote "send $id $cmd \"$res\""
+}}
+
 cmd chmod %{{
     set -f
-    ls -l --color=never $f | awk '{print $9,"("$1"):"}'
+    ls -lH --color=never $f | awk '{print $9,"("$1"):"}'
     read mod
     chmod "$mod" $f
-    lf -remote 'send $id reload'
+    lf -remote "send $id reload"
 }}
 
 cmd trash %trash -- $fx
@@ -88,6 +101,17 @@ cmd set_wallpaper &{{
         sed -i -r "s#'[^']+'#'$f'#" ~/.fehbg
         source ~/.fehbg
     fi
+}}
+
+cmd symlink %{{
+    load=$(lf -remote "load $id")
+    mode=$(echo "$load" | sed -n '1p')
+    list=$(echo "$load" | sed '1d')
+    if [ $mode = 'copy' ]; then
+        cp -Rs $list .
+        lf -remote "send $id clear"
+    fi
+    lf -remote "send $id load"
 }}
 
 cmd extract ${{
