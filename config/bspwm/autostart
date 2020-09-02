@@ -14,8 +14,9 @@ sxhkd &
 light -I &
 fc-cache -fv &
 devmon &
-wallpaper_changer &
 dunst &
+
+# wallpaper_changer starts with cron
 
 ## powersaving options
 xset dpms 0 0 300 &
