@@ -34,7 +34,7 @@ map S :symlink
 map D :delete
 map w
 map sw :set_wallpaper
-map sf push :fzf<space>
+map sf :fzf
 map sl push :rg<space>
 
 map gr cd /
@@ -65,7 +65,8 @@ map git $lazygit
 cmd open $$OPENER $f
 
 cmd fzf ${{
-    res="$(fd --hidden $1 | fzf --reverse --header='Jump to location')"
+    res=$(fd --hidden | fzf --reverse --header='Jump to location' \
+        --preview "bat {}")
     if [ -f "$res" ]; then
         cmd="select"
     elif [ -d "$res" ]; then
@@ -75,8 +76,8 @@ cmd fzf ${{
 }}
 
 cmd rg ${{
-    res=$(rg --hidden -ilw $1 | fzf --header='Jump to location' \
-        --preview "bat {} | rg --color always -B5 -A5 $1")
+    res=$(rg --hidden -ilwL $1 | fzf --header='Jump to location' \
+        --preview "bat {} | rg --color always -B3 -A3 $1")
     if [ -f "$res" ]; then
         cmd="select"
     elif [ -d "$res" ]; then
