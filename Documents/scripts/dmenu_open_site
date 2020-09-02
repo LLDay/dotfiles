@@ -10,11 +10,11 @@ SITES=(
     youtube.com
 )
 
-chosen=$(printf '%s\n' ${SITES[@]} | dmenu_colored)
+chosen=$(printf '%s\n' "${SITES[@]}" | dmenu_colored)
 
 if [[ "$chosen" =~ ^[[:alnum:]._]+\.[[:alnum:]]{1,5}$ ]]; then
     $BROWSER "$chosen"
-elif [ ! -z "$chosen" ]; then
+elif [ -n "$chosen" ]; then
     $BROWSER --search "$chosen"
 fi
 

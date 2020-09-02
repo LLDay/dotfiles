@@ -4,8 +4,8 @@ cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
 cache=$cachedir/dmenu_run
 (
 	IFS=:
-	if stest -dqr -n "$cache" $PATH; then
-		stest -flx $PATH | sort -u | tee "$cache" | dmenu_colored "$@"
+	if stest -dqr -n "$cache" "$PATH"; then
+		stest -flx "$PATH" | sort -u | tee "$cache" | dmenu_colored "$@"
 	else
 		dmenu_colored "$@" < "$cache"
 	fi
