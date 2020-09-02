@@ -1,32 +1,50 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
-Plug 'Yggdroot/indentLine'
+
+" Linters & Lsp
+Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim'
+Plug 'metakirby5/codi.vim'
+
+" Git
 Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-rooter'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'easymotion/vim-easymotion'
-Plug 'godlygeek/tabular'
-Plug 'itchyny/lightline.vim'
-Plug 'kassio/neoterm'
 Plug 'kdheepak/lazygit.nvim'
+Plug 'tpope/vim-fugitive'
+
+" Programming
+Plug 'airblade/vim-rooter'
 Plug 'lifepillar/pgsql.vim'
-Plug 'lilydjwg/colorizer'
-Plug 'majutsushi/tagbar'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'preservim/nerdcommenter'
+
+"Plug 'puremourning/vimspector'
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
+Plug 'skywind3000/asyncrun.vim'
+Plug 'skywind3000/asynctasks.vim'
+
+" Look and feel
+Plug 'Yggdroot/indentLine'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+Plug 'kaicataldo/material.vim', {'branch': 'main'}
+Plug 'kassio/neoterm'
+Plug 'lilydjwg/colorizer'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'preservim/nerdtree'
-Plug 'puremourning/vimspector'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'simeji/winresizer'
-Plug 'skywind3000/asyncrun.vim'
-Plug 'skywind3000/asynctasks.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-fugitive'
+Plug 'voldikss/vim-floaterm'
+Plug 'bluz71/vim-moonfly-colors'
+
+" Keybindings
+Plug 'bfredl/nvim-miniyank'
+Plug 'easymotion/vim-easymotion'
+Plug 'godlygeek/tabular'
+Plug 'liuchengxu/vim-which-key'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-scripts/YankRing.vim'
-Plug 'voldikss/vim-floaterm'
+
 call plug#end()

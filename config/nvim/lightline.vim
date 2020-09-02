@@ -20,7 +20,33 @@ nmap c8 :tabclose 8 <CR>
 nmap c9 :tabclose 9 <CR>
 nmap c0 :tabclose 10 <CR>
 
-let g:lightline          = {'colorscheme': 'jellybeans'}
-let g:lightline.tabline  = {'left': [['tabs']], 'right': [[]]}
-let g:lightline.tab      = {'active': [ 'readonly', 'filename', 'modified' ],
-                         \  'inactive':[ 'tabnum', 'readonly', 'filename', 'modified' ]}
+let g:lightline = {'colorscheme': 'jellybeans'}
+
+let g:lightline.tabline = {
+            \'left'  : [['tabs']],
+            \'right' : []}
+
+let g:lightline.tab = {
+            \ 'active'   : [ 'readonly', 'filename', 'modified' ],
+            \ 'inactive' : [ 'tabnum', 'readonly', 'filename', 'modified' ]}
+
+let g:lightline.component_expand = {
+            \ 'linter_infos'    : 'lightline#ale#infos',
+            \ 'linter_warnings' : 'lightline#ale#warnings',
+            \ 'linter_errors'   : 'lightline#ale#errors'}
+
+let g:lightline.component_type = {
+            \ 'linter_infos'    : 'right',
+            \ 'linter_warnings' : 'warning',
+            \ 'linter_errors'   : 'error'}
+
+let g:lightline.active = { 'right': [
+            \ ['lineinfo'],
+            \ ['percent'],
+            \ ['fileformat', 'fileencoding', 'filetype'],
+            \ ['linter_errors', 'linter_warnings', 'linter_infos']] }
+
+let g:lightline#ale#indicator_infos = 'i'
+let g:lightline#ale#indicator_warnings = 'w'
+let g:lightline#ale#indicator_errors = 'e'
+

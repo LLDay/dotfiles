@@ -107,6 +107,9 @@ dotfiles:
   f_lightline.vim:
     src: config/nvim/lightline.vim
     dst: ~/.config/nvim/lightline.vim
+  f_ale.vim:
+    src: config/nvim/ale.vim
+    dst: ~/.config/nvim/ale.vim
 profiles:
   arch:
     dotfiles:
@@ -143,3 +146,4 @@ profiles:
     - f_coc-settings.json
     - f_coc.vim
     - f_lightline.vim
+    - f_ale.vim
