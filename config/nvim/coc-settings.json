@@ -1,17 +1,21 @@
 {
     "clangd.enabled": true,
-    "explorer.width": 30,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.previewAction.onHover": false,
-    "explorer.quitOnOpen": true,
-    "explorer.icon.enableVimDevicons": true,
-    "explorer.file.column.indent.indentLine": true,
-    "cSpell.diagnosticLevel": "Hint",
-    "diagnostic.virtualText": true,
+    "coc.preferences.hoverTarget": "float",
+    "coc.preferences.enableFloatHighlight": true,
+    "yank.highlight.duration": 300,
+    "diagnostic.enable": false,
+    "diagnostic.displayByAle": true,
+    "diagnostic.messageDelay": 100,
     "python.linting.enabled": true,
     "python.linting.banditEnabled": true,
     "python.linting.pep8Enabled": true,
     "python.linting.pylintEnabled": true,
     "python.linting.mypyEnabled": true,
-    "python.linting.mypyArgs": ["--cache-dir=/home/llday/.cache/mypy/"]
+    "python.linting.mypyArgs": [
+        "--cache-dir=/home/llday/.cache/mypy/"
+    ],
+    "cSpell.userWords": [
+        "clangd",
+        "vimt"
+    ]
 }
