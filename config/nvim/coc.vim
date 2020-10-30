@@ -30,7 +30,7 @@ function! s:check_back_space() abort
 endfunction
 
 augroup Common
-    autocmd CursorHold  * if ! coc#util#has_float() | call CocActionAsync('doHover')
+    autocmd CursorHold  * silent call CocActionAsync('doHover')
     autocmd InsertEnter * silent call CocActionAsync('showSignatureHelp')
 augroup END
 

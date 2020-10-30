@@ -1,16 +1,17 @@
 let g:ale_completion_enabled = 0
-let g:ale_echo_cursor = 0
+let g:ale_echo_cursor = 1
 let g:ale_hover_cursor = 0
 let g:ale_set_balloons = 0
 let g:ale_set_highlights = 1
 let g:ale_set_loclist = 1
-let g:ale_set_quickfix = 1
+let g:ale_set_quickfix = 0
 let g:ale_set_signs = 1
 let g:ale_virtualtext_cursor = 1
 let g:ale_sign_highlight_linenrs = 1
 
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_insert_leave = 0
+let g:ale_warn_about_trailing_whitespace = 1
 
 let g:ale_cpp_cc_options = '-std=c++17 -Wall -Wextra -pedantic -Wno-pragma-once-outside-header'
 let g:ale_cpp_cppcheck_options = '--force --suppress=unmatchedSuppression --enable=all'
@@ -37,6 +38,12 @@ highlight link ALEInfoSignLineNr ALEInfo
 highlight link ALEVirtualTextInfo ALEInfo
 
 let g:ale_linters = {
-            \ 'cpp': ['cc', 'cppcheck', 'clangd'],
-            \ 'vim': ['vimt']
+            \ 'cpp': ['cc', 'cppcheck', 'clangtidy'],
+            \ 'vim': ['vimt'],
+            \ 'sh' : ['shellcheck'],
+            \ 'python': ['pylint'],
+            \ 'cmake': ['cmakelint']
             \ }
+
+let g:ale_fixers = ['cmakeformat', 'trim_whitespace']
+

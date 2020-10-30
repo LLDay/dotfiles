@@ -30,6 +30,8 @@ let g:lightline.tab = {
             \ 'active'   : [ 'readonly', 'filename', 'modified' ],
             \ 'inactive' : [ 'tabnum', 'readonly', 'filename', 'modified' ]}
 
+let g:lightline.tab_component_function = {'tabnum': 'LightlineWebDevIcons'}
+
 let g:lightline.component_expand = {
             \ 'linter_infos'    : 'lightline#ale#infos',
             \ 'linter_warnings' : 'lightline#ale#warnings',
@@ -44,7 +46,7 @@ let g:lightline.active = { 'right': [
             \ ['lineinfo'],
             \ ['percent'],
             \ ['fileformat', 'fileencoding', 'filetype'],
-            \ ['linter_errors', 'linter_warnings', 'linter_infos']] }
+            \ ['linter_infos', 'linter_warnings', 'linter_errors']] }
 
 let g:lightline#ale#indicator_infos = 'i'
 let g:lightline#ale#indicator_warnings = 'w'
