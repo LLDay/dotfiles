@@ -1,12 +1,4 @@
 #!/bin/sh
 source $HOME/.cache/wal/colors.sh
-cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
-cache=$cachedir/dmenu_run
-(
-	IFS=:
-	if stest -dqr -n "$cache" "$PATH"; then
-		stest -flx "$PATH" | sort -u | tee "$cache" | dmenu_colored "$@"
-	else
-		dmenu_colored "$@" < "$cache"
-	fi
-) | ${SHELL:-"/bin/sh"} &
+dmenu_run -i -o 0.9 -fn 'xos4 Terminus:Regular:size=12' -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" "$@"
+
