@@ -12,17 +12,14 @@ urxvtd -q &
 picom -b &
 sxhkd &
 light -I &
-fc-cache -fv &
+fc-cache -f &
 devmon &
 dunst &
 
 # wallpaper_changer starts with cron
 
 ## powersaving options
-xset dpms 0 0 300 &
 xset s noblank &
 xset s noexpose &
 
-## Run screenlock when suspending
 light-locker &
-

@@ -3,14 +3,14 @@
 # is used to find and restart entr scripts using pkill
 ps -eo pid,cmd | rg -i update_edited_progs | awk '{print $1}' | head --lines=-1 | xargs -r kill
 
-echo ~/.config/sxhkd/sxhkdrc | entr -p sh -c 'update_edited_progs || pkill -USR1 -x sxhkd' &
-echo ~/.fehbg | entr -p sh -c 'update_edited_progs || source $HOME/.fehbg' &
-echo ~/.Xresources | entr -p sh -c 'update_edited_progs || xrdb /_ && source ~/.config/bspwm/bspwmrc' &
+echo ~/.config/sxhkd/sxhkdrc | entr -p sh -c "update_edited_progs || pkill -USR1 -x sxhkd" &
+echo ~/.fehbg | entr -p sh -c "update_edited_progs || source $HOME/.fehbg" &
 
 BSPWM_DIRS="$HOME/.config/bspwm/bspwmrc"
 BSPWM_DIRS+="\n$HOME/.config/bspwm/autostart"
-for f in $(ls ~/.config/polybar); do
-    BSPWM_DIRS+="\n$HOME/.config/polybar/$f"
+BSPWM_DIRS+="\n$HOME/.Xresources"
+for f in ~/.config/polybar/*; do
+    BSPWM_DIRS+="\n$f"
 done
 
-echo -e $BSPWM_DIRS | entr -p sh -c 'update_edited_progs || /home/llday/.config/bspwm/bspwmrc' &
+echo -e $BSPWM_DIRS | entr -p sh -c "update_edited_progs || $HOME/.config/bspwm/bspwmrc" &

@@ -1,8 +1,8 @@
 #!/bin/sh
 bspc rule -r "*"
 
-source $HOME/.config/bspwm/autostart &
-source $HOME/.cache/wal/colors.sh
+source "$HOME/.config/bspwm/autostart" &
+source "$HOME/.cache/wal/colors.sh"
 
 export gap=15
 export PANEL_HEIGHT=0

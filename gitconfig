@@ -1,21 +1,28 @@
 [user]
-        name = LLDay
-        email = ssdenis99@gmail.com
+    name = LLDay
+    email = ssdenis99@gmail.com
+
 [filter "lfs"]
-        required = true
-        clean = git-lfs clean -- %f
-        smudge = git-lfs smudge -- %f
-        process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+
 [core]
-        excludesfile = ~/.gitignore
-	autocrlf = input
+    excludesfile = ~/.gitignore
+    autocrlf = input
+
 [pretty]
-        my = format:%C(yellow)%h %C(green)%cd %C(magenta)%an%C(reset) | %C(cyan)%s %C(blue)%d
+    my = format:%C(yellow)%h %C(green)%cd %C(magenta)%an%C(reset) | %C(cyan)%s %C(blue)%d
+
 [format]
-        pretty = my
+    pretty = my
+
 [log]
-        date = format-local:%F %R
+    date = format-local:%F %R
+
 [commit]
-        verbose = true
+    verbose = true
+
 [grep]
-        patternType = perl
+    patternType = perl
