@@ -6,7 +6,6 @@ super + shift + Escape
 #
 # Window manipulation
 # ______________
-
 # Close window
 super + q
 	bspc node -c
@@ -132,6 +131,9 @@ super + shift + m
 
 super + shift + o
     $TERMINAL -e $SHELL -ic " lfcd; $SHELL"
+
+super + shift + u
+    $TERMINAL -e $SHELL -ic " upd"
 
 Print
 	flameshot gui

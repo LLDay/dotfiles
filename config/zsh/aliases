@@ -14,3 +14,4 @@ alias v=nvim
 
 alias dmenu='dmenu_colored -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 alias mirrors='sudo reflector -f10 --save /etc/pacman.d/mirrorlist --verbose'
+alias pid='ps -Ao pid,command | rg -i'
