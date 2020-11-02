@@ -120,7 +120,7 @@ cmd symlink %{{
     mode=$(echo "$load" | sed -n '1p')
     list=$(echo "$load" | sed '1d')
     if [ $mode = 'copy' ]; then
-        cp -Rs $list .
+        ln -s $list .
         lf -remote "send $id clear"
     fi
     lf -remote "send $id load"
