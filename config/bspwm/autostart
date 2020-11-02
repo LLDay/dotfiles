@@ -15,6 +15,7 @@ light -I &
 fc-cache -f &
 devmon &
 dunst &
+dex -a &
 
 # wallpaper_changer starts with cron
 
