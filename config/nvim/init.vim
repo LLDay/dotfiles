@@ -84,6 +84,12 @@ let g:sneak#label = 1
 let g:sneak#use_ic_scs = 1
 let g:yankring_clipboard_monitor = 0
 let g:yankring_history_dir = '$HOME/.cache/'
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method='zathura'
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 
 colorscheme material
 

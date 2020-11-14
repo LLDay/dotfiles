@@ -11,6 +11,7 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-fugitive'
 
 " Programming
+Plug 'lervag/vimtex'
 Plug 'airblade/vim-rooter'
 Plug 'lifepillar/pgsql.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'

@@ -1,8 +1,5 @@
 map <silent> <F4>  :CocList tasks<CR>
 
-let g:coc_snippet_next = '<c-j>'
-let g:coc_snippet_prev = '<c-k>'
-
 nmap <silent> <F2> <Plug>(coc-rename)
 nmap <silent> <F7> <Plug>(coc-diagnostic-prev)
 nmap <silent> <F8> <Plug>(coc-diagnostic-next)
