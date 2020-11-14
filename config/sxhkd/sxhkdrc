@@ -18,7 +18,7 @@ super + t
 	{bspc node -t floating,bspc node -t tiled}
 
 # Toggle fullscreen
-super + shift + f
+super + f
 	bspc node -t {fullscreen,tiled}
 
 # Try to keep size and position of the selected window
@@ -80,10 +80,6 @@ super + ctrl + {Left,Down,Up,Right}
 #
 # Layout manipulation/desktop level controls
 # ______________
-
-# Toggle monocle mode
-super + f
-	bspc desktop -l next
 
 # Balance tree
 super + b

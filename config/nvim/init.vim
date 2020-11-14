@@ -89,7 +89,6 @@ colorscheme material
 
 augroup Common
     autocmd TermOpen * setlocal nonumber norelativenumber
-    autocmd FileType help,neoterm IndentLinesDisable
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup END
 
