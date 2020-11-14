@@ -20,6 +20,10 @@ Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 Plug 'skywind3000/asyncrun.vim'
 Plug 'skywind3000/asynctasks.vim'
 
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 " Look and feel
 Plug 'morhetz/gruvbox'
 Plug 'bluz71/vim-moonfly-colors'

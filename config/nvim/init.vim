@@ -95,6 +95,6 @@ augroup END
 
 augroup plugin-devdocs
   autocmd!
-  autocmd FileType c,cpp,python,cmake nmap <buffer>K <Plug>(devdocs-under-cursor)
+  autocmd FileType c,cpp,python,cmake nmap <buffer><leader>K <Plug>(devdocs-under-cursor)
 augroup END
 
