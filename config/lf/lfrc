@@ -12,6 +12,8 @@ set previewer /usr/bin/bat
 set scrolloff 10
 set icons
 set info size
+set dircounts
+
 :reload
 
 map <enter> shell
@@ -21,9 +23,6 @@ map X $$f &
 
 map e $$EDITOR $f
 map E $sudo $EDITOR $f
-
-map o $xdg-open $f
-map O $mimeopen -d $f
 
 map <f-2> :rename
 
@@ -72,8 +71,8 @@ map gme cd /media
 
 map git $lazygit
 
-cmd open $$OPENER $f 1>/dev/null 2>/dev/null &
-cmd opend $$OPENER $f
+cmd open $setsid $OPENER $f
+cmd opend $setsid $mimeopen -d $f
 
 cmd fzf ${{
     res=$(fd --hidden | fzf --reverse --header='Jump to location' \
