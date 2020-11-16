@@ -3,8 +3,6 @@
 wal -R && source ~/.config/polybar/launch.sh &
 source ~/.fehbg &
 
-xsetroot -cursor_name left_ptr &
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
 xrdb -merge ~/.Xresources &
 
 update_edited &
@@ -15,12 +13,5 @@ light -I &
 fc-cache -f &
 devmon &
 dunst &
-dex -a &
-
-# wallpaper_changer starts with cron
-
-## powersaving options
-xset s noblank &
-xset s noexpose &
-
+sleep 15 && dex -a &
 light-locker &

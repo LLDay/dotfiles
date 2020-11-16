@@ -5,11 +5,11 @@ source "$HOME/.config/bspwm/autostart" &
 source "$HOME/.cache/wal/colors.sh"
 
 export gap=15
-export PANEL_HEIGHT=0
+export PANEL_HEIGHT=15
 
 #This creates negative padding equal to window gap so that gaps are shown only between windows and not on desktop edges.
 bspc config window_gap $gap
-bspc config top_padding $(($PANEL_HEIGHT-$gap))
+bspc config top_padding $((-$PANEL_HEIGHT))
 bspc config left_padding -$gap
 bspc config right_padding -$gap
 bspc config bottom_padding -$gap
@@ -38,32 +38,11 @@ bspc config split_ratio         0.50
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc rule -a screenkey --unmanage
-bspc rule -a gcolor2 state=floating center=true
-bspc rule -a lxappearance state=floating center=true
-bspc rule -a gmrun state=floating center=true
 bspc rule -a lxterminal state=floating center=true sticky=true
 bspc rule -a viewnior state=floating center=true
-bspc rule -a file-roller state=floating center=true
 bspc rule -a floaterm state=floating center=true
-bspc rule -a spotify state=pseudo_tiled
-bspc rule -a file-roller state=pseudo_tiled
-bspc rule -a transmission-gtk state=pseudo_tiled
 bspc rule -a conky sticky=on manage=off lower=on
-bspc rule -a astime sticky=on
-bspc rule -a yad state=floating
-bspc rule -a Docky layer=above border=off manage=on
-bspc rule -a Plank layer=above border=off manage=on
-bspc rule -a wbar layer=above
-bspc rule -a dockbarx layer=above
-bspc rule -a google-chrome-unstable private=on
-bspc rule -a google-chrome-stable private=on
-bspc rule -a chromium private=on
 bspc rule -a firefox private=on desktop=I follow=on
 bspc rule -a Code private=on desktop=II
-bspc rule -a midori private=on
-bspc rule -a gnome-pie border=off manage=off
 bspc rule -a wpa_gui state=pseudo_tiled
-bspc rule -a libreoffice state=tiled
-bspc rule -a '*:libreofficedev' state=tiled
-bspc rule -a '*:soffice' state=tiled
+bspc rule -a Zathura state=tiled

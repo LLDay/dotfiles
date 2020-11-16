@@ -1,5 +1,6 @@
 #!/bin/bash
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin/core_perl:/usr/bin:/usr/bin/vendor_perl:$HOME/.local/bin:$HOME/Documents/scripts"
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export BSPWM_SOCKET="/tmp/bspwm-socket"
