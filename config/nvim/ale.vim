@@ -15,6 +15,7 @@ let g:ale_warn_about_trailing_whitespace = 1
 
 let g:ale_cpp_cc_options = '-std=c++17 -Wall -Wextra -pedantic -Wno-pragma-once-outside-header'
 let g:ale_cpp_cppcheck_options = '--force --suppress=unmatchedSuppression --enable=all'
+let g:ale_cpp_clangtidy_extra_options = '-extra-arg=--std=c++17'
 let g:ale_linters_explicit = 1
 
 let g:ale_sign_error = '>>'
@@ -38,7 +39,7 @@ highlight link ALEInfoSignLineNr ALEInfo
 highlight link ALEVirtualTextInfo ALEInfo
 
 let g:ale_linters = {
-            \ 'cpp': ['cc', 'cppcheck', 'clangtidy'],
+            \ 'cpp': ['cc', 'cpplint', 'clangtidy'],
             \ 'vim': ['vimt'],
             \ 'sh' : ['shellcheck'],
             \ 'python': ['pylint'],

@@ -1,4 +1,3 @@
-noremap <space> <nop>
 let mapleader = ' '
 
 source $HOME/.config/nvim/coc.vim
@@ -38,6 +37,10 @@ set title
 set updatetime=500
 set wildmode=longest:full,full
 
+nmap s <Plug>(easymotion-s2)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 map <leader>p <Plug>(miniyank-cycle)
@@ -62,34 +65,33 @@ map <leader>= :Tabularize /
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowLineNumbers = 1
 let g:NERDTreeWinPos = 'right'
+"let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:XkbSwitchEnabled = 1
 let g:asyncrun_open = 12
 let g:asynctasks_config_name = '.tasks.ini'
 let g:asynctasks_profile = 'release'
 let g:asynctasks_term_pos = 'bottom'
 let g:devdocs_open_cmd = 'devdocs-desktop'
+let g:EasyMotion_smartcase = 1
 let g:floaterm_height = 0.8
 let g:floaterm_width = 0.8
 let g:fzf_preview_grep_cmd = 'rg -i --line-number --no-heading -w'
 let g:gitgutter_sign_priority = 0
+let g:gruvbox_contrast_dark = 'hard'
 let g:indentLine_char = '¦'
 let g:lf_map_keys = 0
-let g:gruvbox_contrast_dark = 'hard'
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean-community'
 let g:neoterm_autoinsert = 1
 let g:neoterm_default_mod = 'botright'
 let g:neoterm_size = 12
 let g:rooter_patterns = ['build/', '.svn', '.git', '.bzr']
-let g:sneak#label = 1
-let g:sneak#use_ic_scs = 1
-let g:yankring_clipboard_monitor = 0
-let g:yankring_history_dir = '$HOME/.cache/'
 let g:tex_flavor = 'latex'
 let g:vimtex_view_method='zathura'
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
+let g:yankring_clipboard_monitor = 0
+let g:yankring_history_dir = '$HOME/.cache/'
 
 colorscheme material
 
