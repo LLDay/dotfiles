@@ -17,13 +17,7 @@ nmap <silent> <c-f> :CocSearch <C-R>=expand("<cword>")<CR><CR>
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <c-j> coc#_select_confirm()
 
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-    if (coc#rpc#ready())
-        call CocActionAsync('doHover')
-    endif
-endfunction
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 
 augroup Common
     autocmd InsertEnter * silent call CocActionAsync('showSignatureHelp')

@@ -62,19 +62,21 @@ tnoremap <Esc> <C-\><C-n>
 xmap <leader>= :Tabularize /
 map <leader>= :Tabularize /
 
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeShowLineNumbers = 1
-let g:NERDTreeWinPos = 'right'
 "let g:UltiSnipsExpandTrigger="<c-j>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:asyncrun_rootmarks = ['build', 'compile_commands.json', '.git', '.svn', '.root']
+let g:EasyMotion_smartcase = 1
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeShowLineNumbers = 1
+let g:NERDTreeWinPos = 'right'
 let g:XkbSwitchEnabled = 1
 let g:asyncrun_open = 12
 let g:asynctasks_config_name = '.tasks.ini'
-let g:asynctasks_profile = 'release'
+let g:asynctasks_profile = 'debug'
 let g:asynctasks_term_pos = 'bottom'
+let g:colorizer_nomap = 1
 let g:devdocs_open_cmd = 'devdocs-desktop'
-let g:EasyMotion_smartcase = 1
 let g:floaterm_height = 0.8
 let g:floaterm_width = 0.8
 let g:fzf_preview_grep_cmd = 'rg -i --line-number --no-heading -w'
@@ -104,4 +106,3 @@ augroup plugin-devdocs
   autocmd!
   autocmd FileType c,cpp,python,cmake nmap <buffer><leader>K <Plug>(devdocs-under-cursor)
 augroup END
-

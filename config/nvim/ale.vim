@@ -8,6 +8,7 @@ let g:ale_set_quickfix = 0
 let g:ale_set_signs = 1
 let g:ale_virtualtext_cursor = 1
 let g:ale_sign_highlight_linenrs = 1
+let g:ale_fix_on_save = 1
 
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_insert_leave = 0
@@ -16,6 +17,8 @@ let g:ale_warn_about_trailing_whitespace = 1
 let g:ale_cpp_cc_options = '-std=c++17 -Wall -Wextra -pedantic -Wno-pragma-once-outside-header'
 let g:ale_cpp_cppcheck_options = '--force --suppress=unmatchedSuppression --enable=all'
 let g:ale_cpp_clangtidy_extra_options = '-extra-arg=--std=c++17'
+let g:ale_cpp_cpplint_options = '--filter=-legal/copyright'
+let g:ale_cpp_clazy_checks = ['level 2']
 let g:ale_linters_explicit = 1
 
 let g:ale_sign_error = '>>'
@@ -39,12 +42,15 @@ highlight link ALEInfoSignLineNr ALEInfo
 highlight link ALEVirtualTextInfo ALEInfo
 
 let g:ale_linters = {
-            \ 'cpp': ['cc', 'cpplint', 'clangtidy'],
+            \ 'cpp': ['cc', 'clazy', 'cpplint', 'flawfinder'],
             \ 'vim': ['vimt'],
             \ 'sh' : ['shellcheck'],
             \ 'python': ['pylint'],
             \ 'cmake': ['cmakelint']
             \ }
 
-let g:ale_fixers = ['cmakeformat', 'trim_whitespace']
-
+let g:ale_fixers = {
+            \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+            \ 'cpp': ['clang-format'],
+            \ 'tex': ['latexindent'],
+            \ 'cmake':[ 'cmakeformat']}
