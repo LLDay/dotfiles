@@ -17,6 +17,7 @@ set ignorecase
 set incsearch
 set laststatus=2
 set matchpairs+=<:>
+set nohlsearch
 set noshowmode
 set notimeout
 set nowrap

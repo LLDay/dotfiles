@@ -71,7 +71,7 @@ map gme cd /media
 
 map git $lazygit
 
-cmd open $setsid $OPENER $f
+cmd open $setsid $OPENER $f &
 cmd opend $setsid $mimeopen -d $f
 
 cmd fzf ${{
@@ -152,4 +152,3 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
-

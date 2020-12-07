@@ -8,9 +8,9 @@ let g:ale_set_quickfix = 0
 let g:ale_set_signs = 1
 let g:ale_virtualtext_cursor = 1
 let g:ale_sign_highlight_linenrs = 1
-let g:ale_fix_on_save = 1
 
-let g:ale_lint_on_enter = 1
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_warn_about_trailing_whitespace = 1
 
@@ -45,7 +45,7 @@ let g:ale_linters = {
             \ 'cpp': ['cc', 'clazy', 'cpplint', 'flawfinder'],
             \ 'vim': ['vimt'],
             \ 'sh' : ['shellcheck'],
-            \ 'python': ['pylint'],
+            \ 'python': ['mypy'],
             \ 'cmake': ['cmakelint']
             \ }
 
@@ -53,4 +53,6 @@ let g:ale_fixers = {
             \   '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ 'cpp': ['clang-format'],
             \ 'tex': ['latexindent'],
-            \ 'cmake':[ 'cmakeformat']}
+            \ 'cmake': [ 'cmakeformat'],
+            \ 'python': ['autoimport', 'autopep8', 'black']
+            \ }
