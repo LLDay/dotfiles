@@ -14,4 +14,3 @@ fc-cache -f &
 devmon &
 dunst &
 sleep 15 && dex -a &
-light-locker &

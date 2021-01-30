@@ -110,6 +110,9 @@ dotfiles:
   f_ale.vim:
     src: config/nvim/ale.vim
     dst: ~/.config/nvim/ale.vim
+  f_git.vim:
+    src: config/nvim/git.vim
+    dst: ~/.config/nvim/git.vim
 profiles:
   arch:
     dotfiles:
@@ -147,3 +150,4 @@ profiles:
     - f_coc.vim
     - f_lightline.vim
     - f_ale.vim
+    - f_git.vim

@@ -26,6 +26,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Look and feel
+Plug 'bfrg/vim-cpp-modern'
 Plug 'lyokha/vim-xkbswitch'
 Plug 'morhetz/gruvbox'
 Plug 'bluz71/vim-moonfly-colors'

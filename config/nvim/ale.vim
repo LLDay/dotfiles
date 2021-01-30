@@ -45,7 +45,7 @@ let g:ale_linters = {
             \ 'cpp': ['cc', 'clazy', 'cpplint', 'flawfinder'],
             \ 'vim': ['vimt'],
             \ 'sh' : ['shellcheck'],
-            \ 'python': ['mypy'],
+            \ 'python': ['bandit'],
             \ 'cmake': ['cmakelint']
             \ }
 

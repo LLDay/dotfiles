@@ -14,7 +14,8 @@ bspc config left_padding -$gap
 bspc config right_padding -$gap
 bspc config bottom_padding -$gap
 
-setxkbmap -option grp:alt_shift_toggle us,ru &
+setxkbmap -option grp:alt_shift_toggle us,ru
+setxkbmap -option compose:ralt
 
 #Various settings
 bspc config gapless_monocle     false #Default setup uses negative padding, and gapless monocle looks really weird like that

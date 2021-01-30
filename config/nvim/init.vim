@@ -2,6 +2,7 @@ let mapleader = ' '
 
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/ale.vim
+source $HOME/.config/nvim/git.vim
 source $HOME/.config/nvim/lightline.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
 
@@ -66,7 +67,7 @@ map <leader>= :Tabularize /
 "let g:UltiSnipsExpandTrigger="<c-j>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:asyncrun_rootmarks = ['build', 'compile_commands.json', '.git', '.svn', '.root']
+let g:asyncrun_rootmarks = ['build/', 'compile_commands.json', '.git', '.svn', '.root']
 let g:EasyMotion_smartcase = 1
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowLineNumbers = 1
@@ -81,7 +82,6 @@ let g:devdocs_open_cmd = 'devdocs-desktop'
 let g:floaterm_height = 0.8
 let g:floaterm_width = 0.8
 let g:fzf_preview_grep_cmd = 'rg -i --line-number --no-heading -w'
-let g:gitgutter_sign_priority = 0
 let g:gruvbox_contrast_dark = 'hard'
 let g:indentLine_char = '¦'
 let g:lf_map_keys = 0
@@ -90,7 +90,7 @@ let g:material_theme_style = 'ocean-community'
 let g:neoterm_autoinsert = 1
 let g:neoterm_default_mod = 'botright'
 let g:neoterm_size = 12
-let g:rooter_patterns = ['build/', '.svn', '.git', '.bzr']
+let g:rooter_patterns = ['.root', 'build/', '.svn', '.git', '.bzr']
 let g:tex_flavor = 'latex'
 let g:vimtex_view_method='zathura'
 let g:yankring_clipboard_monitor = 0
