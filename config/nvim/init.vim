@@ -36,6 +36,8 @@ set splitright
 set tabstop=4
 set termguicolors
 set title
+set undofile
+set undodir=$HOME/.cache/vim/undo
 set updatetime=500
 set wildmode=longest:full,full
 
@@ -52,7 +54,7 @@ map <silent> <leader>v :vsp<CR>
 map <silent> <leader>s :sp<CR>
 map <silent> <leader>t :Ttoggle<CR>
 map <silent> <leader>o :FloatermNew lf<CR>
-map <silent> <C-b> :NERDTreeToggle<CR>
+map <silent> U :UndotreeToggle<CR>
 
 map <silent> <C-h> :wincmd h<CR>
 map <silent> <C-j> :wincmd j<CR>
@@ -64,14 +66,8 @@ tnoremap <Esc> <C-\><C-n>
 xmap <leader>= :Tabularize /
 map <leader>= :Tabularize /
 
-"let g:UltiSnipsExpandTrigger="<c-j>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-"let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:asyncrun_rootmarks = ['build/', 'compile_commands.json', '.git', '.svn', '.root']
 let g:EasyMotion_smartcase = 1
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeShowLineNumbers = 1
-let g:NERDTreeWinPos = 'right'
 let g:XkbSwitchEnabled = 1
 let g:asyncrun_open = 12
 let g:asynctasks_config_name = '.tasks.ini'
@@ -100,7 +96,6 @@ colorscheme material
 
 augroup Common
     autocmd TermOpen * setlocal nonumber norelativenumber
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup END
 
 augroup plugin-devdocs

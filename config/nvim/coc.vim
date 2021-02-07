@@ -11,12 +11,12 @@ nmap <silent> go :CocList outline<CR>
 
 nmap <c-_> :CocAction<CR>
 
-nmap <silent> <c-p> :CocCommand fzf-preview.ProjectFiles<CR>
+nmap <silent> <c-p> :CocCommand fzf-preview.DirectoryFiles<CR>
+nmap <silent> <c-b> :CocCommand fzf-preview.AllBuffers<CR>
 nmap <silent> <c-f> :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nmap <leader>f :CocSearch<space>
 
 inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <silent><expr> <c-j> coc#_select_confirm()
-
 nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 
 augroup Common
