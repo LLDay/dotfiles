@@ -30,10 +30,10 @@ URxvt.keysym.Control-Left: \033[1;5D
 !! Copy Paste & Other Extensions
 URxvt.perl-ext-common: default,matcher,clipboard,url-select,keyboard-select,resize-font
 URxvt.perl-lib: /usr/lib/urxvt/perl/
+URxvt.keyboard-select.clipboard: true
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.M-u: perl:url-select:select_next
+kRxvt.keysym.M-u: perl:url-select:select_next
 URxvt.underlineURLs: true
 URxvt.urlButton: 1

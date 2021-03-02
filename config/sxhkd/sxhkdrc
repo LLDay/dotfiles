@@ -104,6 +104,9 @@ super + space
 super + Return
 	$TERMINAL
 
+super + shift + e
+    thunar
+
 super + shift + s
 	dmenu_open_site
 

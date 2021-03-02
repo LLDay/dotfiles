@@ -11,10 +11,11 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-fugitive'
 
 " Programming
-Plug 'lervag/vimtex'
 Plug 'airblade/vim-rooter'
+Plug 'lervag/vimtex'
 Plug 'lifepillar/pgsql.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'pprovost/vim-ps1'
 Plug 'preservim/nerdcommenter'
 Plug 'rhysd/devdocs.vim'
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }

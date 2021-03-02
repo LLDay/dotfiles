@@ -37,9 +37,9 @@ map md push $mkdir<space>
 map mf push $touch<space>
 map mF push $$EDITOR<space>
 
-map L :opend
 map S :symlink
 map D :delete
+map L :set_default
 map w
 map sw :set_wallpaper
 map sf :fzf
@@ -71,8 +71,8 @@ map gme cd /media
 
 map git $lazygit
 
-cmd open $setsid $OPENER $f &
-cmd opend $setsid $mimeopen -d $f
+cmd open $setsid $OPENER $f &>/dev/null &
+cmd set_default $setsid mimeopen -d $f 2>/dev/null
 
 cmd fzf ${{
     res=$(fd --hidden | fzf --reverse --header='Jump to location' \
