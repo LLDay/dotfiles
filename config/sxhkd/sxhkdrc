@@ -102,7 +102,7 @@ super + space
     dmenu_open_app
 
 super + Return
-	$TERMINAL
+    urxvtc || (urxvtd -q -f && urxvtc)
 
 super + shift + e
     thunar
@@ -152,4 +152,3 @@ XF86AudioMute
 
 XF86MonBrightness{Down,Up}
     light {-U,-A} 20 && light -O
-
