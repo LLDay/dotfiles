@@ -172,7 +172,32 @@ esac
 
 lfcd () {
     tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
+    fid="$(mktemp)"
+
+    lf -command '&printf $id > '"$fid"'' -last-dir-path="$tmp" "$@"
+
+    id="$(cat "$fid")"
+    if [ -f "$fid" ]; then
+        rm -f "$fid"
+    fi
+
+    archivemount_dir="/tmp/__lf_archivemount_$id"
+    if [ -f "$archivemount_dir" ]; then
+        cat "$archivemount_dir" | \
+            while read -r line; do
+                umount "$line"
+                rmdir "$line"
+            done
+        rm -f "$archivemount_dir"
+    fi
+
+
+    exit_flag="/tmp/__lf_exit__"$id""
+    if [ -f "$exit_flag" ]; then
+        trap "exit" EXIT
+        rm -f "$exit_flag"
+    fi
+
     if [ -f "$tmp" ]; then
         dir="$(cat "$tmp")"
         rm -f "$tmp"
