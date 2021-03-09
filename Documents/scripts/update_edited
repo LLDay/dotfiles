@@ -1,14 +1,14 @@
 #!/bin/bash
 # There is no update_edited_progs program name. This name
-# is used to find and restart entr scripts using pkill
+# is used to find and restart entr scripts using kill
 ps -eo pid,cmd | rg -i update_edited_progs | awk '{print $1}' | head --lines=-1 | xargs -r kill
 
 echo ~/.config/sxhkd/sxhkdrc | entr -p sh -c "update_edited_progs || pkill -USR1 -x sxhkd" &
 echo ~/.fehbg | entr -p sh -c "update_edited_progs || source $HOME/.fehbg" &
+echo ~/.Xresources | entr -p sh -c "update_edited_progs || xrdb -merge ~/.Xresources" &
 
 BSPWM_DIRS="$HOME/.config/bspwm/bspwmrc"
 BSPWM_DIRS+="\n$HOME/.config/bspwm/autostart"
-BSPWM_DIRS+="\n$HOME/.Xresources"
 for f in ~/.config/polybar/*; do
     BSPWM_DIRS+="\n$f"
 done

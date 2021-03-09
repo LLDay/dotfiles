@@ -34,6 +34,6 @@ URxvt.keyboard-select.clipboard: true
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
-kRxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
