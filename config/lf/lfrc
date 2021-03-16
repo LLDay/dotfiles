@@ -21,11 +21,11 @@ map e $$EDITOR $f
 map E $sudo $EDITOR $f
 
 map r
-map ra :rename; cmd-word-back; cmd-left
-map rc :rename; cmd-word-back; cmd-left; cmd-delete-home
-map ri :rename; cmd-home
-map rA :rename
-map rC :rename; cmd-delete-home
+map ra :rename_logic focus-name
+map rc :rename_logic clear-name
+map ri :rename_logic focus-start
+map rA :rename_logic focus-end
+map rC :rename_logic clear
 map re $printf '%s\n' $fx | vidir -
 
 map c
@@ -74,6 +74,35 @@ map gmn cd /mnt
 map gme cd /media
 
 map git $lazygit
+
+cmd rename_logic &{{
+    lf -remote "send $id :rename"
+    if [ -f $f ]; then
+        case $1 in
+            "focus-name")
+                lf -remote "send $id :cmd-word-back; cmd-left"
+            ;;
+            "clear-name")
+                lf -remote "send $id :cmd-word-back; cmd-left; cmd-delete-home"
+            ;;
+        esac
+    else
+        case $1 in
+            "clear-name")
+                lf -remote "send $id :cmd-delete-home"
+            ;;
+        esac
+    fi
+
+    case $1 in
+        "focus-start")
+            lf -remote "send $id :cmd-home"
+        ;;
+        "clear")
+            lf -remote "send $id :cmd-delete-home"
+        ;;
+        esac
+}}
 
 cmd open &{{
     case "$f" in
