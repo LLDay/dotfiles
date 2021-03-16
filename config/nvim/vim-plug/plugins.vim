@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 
 " Programming
 Plug 'airblade/vim-rooter'
+Plug 'itchyny/vim-gitbranch'
 Plug 'lervag/vimtex'
 Plug 'lifepillar/pgsql.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -31,6 +32,7 @@ Plug 'adelarsq/vim-matchit'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'kaicataldo/material.vim', {'branch': 'main'}
 Plug 'kassio/neoterm'
@@ -41,6 +43,7 @@ Plug 'mbbill/undotree'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'simeji/winresizer'
+Plug 'unblevable/quick-scope'
 Plug 'voldikss/vim-floaterm'
 
 " Keybindings
