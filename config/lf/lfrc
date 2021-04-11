@@ -2,23 +2,30 @@ set shell sh
 set shellopts '-eu'
 
 set ifs "\n"
+set dircounts
+set icons
 set ignorecase
 set incsearch
-set nohidden
-set ratios 3:2
-set number
-set relativenumber
-set previewer /usr/bin/bat
-set scrolloff 10
-set icons
 set info size
-set dircounts
+set nohidden
+set number
+set previewer /usr/bin/bat
+set ratios 3:2
+set relativenumber
+set scrolloff 10
 reload
 
 map <enter> shell
 
 map e $$EDITOR $f
-map E $sudo $EDITOR $f
+map E $sudo -E $EDITOR $f
+
+map sn :set sortby natural; set info; set noreverse
+map ss :set sortby size; set info size; set reverse
+map st :set sortby time; set info time; set reverse
+map sa :set sortby atime; set info atime; set reverse
+map sc :set sortby ctime; set info ctime; set reverse
+map se :set sortby ext; set info; set noreverse
 
 map r
 map ra :rename_logic focus-name
