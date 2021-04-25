@@ -48,7 +48,7 @@ zle -N edit-command-line
 bindkey '^[[8~' end-of-line                                     # End key
 bindkey '^[[F' end-of-line                                     # End key
 bindkey '^e' edit-command-line
-bindkey -s '^o' ' lfcd\n'
+bindkey -s '^o' '^k ^u lfcd\n'
 
 if [[ "${terminfo[kend]}" != "" ]]; then
   bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
@@ -84,7 +84,7 @@ setopt prompt_subst
 
 # Prompt (on left side) similar to default bash prompt, or redhat zsh prompt with colors
 if [[ $EUID -ne 0 ]]; then
-    PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+    PROMPT="%B%{$fg[green]%}[%{$fg[cyan]%}%~%{$fg[green]%}]%{$reset_color%}$%b "
 else
     PROMPT="%B%{$fg[red]%}[%{$fg[orange]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}#%b "
 fi
