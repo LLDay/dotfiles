@@ -5,12 +5,13 @@ source ~/.fehbg &
 
 xrdb -merge ~/.Xresources &
 
-update_edited &
-urxvtd -q &
+dunst &
+fc-cache -f &
+light -I &
 picom -b &
 sxhkd &
-light -I &
-fc-cache -f &
-devmon &
-dunst &
+thunar --daemon &
+update_edited &
+urxvtd -q &
+
 sleep 15 && dex -a &

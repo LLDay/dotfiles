@@ -20,7 +20,7 @@ nmap c8 :tabclose 8 <CR>
 nmap c9 :tabclose 9 <CR>
 nmap c0 :tabclose 10 <CR>
 
-let g:lightline = {'colorscheme': 'jellybeans'}
+let g:lightline = {'colorscheme': 'tokyonight'}
 
 let g:lightline.tabline = {
             \'left'  : [['tabs']],
@@ -42,13 +42,12 @@ let g:lightline.component_type = {
             \ 'linter_warnings' : 'warning',
             \ 'linter_errors'   : 'error'}
 
-let g:lightline.active = { 'right': [
-            \ ['lineinfo'],
-            \ ['percent'],
-            \ ['fileformat', 'fileencoding', 'filetype'],
-            \ ['linter_infos', 'linter_warnings', 'linter_errors']] }
+let g:lightline.component_function = { 'gitbranch': 'FugitiveHead' }
 
-let g:lightline#ale#indicator_infos = 'i'
-let g:lightline#ale#indicator_warnings = 'w'
-let g:lightline#ale#indicator_errors = 'e'
-
+let g:lightline.active = {
+            \ 'right': [
+            \ ['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype'],
+            \ ['linter_infos', 'linter_warnings', 'linter_errors']],
+            \ 'left': [
+            \ ['mode', 'paste'],
+            \ ['gitbranch', 'readonly', 'filename', 'modified']] }

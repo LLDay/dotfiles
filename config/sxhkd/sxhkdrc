@@ -102,7 +102,7 @@ super + space
     dmenu_open_app
 
 super + Return
-    urxvtc || (urxvtd -q -f && urxvtc)
+    $TERMINAL
 
 super + shift + e
     thunar

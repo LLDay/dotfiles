@@ -78,7 +78,7 @@ map gp cd ~/Pictures
 map gU cd /usr/
 map gV cd /var/
 map gmn cd /mnt
-map gme cd /media
+map gme cd /run/media/llday
 
 map git $lazygit
 

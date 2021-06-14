@@ -1,12 +1,13 @@
 #!/bin/bash
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin/core_perl:/usr/bin:/usr/bin/vendor_perl:$HOME/.local/bin:$HOME/Documents/scripts"
+eval "$(ssh-agent)"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin/core_perl:/usr/bin:/usr/bin/vendor_perl:$HOME/.local/bin:$HOME/Documents/scripts:$HOME/.gem/ruby/2.7.0/bin"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export BSPWM_SOCKET="/tmp/bspwm-socket"
 export GUI_EDITOR=/usr/bin/code
 export BROWSER=/usr/bin/firefox
-export TERMINAL=/usr/bin/urxvtc
+export TERMINAL=/usr/bin/alacritty
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export OPENER=/usr/bin/vendor_perl/mimeopen

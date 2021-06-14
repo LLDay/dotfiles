@@ -11,6 +11,5 @@ alias vim=nvim
 
 alias mirrors='sudo reflector --country "Russia" -f10 --save /etc/pacman.d/mirrorlist --verbose'
 
-alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'

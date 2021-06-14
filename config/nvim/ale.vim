@@ -42,11 +42,12 @@ highlight link ALEInfoSignLineNr ALEInfo
 highlight link ALEVirtualTextInfo ALEInfo
 
 let g:ale_linters = {
+            \ 'cmake': ['cmakelint'],
             \ 'cpp': ['cc', 'clazy', 'cpplint', 'flawfinder'],
-            \ 'vim': ['vimt'],
+            \ 'puppet': ['puppet', 'puppetlint'],
+            \ 'python': ['bandit', 'pep8', 'pylint'],
             \ 'sh' : ['shellcheck'],
-            \ 'python': ['bandit'],
-            \ 'cmake': ['cmakelint']
+            \ 'vim': ['vimt']
             \ }
 
 let g:ale_fixers = {
@@ -54,5 +55,6 @@ let g:ale_fixers = {
             \ 'cpp': ['clang-format'],
             \ 'tex': ['latexindent'],
             \ 'cmake': [ 'cmakeformat'],
-            \ 'python': ['autoimport', 'autopep8', 'black']
+            \ 'python': ['autopep8', 'black', 'reorder-python-imports'],
+            \ 'puppet': ['puppetlint']
             \ }
