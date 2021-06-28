@@ -3,12 +3,16 @@
 import requests
 import json
 import re
+import pathlib
 
 from datetime import date, timedelta
 
 prompt = 'WALLPAPER:'
 
 def get_wallpaper(index=0, mkt='ru-RU', path=None):
+    path = pathlib.Path(path)
+    path.parent.mkdir(exist_ok=True)
+
     day = date.today() - timedelta(days=index);
     bing_url = 'https://www.bing.com'
     bing_wal = '/HPImageArchive.aspx?format=js&idx={0}&n=1&mkt={1}'.format(index, mkt)

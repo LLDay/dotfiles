@@ -13,3 +13,4 @@ alias mirrors='sudo reflector --country "Russia" -f10 --save /etc/pacman.d/mirro
 
 alias cp='cp -i'
 alias mv='mv -i'
+alias pid='ps -aux | rg -i'
