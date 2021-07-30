@@ -113,9 +113,6 @@ super + shift + s
 super + shift + b
     $BROWSER
 
-super + shift + p
-    dmenu_pacman
-
 super + shift + t
 	telegram-desktop
 

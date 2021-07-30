@@ -86,9 +86,6 @@ dotfiles:
   f_dmenu_open_site:
     src: Documents/scripts/dmenu_open_site
     dst: ~/Documents/scripts/dmenu_open_site
-  f_dmenu_pacman:
-    src: Documents/scripts/dmenu_pacman
-    dst: ~/Documents/scripts/dmenu_pacman
   f_config:
     src: config/bat/config
     dst: ~/.config/bat/config
