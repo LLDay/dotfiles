@@ -113,6 +113,23 @@ dotfiles:
   f_git.vim:
     src: config/nvim/git.vim
     dst: ~/.config/nvim/git.vim
+  f_colors.ini:
+    src: config/polybar/colors.ini
+    dst: ~/.config/polybar/colors.ini
+  f_user_modules.ini:
+    src: config/polybar/user_modules.ini
+    dst: ~/.config/polybar/user_modules.ini
+  f_bars.ini:
+    src: config/polybar/bars.ini
+    dst: ~/.config/polybar/bars.ini
+  f_updates.sh:
+    src: config/polybar/scripts/updates.sh
+    dst: ~/.config/polybar/scripts/updates.sh
+    chmod: '755'
+  f_launch.sh:
+    src: config/polybar/launch.sh
+    dst: ~/.config/polybar/launch.sh
+    chmod: '755'
 profiles:
   arch:
     dotfiles:
@@ -151,3 +168,8 @@ profiles:
     - f_lightline.vim
     - f_ale.vim
     - f_git.vim
+    - f_colors.ini
+    - f_user_modules.ini
+    - f_bars.ini
+    - f_updates.sh
+    - f_launch.sh
