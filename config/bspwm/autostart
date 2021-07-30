@@ -1,17 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 
-wal -R && source ~/.config/polybar/launch.sh &
+wal -R && fc-cache -f && source ~/.config/polybar/launch.sh &
 source ~/.fehbg &
 
 xrdb -merge ~/.Xresources &
 
 dunst &
-fc-cache -f &
 light -I &
 picom -b &
 sxhkd &
 thunar --daemon &
 update_edited &
-urxvtd -q &
 
 sleep 15 && dex -a &

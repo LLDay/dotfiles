@@ -51,7 +51,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'yggdroot/indentline'
 
 " Keybindings
-Plug 'bfredl/nvim-miniyank'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'liuchengxu/vim-which-key'

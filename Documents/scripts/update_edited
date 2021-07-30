@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # There is no update_edited_progs program name. This name
 # is used to find and restart entr scripts using kill
 ps -eo pid,cmd | rg -i update_edited_progs | awk '{print $1}' | head --lines=-1 | xargs -r kill
@@ -7,10 +8,14 @@ echo ~/.config/sxhkd/sxhkdrc | entr -pn sh -c "update_edited_progs || pkill -USR
 echo ~/.fehbg | entr -pn sh -c "update_edited_progs || source $HOME/.fehbg" &
 echo ~/.Xresources | entr -pn sh -c "update_edited_progs || xrdb -merge ~/.Xresources" &
 
-BSPWM_DIRS="$HOME/.config/bspwm/bspwmrc"
-BSPWM_DIRS+="\n$HOME/.config/bspwm/autostart"
+BSPWM="$HOME/.config/bspwm/bspwmrc"
+BSPWM+="\n$HOME/.config/bspwm/autostart"
+
+echo -e "$BSPWM" | entr -pn sh -c "update_edited_progs || $HOME/.config/bspwm/bspwmrc" &
+
+POLYBAR=""
 for f in ~/.config/polybar/*; do
-    BSPWM_DIRS+="\n$f"
+    POLYBAR+="\n$f"
 done
 
-echo -e $BSPWM_DIRS | entr -pn sh -c "update_edited_progs || $HOME/.config/bspwm/bspwmrc" &
+echo -e "$POLYBAR" | entr -pn sh -c "update_edited_progs || source ~/.config/polybar/launch.sh" &

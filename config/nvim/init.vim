@@ -47,11 +47,6 @@ set wildmode=longest:full,full
 nmap s <Plug>(easymotion-s2)
 nmap <silent> U :UndotreeToggle<CR>
 
-map p <Plug>(miniyank-autoput)
-map P <Plug>(miniyank-autoPut)
-map <leader>p <Plug>(miniyank-cycle)
-map <leader>n <Plug>(miniyank-cycleback)
-
 map <silent> <leader>v :vsp<CR>
 map <silent> <leader>s :sp<CR>
 map <silent> <leader>t :Ttoggle<CR>
