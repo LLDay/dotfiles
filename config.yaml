@@ -130,6 +130,9 @@ dotfiles:
     src: config/polybar/launch.sh
     dst: ~/.config/polybar/launch.sh
     chmod: '755'
+  f_alacritty.yml:
+    src: config/alacritty/alacritty.yml
+    dst: ~/.config/alacritty/alacritty.yml
 profiles:
   arch:
     dotfiles:
@@ -173,3 +176,4 @@ profiles:
     - f_bars.ini
     - f_updates.sh
     - f_launch.sh
+    - f_alacritty.yml
