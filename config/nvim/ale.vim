@@ -44,6 +44,7 @@ highlight link ALEVirtualTextInfo ALEInfo
 let g:ale_linters = {
             \ 'cmake': ['cmakelint'],
             \ 'cpp': ['cc', 'clazy', 'cpplint', 'flawfinder'],
+            \ 'rust': ['analyzer', 'cargo'],
             \ 'puppet': ['puppet', 'puppetlint'],
             \ 'python': ['bandit', 'pep8', 'pylint'],
             \ 'sh' : ['shellcheck'],
@@ -54,6 +55,8 @@ let g:ale_fixers = {
             \   '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ 'cpp': ['clang-format'],
             \ 'tex': ['latexindent'],
+            \ 'rust': ['rustfmt'],
+            \ 'lua': ['lua-format'],
             \ 'cmake': [ 'cmakeformat'],
             \ 'python': ['autopep8', 'black', 'reorder-python-imports'],
             \ 'puppet': ['puppetlint']

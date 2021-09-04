@@ -2,8 +2,8 @@ let mapleader = ' '
 
 source $HOME/.config/nvim/ale.vim
 source $HOME/.config/nvim/coc.vim
-source $HOME/.config/nvim/git.vim
 source $HOME/.config/nvim/lightline.vim
+source $HOME/.config/nvim/vimspector.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
 
 set autoindent
@@ -89,6 +89,7 @@ let g:floaterm_width = 0.8
 let g:fzf_buffers_jump = 1
 let g:fzf_preview_default_fzf_options = {'--tiebreak': 'end'}
 let g:fzf_preview_grep_cmd = 'rg -i --line-number --no-heading -w'
+let g:gitgutter_sign_priority = 0
 let g:incsearch#auto_nohlsearch = 1
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean-community'

@@ -186,6 +186,13 @@ cmd chmod %{{
 
 cmd set_wallpaper &{{
     set -f
+
+    if [ ! -f ~/.fehbg ]; then
+        echo "#!/bin/bash" > ~/.fehbg
+        echo "feh --no-fehbg --bg-scale '/home/llday/Pictures/image.png'" > ~/.fehbg
+        chmod u+x ~/.fehbg
+    fi
+
     if rg --quiet -i "[/\w.-_ ]+\.(png|jpg|jpeg|bmp)" <<< $f; then
         sed -i -r "s#'[^']+'#'$f'#" ~/.fehbg
         source ~/.fehbg
