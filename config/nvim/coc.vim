@@ -1,4 +1,4 @@
-map <silent> <F4>  :CocList tasks<CR>
+map <silent> gt :CocList tasks<CR>
 
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()

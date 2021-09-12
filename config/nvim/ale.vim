@@ -14,6 +14,9 @@ let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_warn_about_trailing_whitespace = 1
 
+
+let g:ale_rust_cargo_use_clippy = 1
+
 let g:ale_cpp_cc_options = '-std=c++17 -Wall -Wextra -pedantic -Wno-pragma-once-outside-header'
 let g:ale_cpp_cppcheck_options = '--force --suppress=unmatchedSuppression --enable=all'
 let g:ale_cpp_clangtidy_extra_options = '-extra-arg=--std=c++17'
@@ -48,7 +51,8 @@ let g:ale_linters = {
             \ 'puppet': ['puppet', 'puppetlint'],
             \ 'python': ['bandit', 'pep8', 'pylint'],
             \ 'sh' : ['shellcheck'],
-            \ 'vim': ['vimt']
+            \ 'vim': ['vimt'],
+            \ 'sql': ['sqlint']
             \ }
 
 let g:ale_fixers = {
