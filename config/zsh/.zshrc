@@ -174,7 +174,7 @@ lfcd () {
     tmp="$(mktemp)"
     fid="$(mktemp)"
 
-    lf -command '&printf $id > '"$fid"'' -last-dir-path="$tmp" "$@"
+    lfrun -command '&printf $id > '"$fid"'' -last-dir-path="$tmp" "$@"
 
     id="$(cat "$fid")"
     if [ -f "$fid" ]; then

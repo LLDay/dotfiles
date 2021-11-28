@@ -8,6 +8,7 @@ alias ls='ls --color=always'
 alias sv='sudo nvim'
 alias v=nvim
 alias vim=nvim
+alias htop=btop
 
 alias mirrors='sudo reflector --country "Russia" -f10 --save /etc/pacman.d/mirrorlist --verbose'
 
