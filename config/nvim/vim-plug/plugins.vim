@@ -3,12 +3,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " Linters & Lsp
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'metakirby5/codi.vim'
 
 " Git
-Plug 'airblade/vim-gitgutter'
-Plug 'kdheepak/lazygit.nvim'
-Plug 'tpope/vim-fugitive'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'tpope/vim-fugitive'
 
 " Programming
 Plug 'airblade/vim-rooter'
@@ -37,7 +35,6 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'cespare/vim-toml'
 Plug 'fidian/hexmode'
 Plug 'ghifarit53/tokyonight-vim'
-Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'kaicataldo/material.vim', {'branch': 'main'}
 Plug 'kassio/neoterm'

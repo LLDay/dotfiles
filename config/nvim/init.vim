@@ -51,6 +51,7 @@ map <silent> <leader>v :vsp<CR>
 map <silent> <leader>s :sp<CR>
 map <silent> <leader>t :Ttoggle<CR>
 map <silent> <leader>o :FloatermNew lf<CR>
+map <silent> <leader>n :noh<CR>
 
 nmap <silent> <leader>l :call ToggleLocationList()<CR>
 nmap <silent> <leader>q :call ToggleQuickfixList()<CR>
@@ -59,16 +60,6 @@ map <silent> <C-h> :wincmd h<CR>
 map <silent> <C-j> :wincmd j<CR>
 map <silent> <C-k> :wincmd k<CR>
 map <silent> <C-l> :wincmd l<CR>
-
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
 
 tnoremap <Esc> <C-\><C-n>
 

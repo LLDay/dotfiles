@@ -4,7 +4,7 @@ let g:ale_hover_cursor = 0
 let g:ale_set_balloons = 0
 let g:ale_set_highlights = 1
 let g:ale_set_loclist = 1
-let g:ale_set_quickfix = 0
+let g:ale_set_quickfix = 1
 let g:ale_set_signs = 1
 let g:ale_virtualtext_cursor = 1
 let g:ale_sign_highlight_linenrs = 1
@@ -14,8 +14,8 @@ let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_warn_about_trailing_whitespace = 1
 
-
 let g:ale_rust_cargo_use_clippy = 1
+let g:ale_rust_cargo_check_tests = 1
 
 let g:ale_cpp_cc_options = '-std=c++17 -Wall -Wextra -pedantic -Wno-pragma-once-outside-header'
 let g:ale_cpp_cppcheck_options = '--force --suppress=unmatchedSuppression --enable=all'
@@ -66,3 +66,6 @@ let g:ale_fixers = {
             \ 'python': ['autopep8', 'black', 'reorder-python-imports'],
             \ 'puppet': ['puppetlint']
             \ }
+
+nmap <silent> ]d <Plug>(ale_previous_wrap)
+nmap <silent> [d <Plug>(ale_next_wrap)
