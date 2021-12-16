@@ -9,10 +9,12 @@ set incsearch
 set info size
 set nohidden
 set number
-set previewer /usr/bin/bat
 set ratios 3:2
 set relativenumber
 set scrolloff 10
+
+set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
 reload
 
 map <enter> shell

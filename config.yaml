@@ -47,12 +47,6 @@ dotfiles:
   f_xinitrc:
     src: xinitrc
     dst: ~/.xinitrc
-  f_init.vim:
-    src: config/nvim/init.vim
-    dst: ~/.config/nvim/init.vim
-  f_plugins.vim:
-    src: config/nvim/vim-plug/plugins.vim
-    dst: ~/.config/nvim/vim-plug/plugins.vim
   f_dmenu_colored:
     src: Documents/scripts/dmenu_colored
     dst: ~/Documents/scripts/dmenu_colored
@@ -98,15 +92,6 @@ dotfiles:
   f_coc-settings.json:
     src: config/nvim/coc-settings.json
     dst: ~/.config/nvim/coc-settings.json
-  f_coc.vim:
-    src: config/nvim/coc.vim
-    dst: ~/.config/nvim/coc.vim
-  f_lightline.vim:
-    src: config/nvim/lightline.vim
-    dst: ~/.config/nvim/lightline.vim
-  f_ale.vim:
-    src: config/nvim/ale.vim
-    dst: ~/.config/nvim/ale.vim
   f_colors.ini:
     src: config/polybar/colors.ini
     dst: ~/.config/polybar/colors.ini
@@ -131,9 +116,36 @@ dotfiles:
     src: config/bspwm/bspwmrc
     dst: ~/.config/bspwm/bspwmrc
     chmod: '755'
-  f_vimspector.vim:
-    src: config/nvim/vimspector.vim
-    dst: ~/.config/nvim/vimspector.vim
+  f_ale.lua:
+    src: config/nvim/lua/plugins/ale.lua
+    dst: ~/.config/nvim/lua/plugins/ale.lua
+  f_coc.lua:
+    src: config/nvim/lua/plugins/coc.lua
+    dst: ~/.config/nvim/lua/plugins/coc.lua
+  f_gitsigns.lua:
+    src: config/nvim/lua/plugins/gitsigns.lua
+    dst: ~/.config/nvim/lua/plugins/gitsigns.lua
+  f_lualine.lua:
+    src: config/nvim/lua/plugins/lualine.lua
+    dst: ~/.config/nvim/lua/plugins/lualine.lua
+  f_augroups.lua:
+    src: config/nvim/lua/augroups.lua
+    dst: ~/.config/nvim/lua/augroups.lua
+  f_globals.lua:
+    src: config/nvim/lua/globals.lua
+    dst: ~/.config/nvim/lua/globals.lua
+  f_keybindings.lua:
+    src: config/nvim/lua/keybindings.lua
+    dst: ~/.config/nvim/lua/keybindings.lua
+  f_options.lua:
+    src: config/nvim/lua/options.lua
+    dst: ~/.config/nvim/lua/options.lua
+  f_plugins.lua:
+    src: config/nvim/lua/plugins.lua
+    dst: ~/.config/nvim/lua/plugins.lua
+  f_init.lua:
+    src: config/nvim/init.lua
+    dst: ~/.config/nvim/init.lua
 profiles:
   arch:
     dotfiles:
@@ -150,8 +162,6 @@ profiles:
     - f_gitconfig
     - f_clang-format
     - f_xinitrc
-    - f_init.vim
-    - f_plugins.vim
     - f_dmenu_colored
     - f_update_edited
     - f_lfrc
@@ -167,9 +177,6 @@ profiles:
     - f_fonts.conf
     - f_dunstrc
     - f_coc-settings.json
-    - f_coc.vim
-    - f_lightline.vim
-    - f_ale.vim
     - f_colors.ini
     - f_user_modules.ini
     - f_bars.ini
@@ -177,4 +184,13 @@ profiles:
     - f_launch.sh
     - f_alacritty.yml
     - f_bspwmrc
-    - f_vimspector.vim
+    - f_ale.lua
+    - f_coc.lua
+    - f_gitsigns.lua
+    - f_lualine.lua
+    - f_augroups.lua
+    - f_globals.lua
+    - f_keybindings.lua
+    - f_options.lua
+    - f_plugins.lua
+    - f_init.lua

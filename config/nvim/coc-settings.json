@@ -5,6 +5,10 @@
   "cSpellExt.enableDictionaries": [
     "russian"
   ],
+  "Lua.diagnostics.globals": [
+    "vim",
+    "use"
+  ],
   "clangd.enabled": true,
   "coc.preferences.enableFloatHighlight": true,
   "coc.preferences.listOfWorkspaceEdit": "quickfix",
@@ -30,6 +34,7 @@
   "snippets.ultisnips.enable": true,
   "suggest.numberSelect": true,
   "suggest.snippetIndicator": "~",
+  "sumneko-lua.enableNvimLuaDev": true,
   "yank.highlight.duration": 300,
   "cSpell.userWords": [
     "clangd",
