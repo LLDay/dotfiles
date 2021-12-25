@@ -41,8 +41,8 @@ end
 map('n', 'U', '<cmd>UndotreeToggle<CR>', ns)
 map('', '<leader>t', '<cmd>Ttoggle<CR>', ns)
 map('', '<leader>o', '<cmd>FloatermNew lf<CR>', ns)
-map('', '<leader>=', '<cmd>Tabularize /', {})
-map('x', '<leader>=', '<cmd>Tabularize /', {})
+map('', '<leader>=', ':Tabularize /', {})
+map('x', '<leader>=', ':Tabularize /', {})
 
 map('', '[d', '<Plug>(ale_previous_wrap)', s)
 map('', ']d', '<Plug>(ale_next_wrap)', s)
@@ -85,10 +85,10 @@ map('n', '<leader>a', '<Plug>(coc-codeaction-selected)', s)
 map('n', '<c-p>', '<cmd>CocCommand fzf-preview.DirectoryFiles<CR>', ns)
 map('n', '<c-b>', '<cmd>CocCommand fzf-preview.AllBuffers<CR>', s)
 map('n', '<c-f>', '<cmd>CocSearch <C-R>=expand("<cword>")<CR><CR>', s)
-map('n', '<leader>f', '<cmd>CocSearch<space>', {})
+map('n', '<leader>f', ':CocSearch<space>', {})
 
 map('n', 'K', '<cmd>call CocActionAsync("doHover")<CR>', ns)
-map('n', '<leader>p', '<cmd><C-u>CocList -A yank<CR>', {})
+map('n', '<leader>p', '<cmd>CocList -A yank<CR>', {})
 
 map('x', 'if', '<Plug>(coc-funcobj-i)', {})
 map('o', 'if', '<Plug>(coc-funcobj-i)', {})

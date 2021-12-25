@@ -1,24 +1,23 @@
+local cmd = vim.cmd
+local sign = {text = '│'}
+
 require('gitsigns').setup {
     signs = {
-        add = {hl = 'green', text = '│', numhl = 'green', linehl = 'green'},
-        change = {hl = 'blue', text = '│', numhl = 'blue', linehl = 'blue'},
-        delete = {
-            hl = 'orange',
-            text = '│',
-            numhl = 'orange',
-            linehl = 'orange'
-        },
-        topdelete = {
-            hl = 'orange',
-            text = '│',
-            numhl = 'orange',
-            linehl = 'orange'
-        },
-        changedelete = {
-            hl = 'blue',
-            text = '│',
-            numhl = 'blue',
-            linehl = 'blue'
-        }
+        add = sign,
+        change = sign,
+        delete = sign,
+        topdelete = sign,
+        changedelete = sign
     }
 }
+
+local colors = require('plugins.colors')
+
+cmd(string.format([[
+augroup colors
+    autocmd ColorScheme * highlight! diffAdded guifg=%s
+    autocmd ColorScheme * highlight! diffChanged guifg=%s
+    autocmd ColorScheme * highlight! diffDeleted guifg=%s
+    autocmd ColorScheme * highlight! link GitSignsDeleteLn diffDeleted
+augroup end
+]], colors.diffAdded, colors.diffChanged, colors.diffDeleted))

@@ -4,9 +4,9 @@ local opt = vim.opt
 -- Appearance
 --------------------------------------------------
 
-opt.shortmess:remove('c')
 opt.cursorline = true
 opt.scrolloff = 10
+opt.shortmess:remove('c')
 opt.showmode = false
 opt.termguicolors = true
 

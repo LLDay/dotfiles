@@ -4,7 +4,6 @@ cmd [[
 augroup Terminal
     autocmd!
     autocmd TermOpen * setlocal nonumber norelativenumber
-    autocmd TermOpen * IndentLinesDisable
     autocmd TermEnter * setlocal scrolloff=0
     autocmd TermLeave * setlocal scrolloff=10
 augroup END
@@ -12,6 +11,7 @@ augroup END
 
 cmd [[
 augroup FileTypes
+    autocmd!
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType json let g:indentLine_enabled = 0
     autocmd FileType tex setlocal tw=80

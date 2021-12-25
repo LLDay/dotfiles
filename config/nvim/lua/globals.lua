@@ -22,7 +22,6 @@ g.fzf_preview_grep_cmd = 'rg -i --line-number --no-heading -w'
 g.gitgutter_max_signs = 30
 g.gitgutter_sign_priority = 0
 g.lf_command_override = 'lfrun'
-g.material_style = 'deep ocean'
 g.neoterm_autoinsert = 1
 g.neoterm_default_mod = 'botright'
 g.neoterm_size = 12

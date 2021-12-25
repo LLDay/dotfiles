@@ -56,22 +56,24 @@ g.ale_fixers = {
     puppet = {'puppetlint'}
 }
 
-cmd [[
-augroup colors
-    autocmd ColorScheme * highlight! link ALEError red
-    autocmd ColorScheme * highlight! link ALEErrorSign red
-    autocmd ColorScheme * highlight! link ALEErrorSignLineNr red
-    autocmd ColorScheme * highlight! link ALEVirtualTextError red
+local colors = require('plugins.colors')
+local errors = string.gsub([[
+autocmd ColorScheme * highlight! ALEErrorSignLineNr guifg=color gui=bold
+autocmd ColorScheme * highlight! ALEError guifg=color gui=bold,underline
+autocmd ColorScheme * highlight! ALEVirtualTextError guifg=color
+]], 'color', colors.error)
 
-    autocmd ColorScheme * highlight! link ALEWarning orange
-    autocmd ColorScheme * highlight! link ALEWarningSign orange
-    autocmd ColorScheme * highlight! link ALEWarningSignLineNr orange
-    autocmd ColorScheme * highlight! link ALEVirtualTextWarning orange
+local warnings = string.gsub([[
+autocmd ColorScheme * highlight! ALEWarning guifg=color gui=bold,underline
+autocmd ColorScheme * highlight! ALEWarningSignLineNr guifg=color gui=bold
+autocmd ColorScheme * highlight! ALEVirtualTextWarning guifg=color
+]], 'color', colors.warning)
 
-    autocmd ColorScheme * highlight! link ALEInfo blue
-    autocmd ColorScheme * highlight! link ALEInfoSign blue
-    autocmd ColorScheme * highlight! link ALEInfoSignLineNr blue
-    autocmd ColorScheme * highlight! link ALEVirtualTextInfo blue
-augroup end
-]]
+local infos = string.gsub([[
+autocmd ColorScheme * highlight! ALEInfo guifg=color gui=bold,underline
+autocmd ColorScheme * highlight! ALEInfoSignLineNr guifg=color gui=bold
+autocmd ColorScheme * highlight! ALEVirtualTextInfo guifg=color
+]], 'color', colors.info)
 
+cmd("augroup colors\n" .. errors .. "\n" .. warnings .. "\n" .. infos .. "\n" ..
+        "augroup end")

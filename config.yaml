@@ -146,6 +146,18 @@ dotfiles:
   f_init.lua:
     src: config/nvim/init.lua
     dst: ~/.config/nvim/init.lua
+  f_colors.lua:
+    src: config/nvim/lua/plugins/colors.lua
+    dst: ~/.config/nvim/lua/plugins/colors.lua
+  f_indent_blankline.lua:
+    src: config/nvim/lua/plugins/indent_blankline.lua
+    dst: ~/.config/nvim/lua/plugins/indent_blankline.lua
+  f_theme.lua:
+    src: config/nvim/lua/plugins/theme.lua
+    dst: ~/.config/nvim/lua/plugins/theme.lua
+  f_treesitter.lua:
+    src: config/nvim/lua/plugins/treesitter.lua
+    dst: ~/.config/nvim/lua/plugins/treesitter.lua
 profiles:
   arch:
     dotfiles:
@@ -194,3 +206,7 @@ profiles:
     - f_options.lua
     - f_plugins.lua
     - f_init.lua
+    - f_colors.lua
+    - f_indent_blankline.lua
+    - f_theme.lua
+    - f_treesitter.lua

@@ -3,11 +3,10 @@ local cmd = vim.cmd
 
 g.coc_global_extensions = {
     'coc-actions', 'coc-clangd', 'coc-cmake', 'coc-cspell-dicts', 'coc-css',
-    'coc-fzf-preview', 'coc-json', 'coc-lua', 'coc-marketplace', 'coc-python',
+    'coc-fzf-preview', 'coc-json', 'coc-marketplace', 'coc-python',
     'coc-rust-analyzer', 'coc-sh', 'coc-snippets', 'coc-spell-checker',
-    'coc-sql', 'coc-sqlfluff', 'coc-sumneko-lua', 'coc-tasks', 'coc-toml',
-    'coc-tsserver', 'coc-ultisnips', 'coc-vimlsp', 'coc-xml', 'coc-yaml',
-    'coc-yank'
+    'coc-sql', 'coc-sqlfluff', 'coc-tasks', 'coc-toml', 'coc-tsserver',
+    'coc-ultisnips', 'coc-vimlsp', 'coc-xml', 'coc-yaml', 'coc-yank'
 }
 
 cmd [[

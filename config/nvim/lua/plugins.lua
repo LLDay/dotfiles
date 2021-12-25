@@ -38,7 +38,6 @@ return packer.startup(function()
     use 'preservim/nerdcommenter'
     use 'puremourning/vimspector'
     use {'skywind3000/asynctasks.vim', requires = {'skywind3000/asyncrun.vim'}}
-
     -- Snippets
     use 'SirVer/ultisnips'
     use 'honza/vim-snippets'
@@ -59,15 +58,29 @@ return packer.startup(function()
     use 'tiagovla/tokyodark.nvim'
     use 'unblevable/quick-scope'
     use 'voldikss/vim-floaterm'
-    use 'yggdroot/indentline'
 
     use {
-        'ghifarit53/tokyonight-vim',
-        config = "vim.cmd [[colorscheme tokyonight]]"
+        'lukas-reineke/indent-blankline.nvim',
+        config = function() require 'plugins.indent_blankline' end
+    }
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = function() require'colorizer'.setup() end,
+        cmd = {'ColorizerToggle'}
+    }
+    use {
+        'rebelot/kanagawa.nvim',
+        config = function() require 'plugins.theme' end
     }
     use {
         'nvim-lualine/lualine.nvim',
         config = function() require 'plugins.lualine' end
+    }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        requires = {{'nvim-treesitter/playground', cmd = 'TSPlaygroundToggle'}},
+        run = ":TSUpdate",
+        config = function() require('plugins.treesitter') end
     }
 
     -- Keybindings
