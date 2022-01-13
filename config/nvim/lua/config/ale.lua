@@ -42,21 +42,23 @@ g.ale_linters = {
     rust = {'cargo'},
     sh = {'shellcheck'},
     sql = {'sqlint'},
+    typescript = {'tslint'},
     vim = {'vimt'}
 }
 
 g.ale_fixers = {
+    cmake = {'cmakeformat'},
     cpp = {'clang-format'},
-    tex = {'latexindent'},
-    rust = {'rustfmt'},
     json = {'jq'},
     lua = {'lua-format'},
-    cmake = {'cmakeformat'},
+    puppet = {'puppetlint'},
     python = {'autopep8', 'black', 'reorder-python-imports'},
-    puppet = {'puppetlint'}
+    rust = {'rustfmt'},
+    tex = {'latexindent'},
+    typescript = {'prettier'}
 }
 
-local colors = require('plugins.colors')
+local colors = require('config.colors')
 local errors = string.gsub([[
 autocmd ColorScheme * highlight! ALEErrorSignLineNr guifg=color gui=bold
 autocmd ColorScheme * highlight! ALEError guifg=color gui=bold,underline

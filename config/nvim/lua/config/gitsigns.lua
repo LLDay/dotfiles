@@ -11,7 +11,7 @@ require('gitsigns').setup {
     }
 }
 
-local colors = require('plugins.colors')
+local colors = require('config.colors')
 
 cmd(string.format([[
 augroup colors

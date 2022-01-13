@@ -12,9 +12,8 @@ augroup END
 cmd [[
 augroup FileTypes
     autocmd!
-    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd FileType json let g:indentLine_enabled = 0
-    autocmd FileType tex setlocal tw=80
+    autocmd FileType yaml,typescript,javascript setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType markdown,tex,txt setlocal wrap linebreak
 augroup END
 ]]
 
@@ -29,6 +28,19 @@ cmd [[
 augroup colors
     autocmd ColorScheme * highlight! link SignColumn LineNr
 augroup end
+]]
+
+cmd [[
+augroup Binary
+  au!
+  au BufReadPre  *.bin let &bin=1
+  au BufReadPost *.bin if &bin | %!xxd
+  au BufReadPost *.bin set ft=xxd | endif
+  au BufWritePre *.bin if &bin | %!xxd -r
+  au BufWritePre *.bin endif
+  au BufWritePost *.bin if &bin | %!xxd
+  au BufWritePost *.bin set nomod | endif
+augroup END
 ]]
 
 cmd [[

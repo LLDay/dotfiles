@@ -18,17 +18,15 @@ return packer.startup(function()
     use {
         'neoclide/coc.nvim',
         branch = 'release',
-        config = function() require 'plugins.coc' end
+        config = function() require 'config.coc' end
     }
-    use {'dense-analysis/ale', config = function() require 'plugins.ale' end}
+    use {'dense-analysis/ale', config = function() require 'config.ale' end}
 
     -- Git
-    -- use 'airblade/vim-gitgutter'
-    -- use 'tpope/vim-fugitive'
     use {
         'lewis6991/gitsigns.nvim',
         requires = {'nvim-lua/plenary.nvim'},
-        config = function() require 'plugins.gitsigns' end
+        config = function() require 'config.gitsigns' end
     }
 
     -- Programming
@@ -36,8 +34,9 @@ return packer.startup(function()
     use 'kassio/neoterm'
     use 'lifepillar/pgsql.vim'
     use 'preservim/nerdcommenter'
-    use 'puremourning/vimspector'
+    use {'mfussenegger/nvim-dap', config = function() require 'config.dap' end}
     use {'skywind3000/asynctasks.vim', requires = {'skywind3000/asyncrun.vim'}}
+
     -- Snippets
     use 'SirVer/ultisnips'
     use 'honza/vim-snippets'
@@ -60,8 +59,13 @@ return packer.startup(function()
     use 'voldikss/vim-floaterm'
 
     use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/plenary.nvim'}},
+        config = function() require 'config.telescope' end
+    }
+    use {
         'lukas-reineke/indent-blankline.nvim',
-        config = function() require 'plugins.indent_blankline' end
+        config = function() require 'config.indent_blankline' end
     }
     use {
         'norcalli/nvim-colorizer.lua',
@@ -70,17 +74,17 @@ return packer.startup(function()
     }
     use {
         'rebelot/kanagawa.nvim',
-        config = function() require 'plugins.theme' end
+        config = function() require 'config.theme' end
     }
     use {
         'nvim-lualine/lualine.nvim',
-        config = function() require 'plugins.lualine' end
+        config = function() require 'config.lualine' end
     }
     use {
         'nvim-treesitter/nvim-treesitter',
         requires = {{'nvim-treesitter/playground', cmd = 'TSPlaygroundToggle'}},
         run = ":TSUpdate",
-        config = function() require('plugins.treesitter') end
+        config = function() require('config.treesitter') end
     }
 
     -- Keybindings

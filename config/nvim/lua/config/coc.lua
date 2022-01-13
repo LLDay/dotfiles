@@ -12,6 +12,6 @@ g.coc_global_extensions = {
 cmd [[
 augroup Common
     autocmd CursorHold * silent call CocActionAsync('highlight')
-    autocmd InsertEnter * silent call CocActionAsync('showSignatureHelp')
+    autocmd InsertEnter * if CocActionAsync('ensureDocument') | silent call CocActionAsync('showSignatureHelp')
 augroup END
 ]]

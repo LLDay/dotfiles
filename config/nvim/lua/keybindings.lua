@@ -15,7 +15,6 @@ map('t', '<Esc>', '<C-\\><C-n>', {})
 --------------------------------------------------
 -- Windows
 --------------------------------------------------
-
 map('', '<C-h>', '<cmd>wincmd h<CR>', ns)
 map('', '<C-j>', '<cmd>wincmd j<CR>', ns)
 map('', '<C-k>', '<cmd>wincmd k<CR>', ns)
@@ -57,6 +56,13 @@ map('', '[g', '<cmd>Gitsigns prev_hunk<CR>', ns)
 map('', ']g', '<cmd>Gitsigns next_hunk<CR>', ns)
 
 --------------------------------------------------
+-- Gitsigns
+--------------------------------------------------
+
+map('n', '<c-p>', '<cmd>Telescope find_files<CR>', ns)
+-- map('n', '<c-b>', '<cmd>CocCommand fzf-preview.AllBuffers<CR>', s)
+
+--------------------------------------------------
 -- Coc
 --------------------------------------------------
 
@@ -82,8 +88,6 @@ map('n', '<leader>ar', '<Plug>(coc-codelens-action)', s)
 map('x', '<leader>a', '<Plug>(coc-codeaction-selected)', s)
 map('n', '<leader>a', '<Plug>(coc-codeaction-selected)', s)
 
-map('n', '<c-p>', '<cmd>CocCommand fzf-preview.DirectoryFiles<CR>', ns)
-map('n', '<c-b>', '<cmd>CocCommand fzf-preview.AllBuffers<CR>', s)
 map('n', '<c-f>', '<cmd>CocSearch <C-R>=expand("<cword>")<CR><CR>', s)
 map('n', '<leader>f', ':CocSearch<space>', {})
 
@@ -98,3 +102,16 @@ map('x', 'ic', '<Plug>(coc-classobj-i)', {})
 map('o', 'ic', '<Plug>(coc-classobj-i)', {})
 map('x', 'ac', '<Plug>(coc-classobj-a)', {})
 map('o', 'ac', '<Plug>(coc-classobj-a)', {})
+
+--------------------------------------------------
+-- Dap
+--------------------------------------------------
+
+map('n', '<F5>', ':lua require"dap".continue()<CR>', ns)
+map('n', '<F10>', ':lua require"dap".step_over()<CR>', ns)
+map('n', '<F11>', ':lua require"dap".step_into()<CR>', ns)
+map('n', '<F12>', ':lua require"dap".step_out()<CR>', ns)
+map('n', '<F9>', ':lua require"dap".toggle_breakpoint()<CR>', ns)
+map('n', '<leader><F9>',
+    ':lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>',
+    ns)

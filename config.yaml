@@ -117,17 +117,17 @@ dotfiles:
     dst: ~/.config/bspwm/bspwmrc
     chmod: '755'
   f_ale.lua:
-    src: config/nvim/lua/plugins/ale.lua
-    dst: ~/.config/nvim/lua/plugins/ale.lua
+    src: config/nvim/lua/config/ale.lua
+    dst: ~/.config/nvim/lua/config/ale.lua
   f_coc.lua:
-    src: config/nvim/lua/plugins/coc.lua
-    dst: ~/.config/nvim/lua/plugins/coc.lua
+    src: config/nvim/lua/config/coc.lua
+    dst: ~/.config/nvim/lua/config/coc.lua
   f_gitsigns.lua:
-    src: config/nvim/lua/plugins/gitsigns.lua
-    dst: ~/.config/nvim/lua/plugins/gitsigns.lua
+    src: config/nvim/lua/config/gitsigns.lua
+    dst: ~/.config/nvim/lua/config/gitsigns.lua
   f_lualine.lua:
-    src: config/nvim/lua/plugins/lualine.lua
-    dst: ~/.config/nvim/lua/plugins/lualine.lua
+    src: config/nvim/lua/config/lualine.lua
+    dst: ~/.config/nvim/lua/config/lualine.lua
   f_augroups.lua:
     src: config/nvim/lua/augroups.lua
     dst: ~/.config/nvim/lua/augroups.lua
@@ -147,17 +147,20 @@ dotfiles:
     src: config/nvim/init.lua
     dst: ~/.config/nvim/init.lua
   f_colors.lua:
-    src: config/nvim/lua/plugins/colors.lua
-    dst: ~/.config/nvim/lua/plugins/colors.lua
+    src: config/nvim/lua/config/colors.lua
+    dst: ~/.config/nvim/lua/config/colors.lua
   f_indent_blankline.lua:
-    src: config/nvim/lua/plugins/indent_blankline.lua
-    dst: ~/.config/nvim/lua/plugins/indent_blankline.lua
+    src: config/nvim/lua/config/indent_blankline.lua
+    dst: ~/.config/nvim/lua/config/indent_blankline.lua
   f_theme.lua:
-    src: config/nvim/lua/plugins/theme.lua
-    dst: ~/.config/nvim/lua/plugins/theme.lua
+    src: config/nvim/lua/config/theme.lua
+    dst: ~/.config/nvim/lua/config/theme.lua
   f_treesitter.lua:
-    src: config/nvim/lua/plugins/treesitter.lua
-    dst: ~/.config/nvim/lua/plugins/treesitter.lua
+    src: config/nvim/lua/config/treesitter.lua
+    dst: ~/.config/nvim/lua/config/treesitter.lua
+  f_telescope.lua:
+    src: config/nvim/lua/config/telescope.lua
+    dst: ~/.config/nvim/lua/config/telescope.lua
 profiles:
   arch:
     dotfiles:
@@ -210,3 +213,4 @@ profiles:
     - f_indent_blankline.lua
     - f_theme.lua
     - f_treesitter.lua
+    - f_telescope.lua
