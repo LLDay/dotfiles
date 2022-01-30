@@ -34,7 +34,6 @@ return packer.startup(function()
     use 'kassio/neoterm'
     use 'lifepillar/pgsql.vim'
     use 'preservim/nerdcommenter'
-    use {'mfussenegger/nvim-dap', config = function() require 'config.dap' end}
     use {'skywind3000/asynctasks.vim', requires = {'skywind3000/asyncrun.vim'}}
 
     -- Snippets
@@ -82,6 +81,7 @@ return packer.startup(function()
     }
     use {
         'nvim-treesitter/nvim-treesitter',
+        commit = '668de0951a36ef17016074f1120b6aacbe6c4515',
         requires = {{'nvim-treesitter/playground', cmd = 'TSPlaygroundToggle'}},
         run = ":TSUpdate",
         config = function() require('config.treesitter') end

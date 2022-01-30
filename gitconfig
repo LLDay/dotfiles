@@ -26,3 +26,5 @@
 
 [grep]
     patternType = perl
+[init]
+	defaultBranch = main

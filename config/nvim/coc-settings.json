@@ -1,7 +1,11 @@
 {
   "cSpell.language": "en,ru",
-  "cSpell.enabled": false,
+  "cSpell.enabled": true,
   "cSpell.diagnosticLevel": "Hint",
+  "cSpell.enabledLanguageIds": [
+    "markdown",
+    "text"
+  ],
   "cSpellExt.enableDictionaries": [
     "russian"
   ],

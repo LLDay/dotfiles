@@ -60,7 +60,7 @@ map('', ']g', '<cmd>Gitsigns next_hunk<CR>', ns)
 --------------------------------------------------
 
 map('n', '<c-p>', '<cmd>Telescope find_files<CR>', ns)
--- map('n', '<c-b>', '<cmd>CocCommand fzf-preview.AllBuffers<CR>', s)
+map('n', '<c-b>', '<cmd>Telescope buffers<CR>', ns)
 
 --------------------------------------------------
 -- Coc
@@ -102,16 +102,3 @@ map('x', 'ic', '<Plug>(coc-classobj-i)', {})
 map('o', 'ic', '<Plug>(coc-classobj-i)', {})
 map('x', 'ac', '<Plug>(coc-classobj-a)', {})
 map('o', 'ac', '<Plug>(coc-classobj-a)', {})
-
---------------------------------------------------
--- Dap
---------------------------------------------------
-
-map('n', '<F5>', ':lua require"dap".continue()<CR>', ns)
-map('n', '<F10>', ':lua require"dap".step_over()<CR>', ns)
-map('n', '<F11>', ':lua require"dap".step_into()<CR>', ns)
-map('n', '<F12>', ':lua require"dap".step_out()<CR>', ns)
-map('n', '<F9>', ':lua require"dap".toggle_breakpoint()<CR>', ns)
-map('n', '<leader><F9>',
-    ':lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>',
-    ns)

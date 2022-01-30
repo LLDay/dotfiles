@@ -61,8 +61,11 @@ opt.updatetime = 500
 opt.iskeyword:remove(':')
 opt.matchpairs:append('<:>')
 opt.encoding = 'utf-8'
-opt.spelllang = {'en_us', 'ru'}
+opt.spelllang = {'en_us', 'ru_yo'}
 opt.wrap = false
+opt.keymap = 'russian-jcukenwin'
+opt.iminsert = 0
+opt.imsearch = 0
 
 --------------------------------------------------
 -- Completion

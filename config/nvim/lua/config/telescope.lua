@@ -1,5 +1,7 @@
 local actions = require("telescope.actions")
 
+local layout_config = {height = 0.95, width = 0.25, anchor = 'E'}
+
 require('telescope').setup({
     defaults = {
         prompt_prefix = '> ',
@@ -14,9 +16,9 @@ require('telescope').setup({
     pickers = {
         find_files = {
             theme = 'dropdown',
-            find_command = {'rg', '--ignore', '--hidden', '--files', '-L'},
-            layout_strategy = 'vertical',
-            layout_config = {height = 0.95, width = 0.5, anchor = 'E'}
-        }
+            find_command = {'rg', '--files', '-L'},
+            layout_config = layout_config
+        },
+        buffers = {theme = 'dropdown', layout_config = layout_config}
     }
 })

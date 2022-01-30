@@ -43,7 +43,8 @@ g.ale_linters = {
     sh = {'shellcheck'},
     sql = {'sqlint'},
     typescript = {'tslint'},
-    vim = {'vimt'}
+    vim = {'vimt'},
+    markdown = {'languagetool'}
 }
 
 g.ale_fixers = {
@@ -55,7 +56,9 @@ g.ale_fixers = {
     python = {'autopep8', 'black', 'reorder-python-imports'},
     rust = {'rustfmt'},
     tex = {'latexindent'},
-    typescript = {'prettier'}
+    html = {'tidy'},
+    typescript = {'deno'},
+    markdown = {'pandoc'}
 }
 
 local colors = require('config.colors')
