@@ -32,9 +32,7 @@ return packer.startup(function()
     -- Programming
     use 'airblade/vim-rooter'
     use 'kassio/neoterm'
-    use 'lifepillar/pgsql.vim'
     use 'preservim/nerdcommenter'
-    use {'skywind3000/asynctasks.vim', requires = {'skywind3000/asyncrun.vim'}}
 
     -- Snippets
     use 'SirVer/ultisnips'
@@ -48,12 +46,10 @@ return packer.startup(function()
     use 'cespare/vim-toml'
     use 'fidian/hexmode'
     use 'itchyny/vim-gitbranch'
-    use 'lyokha/vim-xkbswitch'
     use 'mbbill/undotree'
     use 'rafi/awesome-vim-colorschemes'
     use 'ryanoasis/vim-devicons'
     use 'simeji/winresizer'
-    use 'tiagovla/tokyodark.nvim'
     use 'unblevable/quick-scope'
     use 'voldikss/vim-floaterm'
 
