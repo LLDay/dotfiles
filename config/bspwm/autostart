@@ -1,9 +1,7 @@
 #!/bin/bash
 
-wal -R && fc-cache -f && source ~/.config/polybar/launch.sh &
-source ~/.fehbg &
-
 xrdb -merge ~/.Xresources &
+source ~/.fehbg &
 
 dunst &
 light -I &
@@ -13,3 +11,4 @@ thunar --daemon &
 update_edited &
 
 sleep 15 && dex -a &
+fc-cache -f && wal -R && source ~/.config/polybar/launch.sh &
