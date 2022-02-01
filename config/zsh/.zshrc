@@ -86,7 +86,7 @@ setopt prompt_subst
 if [[ $EUID -ne 0 ]]; then
     PROMPT="%B%{$fg[green]%}[%{$fg[cyan]%}%~%{$fg[green]%}]%{$reset_color%}$%b "
 else
-    PROMPT="%B%{$fg[red]%}[%{$fg[orange]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}#%b "
+    PROMPT="%B%{$fg[green]%}[%{$fg[red]%}%~%{$fg[green]%}]%{$reset_color%}#%b "
 fi
 
 # Modify the colors and symbols in these variables as desired.
