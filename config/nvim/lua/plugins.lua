@@ -14,13 +14,24 @@ local packer = require('packer')
 return packer.startup(function()
     use 'wbthomason/packer.nvim'
 
-    -- Linters & LSP
+    -- Completion
     use {
-        'neoclide/coc.nvim',
-        branch = 'release',
-        config = function() require 'config.coc' end
+        'hrsh7th/nvim-cmp',
+        config = function() require 'config.cmp' end,
+        requires = {
+            {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'},
+            {'hrsh7th/cmp-cmdline'}, {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-calc'}, {'Saecki/crates.nvim'}
+        }
     }
+
+    -- Linters & LSP
     use {'dense-analysis/ale', config = function() require 'config.ale' end}
+    use {
+        'neovim/nvim-lspconfig',
+        requires = {{'williamboman/nvim-lsp-installer'}},
+        config = function() require 'config.lsp' end
+    }
 
     -- Git
     use {
@@ -35,8 +46,7 @@ return packer.startup(function()
     use 'preservim/nerdcommenter'
 
     -- Snippets
-    use 'SirVer/ultisnips'
-    use 'honza/vim-snippets'
+    use {'l3mon4d3/luasnip', requires = {{'saadparwaiz1/cmp_luasnip'}}}
 
     -- Look and feel
     use 'adelarsq/vim-matchit'
@@ -77,7 +87,6 @@ return packer.startup(function()
     }
     use {
         'nvim-treesitter/nvim-treesitter',
-        commit = '668de0951a36ef17016074f1120b6aacbe6c4515',
         requires = {{'nvim-treesitter/playground', cmd = 'TSPlaygroundToggle'}},
         run = ":TSUpdate",
         config = function() require('config.treesitter') end

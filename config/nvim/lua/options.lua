@@ -71,7 +71,7 @@ opt.imsearch = 0
 -- Completion
 --------------------------------------------------
 
-opt.completeopt = 'longest,menuone'
+opt.completeopt = 'longest,menuone,noselect'
 opt.wildmode = 'longest:full,full'
 
 --------------------------------------------------

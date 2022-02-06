@@ -89,9 +89,6 @@ dotfiles:
   f_dunstrc:
     src: config/dunst/dunstrc
     dst: ~/.config/dunst/dunstrc
-  f_coc-settings.json:
-    src: config/nvim/coc-settings.json
-    dst: ~/.config/nvim/coc-settings.json
   f_colors.ini:
     src: config/polybar/colors.ini
     dst: ~/.config/polybar/colors.ini
@@ -119,9 +116,6 @@ dotfiles:
   f_ale.lua:
     src: config/nvim/lua/config/ale.lua
     dst: ~/.config/nvim/lua/config/ale.lua
-  f_coc.lua:
-    src: config/nvim/lua/config/coc.lua
-    dst: ~/.config/nvim/lua/config/coc.lua
   f_gitsigns.lua:
     src: config/nvim/lua/config/gitsigns.lua
     dst: ~/.config/nvim/lua/config/gitsigns.lua
@@ -161,6 +155,21 @@ dotfiles:
   f_telescope.lua:
     src: config/nvim/lua/config/telescope.lua
     dst: ~/.config/nvim/lua/config/telescope.lua
+  f_cmp.lua:
+    src: config/nvim/lua/config/cmp.lua
+    dst: ~/.config/nvim/lua/config/cmp.lua
+  f_lsp.lua:
+    src: config/nvim/lua/config/lsp.lua
+    dst: ~/.config/nvim/lua/config/lsp.lua
+  f_rust_analyzer.lua:
+    src: config/nvim/lua/config/lsp/rust_analyzer.lua
+    dst: ~/.config/nvim/lua/config/lsp/rust_analyzer.lua
+  f_sumneko_lua.lua:
+    src: config/nvim/lua/config/lsp/sumneko_lua.lua
+    dst: ~/.config/nvim/lua/config/lsp/sumneko_lua.lua
+  f_taplo.lua:
+    src: config/nvim/lua/config/lsp/taplo.lua
+    dst: ~/.config/nvim/lua/config/lsp/taplo.lua
 profiles:
   arch:
     dotfiles:
@@ -191,7 +200,6 @@ profiles:
     - f_config
     - f_fonts.conf
     - f_dunstrc
-    - f_coc-settings.json
     - f_colors.ini
     - f_user_modules.ini
     - f_bars.ini
@@ -200,7 +208,6 @@ profiles:
     - f_alacritty.yml
     - f_bspwmrc
     - f_ale.lua
-    - f_coc.lua
     - f_gitsigns.lua
     - f_lualine.lua
     - f_augroups.lua
@@ -214,3 +221,8 @@ profiles:
     - f_theme.lua
     - f_treesitter.lua
     - f_telescope.lua
+    - f_cmp.lua
+    - f_lsp.lua
+    - f_rust_analyzer.lua
+    - f_sumneko_lua.lua
+    - f_taplo.lua

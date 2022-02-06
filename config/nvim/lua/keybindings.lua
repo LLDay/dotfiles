@@ -63,42 +63,29 @@ map('n', '<c-p>', '<cmd>Telescope find_files<CR>', ns)
 map('n', '<c-b>', '<cmd>Telescope buffers<CR>', ns)
 
 --------------------------------------------------
--- Coc
+-- LSP
 --------------------------------------------------
 
-if vim.fn.has('nvim') then
-    map('i', '<c-space>', 'coc#refresh()', nse)
-else
-    map('i', '<c-@>', 'coc#refresh()', nse)
-end
+map('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', ns)
+map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', ns)
+map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', ns)
+map('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', ns)
+map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', ns)
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', ns)
+map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', ns)
 
-map('n', '<F2>', '<Plug>(coc-rename)', s)
+map('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', ns)
+map('n', 'K',
+    '<cmd>lua vim.lsp.buf.hover()<CR><cmd>lua vim.lsp.buf.signature_help()<CR>',
+    ns)
 
-map('n', 'gd', '<Plug>(coc-definition)', s)
-map('n', 'gi', '<Plug>(coc-implementation)', s)
-map('n', 'gr', '<Plug>(coc-references)', s)
+map('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', ns)
+map('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', ns)
+map('n', '<space>wl',
+    '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', ns)
 
-map('n', 'gs', '<cmd>CocCommand clangd.switchSourceHeader<CR>', ns)
-map('n', 'go', '<cmd>CocList outline<CR>', ns)
-
-map('n', '<leader>ac', '<Plug>(coc-codeaction-cursor)', s)
-map('n', '<leader>af', '<Plug>(coc-fix-current)', s)
-map('n', '<leader>ar', '<Plug>(coc-codelens-action)', s)
-
-map('x', '<leader>a', '<Plug>(coc-codeaction-selected)', s)
-map('n', '<leader>a', '<Plug>(coc-codeaction-selected)', s)
-
-map('n', '<c-f>', '<cmd>CocSearch <C-R>=expand("<cword>")<CR><CR>', s)
-map('n', '<leader>f', ':CocSearch<space>', {})
-
-map('n', 'K', '<cmd>call CocActionAsync("doHover")<CR>', ns)
-map('n', '<leader>p', '<cmd>CocList -A yank<CR>', {})
-
-map('x', 'if', '<Plug>(coc-funcobj-i)', {})
-map('o', 'if', '<Plug>(coc-funcobj-i)', {})
-map('x', 'af', '<Plug>(coc-funcobj-a)', {})
-map('o', 'af', '<Plug>(coc-funcobj-a)', {})
-map('x', 'ic', '<Plug>(coc-classobj-i)', {})
-map('o', 'ic', '<Plug>(coc-classobj-i)', {})
-map('x', 'ac', '<Plug>(coc-classobj-a)', {})
-map('o', 'ac', '<Plug>(coc-classobj-a)', {})
+map('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', ns)
+map('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', ns)
+map('n', '<space>ac', '<cmd>lua vim.lsp.buf.code_action()<CR>', ns)
+map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', ns)
+map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', ns)
