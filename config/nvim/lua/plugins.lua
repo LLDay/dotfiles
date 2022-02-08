@@ -26,7 +26,11 @@ return packer.startup(function()
     }
 
     -- Linters & LSP
-    use {'dense-analysis/ale', config = function() require 'config.ale' end}
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        config = function() require 'config.null-ls' end,
+        requires = {"nvim-lua/plenary.nvim"}
+    }
     use {
         'neovim/nvim-lspconfig',
         requires = {{'williamboman/nvim-lsp-installer'}},
@@ -42,8 +46,17 @@ return packer.startup(function()
 
     -- Programming
     use 'airblade/vim-rooter'
+    use 'fidian/hexmode'
     use 'kassio/neoterm'
-    use 'preservim/nerdcommenter'
+    use {
+        'terrortylor/nvim-comment',
+        config = function()
+            require('nvim_comment').setup({
+                line_mapping = "<leader>cc",
+                operator_mapping = "<leader>c"
+            })
+        end
+    }
 
     -- Snippets
     use {'l3mon4d3/luasnip', requires = {{'saadparwaiz1/cmp_luasnip'}}}
@@ -54,7 +67,6 @@ return packer.startup(function()
     use 'bluz71/vim-moonfly-colors'
     use 'bronson/vim-trailing-whitespace'
     use 'cespare/vim-toml'
-    use 'fidian/hexmode'
     use 'itchyny/vim-gitbranch'
     use 'mbbill/undotree'
     use 'rafi/awesome-vim-colorschemes'
@@ -87,9 +99,17 @@ return packer.startup(function()
     }
     use {
         'nvim-treesitter/nvim-treesitter',
-        requires = {{'nvim-treesitter/playground', cmd = 'TSPlaygroundToggle'}},
+        requires = {
+            {'nvim-treesitter/playground', cmd = 'TSPlaygroundToggle'},
+            {'nvim-treesitter/nvim-treesitter-textobjects'}
+        },
         run = ":TSUpdate",
-        config = function() require('config.treesitter') end
+        config = function() require 'config.treesitter' end
+    }
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function() require 'config.trouble' end
     }
 
     -- Keybindings
@@ -100,7 +120,6 @@ return packer.startup(function()
     use 'tpope/vim-repeat'
     use 'tpope/vim-speeddating'
     use 'tpope/vim-surround'
-    use 'tpope/vim-unimpaired'
     use 'wellle/targets.vim'
 
     if packer_bootstrap then packer.sync() end

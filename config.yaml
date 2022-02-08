@@ -113,9 +113,6 @@ dotfiles:
     src: config/bspwm/bspwmrc
     dst: ~/.config/bspwm/bspwmrc
     chmod: '755'
-  f_ale.lua:
-    src: config/nvim/lua/config/ale.lua
-    dst: ~/.config/nvim/lua/config/ale.lua
   f_gitsigns.lua:
     src: config/nvim/lua/config/gitsigns.lua
     dst: ~/.config/nvim/lua/config/gitsigns.lua
@@ -170,6 +167,12 @@ dotfiles:
   f_taplo.lua:
     src: config/nvim/lua/config/lsp/taplo.lua
     dst: ~/.config/nvim/lua/config/lsp/taplo.lua
+  f_null-ls.lua:
+    src: config/nvim/lua/config/null-ls.lua
+    dst: ~/.config/nvim/lua/config/null-ls.lua
+  f_trouble.lua:
+    src: config/nvim/lua/config/trouble.lua
+    dst: ~/.config/nvim/lua/config/trouble.lua
 profiles:
   arch:
     dotfiles:
@@ -207,7 +210,6 @@ profiles:
     - f_launch.sh
     - f_alacritty.yml
     - f_bspwmrc
-    - f_ale.lua
     - f_gitsigns.lua
     - f_lualine.lua
     - f_augroups.lua
@@ -226,3 +228,5 @@ profiles:
     - f_rust_analyzer.lua
     - f_sumneko_lua.lua
     - f_taplo.lua
+    - f_null-ls.lua
+    - f_trouble.lua

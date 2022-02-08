@@ -19,6 +19,7 @@ require('telescope').setup({
             find_command = {'rg', '--files', '-L'},
             layout_config = layout_config
         },
-        buffers = {theme = 'dropdown', layout_config = layout_config}
+        buffers = {theme = 'dropdown', layout_config = layout_config},
+        lsp_code_actions = {theme = 'cursor'}
     }
 })

@@ -43,6 +43,22 @@ augroup Binary
 augroup END
 ]]
 
+local colors = require('config.colors')
+local augroup_color = string.format([[
+augroup Colors
+    autocmd ColorScheme * highlight! DiagnosticLineNrError guifg=%s gui=bold
+    autocmd ColorScheme * highlight! DiagnosticLineNrWarn guifg=%s gui=bold
+    autocmd ColorScheme * highlight! DiagnosticLineNrInfo guifg=%s gui=bold
+    autocmd ColorScheme * highlight! DiagnosticLineNrHint guifg=%s gui=bold
+
+    sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
+    sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
+    sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
+    sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
+augroup end
+]], colors.error, colors.warning, colors.info, colors.hint)
+vim.cmd(augroup_color)
+
 cmd [[
 command! -nargs=0 Reload :source $MYVIMRC
 ]]

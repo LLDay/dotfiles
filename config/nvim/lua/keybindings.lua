@@ -1,7 +1,5 @@
 local map = vim.api.nvim_set_keymap
-local s = {silent = true}
 local ns = {noremap = true, silent = true}
-local nse = {noremap = true, silent = true, expr = true}
 
 vim.g.mapleader = ' '
 
@@ -13,8 +11,38 @@ map('', '<leader>n', '<cmd>noh<CR>', ns)
 map('t', '<Esc>', '<C-\\><C-n>', {})
 
 --------------------------------------------------
--- Windows
+-- Navigation
 --------------------------------------------------
+
+map('n', '[a', '<cmd>previous<CR>', ns)
+map('n', ']a', '<cmd>next<CR>', ns)
+map('n', '[e', '<cmd>m .-2<CR>==', ns)
+map('n', ']e', '<cmd>m .+1<CR>==', ns)
+map('n', '[<leader>', 'O<Esc>', ns)
+map('n', ']<leader>', 'o<Esc>', ns)
+map('n', '[A', '<cmd>first<CR>', ns)
+map('n', ']A', '<cmd>last<CR>', ns)
+map('n', '[b', '<cmd>bprevious<CR>', ns)
+map('n', ']b', '<cmd>bnext<CR>', ns)
+map('n', '[B', '<cmd>bfirst<CR>', ns)
+map('n', ']B', '<cmd>blast<CR>', ns)
+map('n', '[l', '<cmd>lprevious<CR>', ns)
+map('n', ']l', '<cmd>lnext<CR>', ns)
+map('n', '[L', '<cmd>lfirst<CR>', ns)
+map('n', ']L', '<cmd>llast<CR>', ns)
+map('n', '[<C-L>', '<cmd>lpfile<CR>', ns)
+map('n', ']<C-L>', '<cmd>lnfile<CR>', ns)
+map('n', '[q', '<cmd>cprevious<CR>', ns)
+map('n', ']q', '<cmd>cnext<CR>', ns)
+map('n', '[Q', '<cmd>cfirst<CR>', ns)
+map('n', ']Q', '<cmd>clast<CR>', ns)
+map('n', '[<C-Q>*', '<cmd>cpfile<CR>', ns)
+map('n', ']<C-Q>*', '<cmd>cnfile<CR>', ns)
+map('n', '[t', '<cmd>tprevious<CR>', ns)
+map('n', ']t', '<cmd>tnext<CR>', ns)
+map('n', '[T', '<cmd>tfirst<CR>', ns)
+map('n', ']T', '<cmd>tlast<CR>', ns)
+
 map('', '<C-h>', '<cmd>wincmd h<CR>', ns)
 map('', '<C-j>', '<cmd>wincmd j<CR>', ns)
 map('', '<C-k>', '<cmd>wincmd k<CR>', ns)
@@ -43,9 +71,6 @@ map('', '<leader>o', '<cmd>FloatermNew lf<CR>', ns)
 map('', '<leader>=', ':Tabularize /', {})
 map('x', '<leader>=', ':Tabularize /', {})
 
-map('', '[d', '<Plug>(ale_previous_wrap)', s)
-map('', ']d', '<Plug>(ale_next_wrap)', s)
-
 --------------------------------------------------
 -- Gitsigns
 --------------------------------------------------
@@ -56,36 +81,45 @@ map('', '[g', '<cmd>Gitsigns prev_hunk<CR>', ns)
 map('', ']g', '<cmd>Gitsigns next_hunk<CR>', ns)
 
 --------------------------------------------------
--- Gitsigns
+-- Telescope
 --------------------------------------------------
 
 map('n', '<c-p>', '<cmd>Telescope find_files<CR>', ns)
 map('n', '<c-b>', '<cmd>Telescope buffers<CR>', ns)
+map('n', '<leader>ac', '<cmd>Telescope lsp_code_actions<CR>', ns)
 
 --------------------------------------------------
 -- LSP
 --------------------------------------------------
 
-map('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', ns)
+map('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', ns)
 map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', ns)
 map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', ns)
-map('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', ns)
+map('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', ns)
 map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', ns)
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', ns)
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', ns)
 
 map('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', ns)
-map('n', 'K',
-    '<cmd>lua vim.lsp.buf.hover()<CR><cmd>lua vim.lsp.buf.signature_help()<CR>',
-    ns)
+map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', ns)
 
-map('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', ns)
-map('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', ns)
-map('n', '<space>wl',
+map('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', ns)
+map('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', ns)
+map('n', '<leader>wl',
     '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', ns)
 
-map('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', ns)
+map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', ns)
 map('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', ns)
-map('n', '<space>ac', '<cmd>lua vim.lsp.buf.code_action()<CR>', ns)
 map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', ns)
-map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', ns)
+map('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', ns)
+
+--------------------------------------------------
+-- Trouble
+--------------------------------------------------
+
+map('n', '<leader>xx', '<cmd>Trouble<cr>', ns)
+map('n', '<leader>xw', '<cmd>Trouble workspace_diagnostics<cr>', ns)
+map('n', '<leader>xd', '<cmd>Trouble document_diagnostics<cr>', ns)
+map('n', '<leader>xl', '<cmd>Trouble loclist<cr>', ns)
+map('n', '<leader>xq', '<cmd>Trouble quickfix<cr>', ns)
+map('n', 'gR', '<cmd>Trouble lsp_references<cr>', ns)

@@ -6,5 +6,6 @@ return {
     diffDeleted = '#C34043',
     error = '#C34043',
     warning = '#DCA561',
-    info = '#A3D4D5'
+    info = '#A3D4D5',
+    hint = '#A3D4D5'
 }
