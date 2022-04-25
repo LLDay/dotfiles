@@ -49,7 +49,7 @@ map mf push :touch<space>
 map mF push &$EDITOR<space>
 
 map S symlink
-map D delete
+map D trash
 map L open_and_exit
 map w
 map t open_file_explorer
@@ -83,6 +83,8 @@ map gmn cd /mnt
 map gme cd /run/media/llday
 
 map git $lazygit
+
+cmd trash %trash-put $fx
 
 cmd rename_logic &{{
     lf -remote "send $id :rename"
