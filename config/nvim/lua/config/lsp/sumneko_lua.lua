@@ -1,17 +1,19 @@
-local runtime_path = vim.split(package.path, ';')
+local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-local sumneko_lua = {
-    settings = {
+return function(server, opts)
+    opts.settings = {
         Lua = {
-            diagnostics = {globals = {'use', 'vim'}},
-            runtime = {version = 'LuaJIT', path = runtime_path},
-            telemetry = {enable = false},
-            window = {progressBar = false, statusBar = false},
-            workspace = {library = vim.api.nvim_get_runtime_file("", true)}
-        }
+            diagnostics = { globals = { "use", "vim" } },
+            runtime = { version = "LuaJIT", path = runtime_path },
+            telemetry = { enable = false },
+            window = { progressBar = false, statusBar = false },
+            workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+        },
     }
-}
 
-return sumneko_lua
+    server:on_ready(function()
+        server:setup(opts)
+    end)
+end

@@ -173,6 +173,12 @@ dotfiles:
   f_trouble.lua:
     src: config/nvim/lua/config/trouble.lua
     dst: ~/.config/nvim/lua/config/trouble.lua
+  f_luasnip.lua:
+    src: config/nvim/lua/config/luasnip.lua
+    dst: ~/.config/nvim/lua/config/luasnip.lua
+  f_stylua.toml:
+    src: config/stylua/stylua.toml
+    dst: ~/.config/stylua/stylua.toml
 profiles:
   arch:
     dotfiles:
@@ -230,3 +236,5 @@ profiles:
     - f_taplo.lua
     - f_null-ls.lua
     - f_trouble.lua
+    - f_luasnip.lua
+    - f_stylua.toml

@@ -1,14 +1,12 @@
-local lsp_installer_servers = require('nvim-lsp-installer.servers')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp
-                                                                     .protocol
-                                                                     .make_client_capabilities())
+local lsp_installer_servers = require("nvim-lsp-installer.servers")
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = false,
     signs = true,
     underline = true,
-    update_in_insert = false,
-    severity_sort = false
+    update_in_insert = true,
+    severity_sort = false,
 })
 
 local function on_attach(client, _)
@@ -16,24 +14,33 @@ local function on_attach(client, _)
     client.resolved_capabilities.document_range_formatting = false
 end
 
-local function setup_server(server_name, opts)
+local default_servers = { "tsserver", "pyright" }
+
+for _, server_name in pairs(default_servers) do
     local is_available, server = lsp_installer_servers.get_server(server_name)
+    local opts = { capabilities = capabilities, on_attach = on_attach }
     if is_available then
-        opts.capabilities = capabilities
-        opts.on_attach = on_attach
-        server:on_ready(function() server:setup(opts) end)
-        if not server:is_installed() then server:install() end
+        if not server:is_installed() then
+            server:install()
+        end
+
+        server:on_ready(function()
+            server:setup(opts)
+        end)
     end
 end
 
-local servers = {'sumneko_lua', 'rust_analyzer', 'taplo'}
-local servers_with_defaults = {'tsserver', 'pyright'}
+local servers_with_configs = { "sumneko_lua", "rust_analyzer", "taplo" }
+for _, server_name in pairs(servers_with_configs) do
+    local is_available, server = lsp_installer_servers.get_server(server_name)
+    local opts = { capabilities = capabilities, on_attach = on_attach }
 
-for _, server_name in pairs(servers) do
-    local server = require('config.lsp.' .. server_name)
-    setup_server(server_name, server)
-end
+    if is_available then
+        if not server:is_installed() then
+            server:install()
+        end
 
-for _, server_name in pairs(servers_with_defaults) do
-    setup_server(server_name, {})
+        local setup = require("config.lsp." .. server_name)
+        setup(server, opts)
+    end
 end

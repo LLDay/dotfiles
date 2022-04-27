@@ -1,7 +1,7 @@
-require('options')
-require('keybindings')
+require("options")
+require("keybindings")
 
-require('globals')
+require("globals")
 
-require('augroups')
-require('plugins')
+require("augroups")
+require("plugins")

@@ -1,23 +1,23 @@
 local cmd = vim.cmd
-local sign = {text = '│'}
+local sign = { text = "│" }
 
-require('gitsigns').setup {
+require("gitsigns").setup({
     signs = {
         add = sign,
         change = sign,
         delete = sign,
         topdelete = sign,
-        changedelete = sign
-    }
-}
+        changedelete = sign,
+    },
+})
 
-local colors = require('config.colors')
-
-cmd(string.format([[
-augroup colors
-    autocmd ColorScheme * highlight! diffAdded guifg=%s
-    autocmd ColorScheme * highlight! diffChanged guifg=%s
-    autocmd ColorScheme * highlight! diffDeleted guifg=%s
-    autocmd ColorScheme * highlight! link GitSignsDeleteLn diffDeleted
-augroup end
-]], colors.diffAdded, colors.diffChanged, colors.diffDeleted))
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "*",
+    callback = function(_)
+        local colors = require("config.colors")
+        vim.cmd(string.format("highlight! diffAdded guifg=%s", colors.diffAdded))
+        vim.cmd(string.format("highlight! diffChanged guifg=%s", colors.diffChanged))
+        vim.cmd(string.format("highlight! diffDeleted guifg=%s", colors.diffDeleted))
+        vim.cmd("link GitSignsDeleteLn diffDeleted")
+    end,
+})
