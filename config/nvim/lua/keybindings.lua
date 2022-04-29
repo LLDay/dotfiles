@@ -85,7 +85,6 @@ map("", "]g", "<cmd>Gitsigns next_hunk<CR>", ns)
 map("n", "<c-p>", "<cmd>Telescope find_files<CR>", ns)
 map("n", "<c-b>", "<cmd>Telescope buffers<CR>", ns)
 map("n", "<c-f>", "<cmd>Telescope live_grep<CR>", ns)
-map("n", "<leader>ac", "<cmd>Telescope lsp_code_actions<CR>", ns)
 
 --------------------------------------------------
 -- LSP
@@ -98,6 +97,9 @@ map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", ns)
 map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", ns)
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", ns)
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", ns)
+
+map("n", "<leader>ac", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true })
+map("x", "<leader>ac", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true })
 
 map("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", ns)
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", ns)

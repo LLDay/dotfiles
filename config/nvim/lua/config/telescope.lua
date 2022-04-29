@@ -3,6 +3,11 @@ local actions = require("telescope.actions")
 local layout_config = { height = 0.95, width = 0.25, anchor = "E" }
 
 require("telescope").setup({
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_cursor({}),
+        },
+    },
     defaults = {
         prompt_prefix = "> ",
         mappings = {
@@ -23,3 +28,5 @@ require("telescope").setup({
         lsp_code_actions = { theme = "cursor", timeout = 300 },
     },
 })
+
+require("telescope").load_extension("ui-select")
