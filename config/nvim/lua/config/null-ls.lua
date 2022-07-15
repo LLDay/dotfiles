@@ -5,7 +5,6 @@ local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
     diagnostics.eslint,
-    diagnostics.pylint,
     diagnostics.shellcheck,
     diagnostics.vint,
     formatting.autopep8,

@@ -1,8 +1,11 @@
-local lsp_installer_servers = require("nvim-lsp-installer.servers")
+local lspconfig = require("lspconfig")
+local lsp_installer = require("nvim-lsp-installer")
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+lsp_installer.setup({})
+
 vim.diagnostic.config({
-    virtual_text = false,
+    virtual_text = true,
     signs = true,
     underline = true,
     update_in_insert = true,
@@ -14,33 +17,17 @@ local function on_attach(client, _)
     client.resolved_capabilities.document_range_formatting = false
 end
 
-local default_servers = { "tsserver", "pyright" }
+local servers = { "sumneko_lua", "rust_analyzer", "taplo", "tsserver", "pyright", "solang" }
 
-for _, server_name in pairs(default_servers) do
-    local is_available, server = lsp_installer_servers.get_server(server_name)
-    local opts = { capabilities = capabilities, on_attach = on_attach }
-    if is_available then
-        if not server:is_installed() then
-            server:install()
-        end
-
-        server:on_ready(function()
-            server:setup(opts)
-        end)
+for _, server in ipairs(servers) do
+    local ok, settings = pcall(require, "config.lsp_settings." .. server)
+    if not ok then
+        settings = {}
     end
-end
 
-local servers_with_configs = { "sumneko_lua", "rust_analyzer", "taplo" }
-for _, server_name in pairs(servers_with_configs) do
-    local is_available, server = lsp_installer_servers.get_server(server_name)
-    local opts = { capabilities = capabilities, on_attach = on_attach }
-
-    if is_available then
-        if not server:is_installed() then
-            server:install()
-        end
-
-        local setup = require("config.lsp." .. server_name)
-        setup(server, opts)
-    end
+    lspconfig[server].setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = settings,
+    })
 end

@@ -18,6 +18,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         vim.cmd(string.format("highlight! diffAdded guifg=%s", colors.diffAdded))
         vim.cmd(string.format("highlight! diffChanged guifg=%s", colors.diffChanged))
         vim.cmd(string.format("highlight! diffDeleted guifg=%s", colors.diffDeleted))
-        vim.cmd("link GitSignsDeleteLn diffDeleted")
+        vim.cmd("highlight! link GitSignsDeleteLn diffDeleted")
     end,
 })

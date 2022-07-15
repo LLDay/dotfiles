@@ -101,18 +101,18 @@ dotfiles:
   f_updates.sh:
     src: config/polybar/scripts/updates.sh
     dst: ~/.config/polybar/scripts/updates.sh
-    chmod: '755'
+    chmod: "755"
   f_launch.sh:
     src: config/polybar/launch.sh
     dst: ~/.config/polybar/launch.sh
-    chmod: '755'
+    chmod: "755"
   f_alacritty.yml:
     src: config/alacritty/alacritty.yml
     dst: ~/.config/alacritty/alacritty.yml
   f_bspwmrc:
     src: config/bspwm/bspwmrc
     dst: ~/.config/bspwm/bspwmrc
-    chmod: '755'
+    chmod: "755"
   f_gitsigns.lua:
     src: config/nvim/lua/config/gitsigns.lua
     dst: ~/.config/nvim/lua/config/gitsigns.lua
@@ -159,14 +159,14 @@ dotfiles:
     src: config/nvim/lua/config/lsp.lua
     dst: ~/.config/nvim/lua/config/lsp.lua
   f_rust_analyzer.lua:
-    src: config/nvim/lua/config/lsp/rust_analyzer.lua
-    dst: ~/.config/nvim/lua/config/lsp/rust_analyzer.lua
+    src: config/nvim/lua/config/lsp_settings/rust_analyzer.lua
+    dst: ~/.config/nvim/lua/config/lsp_settings/rust_analyzer.lua
   f_sumneko_lua.lua:
-    src: config/nvim/lua/config/lsp/sumneko_lua.lua
-    dst: ~/.config/nvim/lua/config/lsp/sumneko_lua.lua
+    src: config/nvim/lua/config/lsp_settings/sumneko_lua.lua
+    dst: ~/.config/nvim/lua/config/lsp_settings/sumneko_lua.lua
   f_taplo.lua:
-    src: config/nvim/lua/config/lsp/taplo.lua
-    dst: ~/.config/nvim/lua/config/lsp/taplo.lua
+    src: config/nvim/lua/config/lsp_settings/taplo.lua
+    dst: ~/.config/nvim/lua/config/lsp_settings/taplo.lua
   f_null-ls.lua:
     src: config/nvim/lua/config/null-ls.lua
     dst: ~/.config/nvim/lua/config/null-ls.lua
@@ -182,59 +182,59 @@ dotfiles:
 profiles:
   arch:
     dotfiles:
-    - f_profile
-    - f_bashrc
-    - f_xresources
-    - f_picom.conf
-    - f_autostart
-    - f_sxhkdrc
-    - f_zshenv
-    - f_zprofile
-    - f_zshrc
-    - f_aliases
-    - f_gitconfig
-    - f_clang-format
-    - f_xinitrc
-    - f_dmenu_colored
-    - f_update_edited
-    - f_lfrc
-    - f_config.ini
-    - f_modules.ini
-    - f_bspwm_resize
-    - f_euclid_mover
-    - f_wallpaper_changer
-    - f_windowpromoter
-    - f_dmenu_open_app
-    - f_dmenu_open_site
-    - f_config
-    - f_fonts.conf
-    - f_dunstrc
-    - f_colors.ini
-    - f_user_modules.ini
-    - f_bars.ini
-    - f_updates.sh
-    - f_launch.sh
-    - f_alacritty.yml
-    - f_bspwmrc
-    - f_gitsigns.lua
-    - f_lualine.lua
-    - f_augroups.lua
-    - f_globals.lua
-    - f_keybindings.lua
-    - f_options.lua
-    - f_plugins.lua
-    - f_init.lua
-    - f_colors.lua
-    - f_indent_blankline.lua
-    - f_theme.lua
-    - f_treesitter.lua
-    - f_telescope.lua
-    - f_cmp.lua
-    - f_lsp.lua
-    - f_rust_analyzer.lua
-    - f_sumneko_lua.lua
-    - f_taplo.lua
-    - f_null-ls.lua
-    - f_trouble.lua
-    - f_luasnip.lua
-    - f_stylua.toml
+      - f_profile
+      - f_bashrc
+      - f_xresources
+      - f_picom.conf
+      - f_autostart
+      - f_sxhkdrc
+      - f_zshenv
+      - f_zprofile
+      - f_zshrc
+      - f_aliases
+      - f_gitconfig
+      - f_clang-format
+      - f_xinitrc
+      - f_dmenu_colored
+      - f_update_edited
+      - f_lfrc
+      - f_config.ini
+      - f_modules.ini
+      - f_bspwm_resize
+      - f_euclid_mover
+      - f_wallpaper_changer
+      - f_windowpromoter
+      - f_dmenu_open_app
+      - f_dmenu_open_site
+      - f_config
+      - f_fonts.conf
+      - f_dunstrc
+      - f_colors.ini
+      - f_user_modules.ini
+      - f_bars.ini
+      - f_updates.sh
+      - f_launch.sh
+      - f_alacritty.yml
+      - f_bspwmrc
+      - f_gitsigns.lua
+      - f_lualine.lua
+      - f_augroups.lua
+      - f_globals.lua
+      - f_keybindings.lua
+      - f_options.lua
+      - f_plugins.lua
+      - f_init.lua
+      - f_colors.lua
+      - f_indent_blankline.lua
+      - f_theme.lua
+      - f_treesitter.lua
+      - f_telescope.lua
+      - f_cmp.lua
+      - f_lsp.lua
+      - f_rust_analyzer.lua
+      - f_sumneko_lua.lua
+      - f_taplo.lua
+      - f_null-ls.lua
+      - f_trouble.lua
+      - f_luasnip.lua
+      - f_stylua.toml

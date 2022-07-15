@@ -65,7 +65,6 @@ return packer.startup(function()
     use("airblade/vim-rooter")
     use("fidian/hexmode")
     use("kassio/neoterm")
-    use("simrat39/rust-tools.nvim")
     use({
         "terrortylor/nvim-comment",
         config = function()
@@ -73,6 +72,13 @@ return packer.startup(function()
                 line_mapping = "<leader>cc",
                 operator_mapping = "<leader>c",
             })
+        end,
+    })
+    use({
+        "rcarriga/nvim-dap-ui",
+        requires = { "mfussenegger/nvim-dap" },
+        config = function()
+            require("config.dap")
         end,
     })
 
@@ -91,6 +97,7 @@ return packer.startup(function()
     -- Look and feel
     use("adelarsq/vim-matchit")
     use("bronson/vim-trailing-whitespace")
+    use("lyokha/vim-xkbswitch")
     use("mbbill/undotree")
     use("ryanoasis/vim-devicons")
     use("simeji/winresizer")
