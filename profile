@@ -1,6 +1,17 @@
 #!/bin/bash
 eval "$(ssh-agent)"
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin/core_perl:/usr/bin:/usr/bin/vendor_perl:$HOME/.local/bin:$HOME/Documents/scripts:$HOME/.gem/ruby/2.7.0/bin"
+
+PATH="/usr/bin"
+PATH="$PATH:/usr/local/bin"
+PATH="$PATH:/usr/local/sbin"
+PATH="$PATH:/usr/bin/core_perl"
+PATH="$PATH:/usr/bin/vendor_perl"
+PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.cargo/bin"
+PATH="$PATH:$HOME/.config/scripts"
+PATH="$PATH:$HOME/.local/share/solana/install/active_release/bin"
+
+export PATH
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0" &
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
