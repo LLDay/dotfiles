@@ -43,6 +43,7 @@ return packer.startup(function()
         end,
         requires = { "nvim-lua/plenary.nvim" },
     })
+
     use({
         "neovim/nvim-lspconfig",
         requires = { { "williamboman/nvim-lsp-installer" } },
@@ -62,9 +63,7 @@ return packer.startup(function()
     })
 
     -- Programming
-    use("airblade/vim-rooter")
     use("fidian/hexmode")
-    use("kassio/neoterm")
     use({
         "terrortylor/nvim-comment",
         config = function()
@@ -74,11 +73,25 @@ return packer.startup(function()
             })
         end,
     })
+
     use({
-        "rcarriga/nvim-dap-ui",
-        requires = { "mfussenegger/nvim-dap" },
+        "airblade/vim-rooter",
+        setup = function()
+            vim.g.rooter_patterns = {
+                ".root",
+                "build/",
+                "compile_commands.json",
+                ".svn",
+                ".git",
+                ".bzr",
+            }
+        end,
+    })
+
+    use({
+        "akinsho/toggleterm.nvim",
         config = function()
-            require("config.dap")
+            require("config.toggleterm")
         end,
     })
 
@@ -96,14 +109,22 @@ return packer.startup(function()
 
     -- Look and feel
     use("adelarsq/vim-matchit")
-    use("bronson/vim-trailing-whitespace")
-    use("lyokha/vim-xkbswitch")
     use("mbbill/undotree")
     use("ryanoasis/vim-devicons")
     use("simeji/winresizer")
-    use("unblevable/quick-scope")
-    use("voldikss/vim-floaterm")
 
+    use({
+        "unblevable/quick-scope",
+        setup = function()
+            vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }
+        end,
+    })
+    use({
+        "lyokha/vim-xkbswitch",
+        setup = function()
+            vim.g.XkbSwitchEnabled = 1
+        end,
+    })
     use({
         "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/plenary.nvim" }, { "nvim-telescope/telescope-ui-select.nvim" } },

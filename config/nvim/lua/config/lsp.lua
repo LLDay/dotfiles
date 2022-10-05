@@ -13,8 +13,8 @@ vim.diagnostic.config({
 })
 
 local function on_attach(client, _)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
 end
 
 local servers = { "sumneko_lua", "rust_analyzer", "taplo", "tsserver", "pyright", "solang" }

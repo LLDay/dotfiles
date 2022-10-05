@@ -49,6 +49,7 @@ map("", "<leader>v", "<cmd>vsp<CR>", ns)
 map("", "<leader>s", "<cmd>sp<CR>", ns)
 map("", "<leader>l", "<cmd>call ToggleLocationList()<CR>", ns)
 map("", "<leader>q", "<cmd>call ToggleQuickfixList()<CR>", ns)
+map("", "<leader>p", '"_dP', ns)
 
 --------------------------------------------------
 -- Tabs
@@ -64,8 +65,8 @@ end
 --------------------------------------------------
 
 map("n", "U", "<cmd>UndotreeToggle<CR>", ns)
-map("", "<leader>t", "<cmd>Ttoggle<CR>", ns)
-map("", "<leader>o", "<cmd>FloatermNew lf<CR>", ns)
+map("", "<leader>t", "<cmd>ToggleTerm<CR>", ns)
+map("", "<leader>o", "<cmd>LfToggle<CR>", ns)
 map("", "<leader>=", ":Tabularize /", {})
 map("x", "<leader>=", ":Tabularize /", {})
 
@@ -77,6 +78,17 @@ map("", "<leader>gis", "<cmd>Gitsigns preview_hunk<CR>", ns)
 map("", "<leader>gid", "<cmd>Gitsigns diffthis<CR>", ns)
 map("", "[g", "<cmd>Gitsigns prev_hunk<CR>", ns)
 map("", "]g", "<cmd>Gitsigns next_hunk<CR>", ns)
+
+--------------------------------------------------
+-- DAP
+--------------------------------------------------
+
+map("n", "<F5>", ":lua require('dap').continue()<CR>", ns)
+map("n", "<F9>", ":lua require('dap').toggle_breakpoint()<CR>", ns)
+
+map("n", "<F10>", ":lua require('dap').step_over()<CR>", ns)
+map("n", "<F11>", ":lua require('dap').step_into()<CR>", ns)
+map("n", "<F12>", ":lua require('dap').step_out()<CR>", ns)
 
 --------------------------------------------------
 -- Telescope
@@ -111,7 +123,7 @@ map("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_fo
 map("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", ns)
 map("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", ns)
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", ns)
-map("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", ns)
+map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", ns)
 
 --------------------------------------------------
 -- Trouble
