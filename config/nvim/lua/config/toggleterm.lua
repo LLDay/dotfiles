@@ -22,7 +22,6 @@ local width = 0.8
 
 local temp_path = "/tmp/lfpickerpath"
 local lf = Terminal:new({
-    cmd = "lf -selection-path " .. temp_path,
     direction = "float",
     shade_terminals = false,
     float_opts = {
@@ -49,5 +48,7 @@ local lf = Terminal:new({
 })
 
 vim.api.nvim_create_user_command("LfToggle", function(_)
-    lf:toggle()
+    local current_path = vim.api.nvim_buf_get_name(0)
+    lf.cmd = "lf -selection-path " .. temp_path .. " " .. current_path
+    lf:open()
 end, { nargs = 0 })

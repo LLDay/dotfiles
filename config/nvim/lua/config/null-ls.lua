@@ -1,10 +1,8 @@
 local null_ls = require("null-ls")
-
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
-    diagnostics.eslint,
     diagnostics.shellcheck,
     diagnostics.vint,
     diagnostics.todo_comments,
@@ -13,6 +11,7 @@ local sources = {
     formatting.clang_format,
     formatting.cmake_format,
     formatting.deno_fmt,
+    formatting.prettierd,
     formatting.fixjson,
     formatting.rustfmt,
     formatting.stylua,
@@ -26,7 +25,7 @@ null_ls.setup({
             vim.api.nvim_create_autocmd("BufWritePre", {
                 buffer = 0,
                 callback = function()
-                    vim.lsp.buf.format(nil, 5000)
+                    vim.lsp.buf.format({ timeout_ms = 5000 })
                 end,
             })
         end

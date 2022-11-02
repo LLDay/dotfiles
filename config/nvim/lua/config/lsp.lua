@@ -1,8 +1,11 @@
-local lspconfig = require("lspconfig")
-local lsp_installer = require("nvim-lsp-installer")
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local mason = require("mason")
+local mason_lspconfig = require("mason-lspconfig")
 
-lsp_installer.setup({})
+local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+mason.setup({})
+mason_lspconfig.setup({})
 
 vim.diagnostic.config({
     virtual_text = true,
@@ -17,7 +20,7 @@ local function on_attach(client, _)
     client.server_capabilities.documentRangeFormattingProvider = false
 end
 
-local servers = { "sumneko_lua", "rust_analyzer", "taplo", "tsserver", "pyright", "solang" }
+local servers = { "sumneko_lua", "rust_analyzer", "taplo", "tsserver", "pyright", "solang", "clangd" }
 
 for _, server in ipairs(servers) do
     local ok, settings = pcall(require, "config.lsp_settings." .. server)
