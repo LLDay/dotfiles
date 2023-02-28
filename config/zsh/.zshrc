@@ -47,7 +47,6 @@ fi
 zle -N edit-command-line
 bindkey '^[[8~' end-of-line                                     # End key
 bindkey '^[[F' end-of-line                                     # End key
-bindkey '^e' edit-command-line
 bindkey -s '^o' '^k ^u lfcd\n'
 
 if [[ "${terminfo[kend]}" != "" ]]; then

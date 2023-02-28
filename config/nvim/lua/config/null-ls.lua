@@ -16,6 +16,7 @@ local sources = {
     formatting.rustfmt,
     formatting.stylua,
     formatting.trim_newlines,
+    formatting.trim_whitespace,
 }
 
 null_ls.setup({

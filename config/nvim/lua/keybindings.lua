@@ -122,7 +122,7 @@ map("n", "<leader>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_fo
 
 map("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", ns)
 map("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", ns)
-map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", ns)
+map("n", "gr", "<cmd>lua vim.lsp.buf.references({ includeDeclaration = false })<CR>", ns)
 map("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({timeout_ms = 5000})<CR>", ns)
 
 --------------------------------------------------

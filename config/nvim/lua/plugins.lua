@@ -1,6 +1,5 @@
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-
 local packer_bootstrap = false
 if fn.empty(fn.glob(install_path)) > 0 then
     packer_bootstrap = fn.system({
@@ -61,16 +60,35 @@ return packer.startup(function()
             require("config.gitsigns")
         end,
     })
+    use({
+        "akinsho/git-conflict.nvim",
+        config = function()
+            require("git-conflict").setup()
+        end,
+    })
 
     -- Programming
     use("fidian/hexmode")
+
     use({
-        "terrortylor/nvim-comment",
+        "windwp/nvim-autopairs",
         config = function()
-            require("nvim_comment").setup({
-                line_mapping = "<leader>cc",
-                operator_mapping = "<leader>c",
-            })
+            require("nvim-autopairs").setup({})
+        end,
+    })
+
+    use({
+        "Darazaki/indent-o-matic",
+        event = "BufEnter",
+        config = function()
+            require("config.indent-o-matic")
+        end,
+    })
+
+    use({
+        "numToStr/Comment.nvim",
+        config = function()
+            require("Comment").setup()
         end,
     })
 
@@ -108,10 +126,27 @@ return packer.startup(function()
     })
 
     -- Look and feel
+    use("lewis6991/impatient.nvim")
     use("adelarsq/vim-matchit")
     use("mbbill/undotree")
     use("ryanoasis/vim-devicons")
     use("simeji/winresizer")
+    use("onsails/lspkind.nvim")
+
+    use({
+        "max397574/better-escape.nvim",
+        config = function()
+            require("better_escape").setup()
+        end,
+        event = "InsertCharPre",
+    })
+
+    use({
+        "rebelot/heirline.nvim",
+        config = function()
+            require("config.heirline")
+        end,
+    })
 
     use({
         "unblevable/quick-scope",

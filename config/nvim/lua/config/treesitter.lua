@@ -14,6 +14,7 @@ require("nvim-treesitter.configs").setup({
         "python",
         "lua",
         "bash",
+        "go",
     },
     sync_install = false,
     highlight = { enable = true, additional_vim_regex_highlighting = false },

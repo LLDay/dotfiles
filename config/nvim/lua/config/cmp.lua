@@ -1,5 +1,6 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+local lspkind = require("lspkind")
 
 require("crates").setup()
 
@@ -8,6 +9,9 @@ local has_words_before = function()
     local get_lines = vim.api.nvim_buf_get_lines
     return col ~= 0 and get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
+
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 cmp.setup({
     completion = { completeopt = "menu,menuone,noinsert" },
@@ -53,4 +57,7 @@ cmp.setup({
         { name = "buffer" },
         { name = "calc" },
     }),
+    formatting = {
+        format = lspkind.cmp_format({}),
+    },
 })
