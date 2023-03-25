@@ -71,6 +71,14 @@ return packer.startup(function()
     use("fidian/hexmode")
 
     use({
+        "mfussenegger/nvim-dap",
+        requires = { "rcarriga/nvim-dap-ui" },
+        config = function()
+            require("config.dap")
+        end,
+    })
+
+    use({
         "windwp/nvim-autopairs",
         config = function()
             require("nvim-autopairs").setup({})
@@ -142,13 +150,6 @@ return packer.startup(function()
     })
 
     use({
-        "rebelot/heirline.nvim",
-        config = function()
-            require("config.heirline")
-        end,
-    })
-
-    use({
         "unblevable/quick-scope",
         setup = function()
             vim.g.qs_highlight_on_keys = { "f", "F", "t", "T" }
@@ -180,7 +181,12 @@ return packer.startup(function()
         end,
         cmd = { "ColorizerToggle" },
     })
-    use({ "rebelot/kanagawa.nvim", config = "vim.cmd [[colorscheme kanagawa]]" })
+    use({
+        "rebelot/kanagawa.nvim",
+        config = function()
+            require("config.kanagawa")
+        end,
+    })
     use({
         "nvim-lualine/lualine.nvim",
         config = function()

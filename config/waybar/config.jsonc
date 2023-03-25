@@ -1,0 +1,118 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "wlr/workspaces",
+    "cpu",
+    "temperature",
+    "memory",
+    "custom/media",
+    "tray"
+  ],
+  "modules-right": [
+    "custom/updates",
+    "backlight",
+    "pulseaudio",
+    "network",
+    "battery",
+    "clock"
+  ],
+
+  "pulseaudio": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+  "temperature": {
+    "critical-threshold": 85,
+    "format-critical": " {temperatureC}°C",
+    "format": " {temperatureC}°C"
+  },
+  "hyprland/window": {
+    "max-length": 50,
+    "separate-outputs": false,
+    "offscreen-css": true,
+    "offscreen-css-text": "(inactive)"
+  },
+  "wlr/workspaces": {
+    "on-click": "activate",
+    "format": "{name}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
+  },
+  "network": {
+    "tooltip": false,
+    "format-wifi": "  {essid}",
+    "format-ethernet": ""
+  },
+  "backlight": {
+    "tooltip": false,
+    "format": " {}%",
+    "interval": 1,
+    "on-scroll-up": "light -A 5",
+    "on-scroll-down": "light -U 5"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 10
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "tray": {
+    "icon-size": 18
+  },
+  "clock": {
+    "format": "{: %d/%m   %I:%M %p}"
+  },
+  "cpu": {
+    "interval": 15,
+    "format": " {usage}%",
+    "max-length": 10
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {}%",
+    "max-length": 10
+  },
+  "custom/media": {
+    "interval": 30,
+    "format": "{icon} {}",
+    "return-type": "json",
+    "max-length": 20,
+    "format-icons": {
+      "spotify": " ",
+      "default": " "
+    },
+    "escape": true,
+    "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
+    "on-click": "playerctl play-pause"
+  },
+  "custom/power": {
+    "format": " ",
+    "on-click": "bash ~/.config/rofi/leave/leave.sh"
+  },
+  "custom/updates": {
+    "format": "{} Updates",
+    "exec": "checkupdates | wc -l",
+    "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+    "interval": 60,
+    "on-click": "$TERMINAL -e yay -Syu --noconfirm"
+  },
+  "custom/wallpaper": {
+    "format": " ",
+    "on-click": "bash ~/.config/system_scripts/pkill_bc"
+  }
+}

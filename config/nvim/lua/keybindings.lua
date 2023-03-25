@@ -83,12 +83,13 @@ map("", "]g", "<cmd>Gitsigns next_hunk<CR>", ns)
 -- DAP
 --------------------------------------------------
 
-map("n", "<F5>", ":lua require('dap').continue()<CR>", ns)
+map("n", "<F5>", ":lua require('config.dap').continue()<CR>", ns)
 map("n", "<F9>", ":lua require('dap').toggle_breakpoint()<CR>", ns)
 
 map("n", "<F10>", ":lua require('dap').step_over()<CR>", ns)
 map("n", "<F11>", ":lua require('dap').step_into()<CR>", ns)
 map("n", "<F12>", ":lua require('dap').step_out()<CR>", ns)
+map("n", "<F17>", ":lua require('dap').terminate()<CR>", ns)
 
 --------------------------------------------------
 -- Telescope

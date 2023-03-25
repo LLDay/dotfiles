@@ -1,7 +1,5 @@
 ## Options section
 
-cat $HOME/.cache/wal/sequences
-
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
 setopt nocaseglob                                               # Case insensitive globbing
 setopt rcexpandparam                                            # Array expension with parameters

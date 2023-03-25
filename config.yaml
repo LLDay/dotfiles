@@ -11,21 +11,6 @@ dotfiles:
   f_profile:
     src: profile
     dst: ~/.profile
-  f_bashrc:
-    src: bashrc
-    dst: ~/.bashrc
-  f_xresources:
-    src: Xresources
-    dst: ~/.Xresources
-  f_picom.conf:
-    src: config/picom.conf
-    dst: ~/.config/picom.conf
-  f_autostart:
-    src: config/bspwm/autostart
-    dst: ~/.config/bspwm/autostart
-  f_sxhkdrc:
-    src: config/sxhkd/sxhkdrc
-    dst: ~/.config/sxhkd/sxhkdrc
   f_zshenv:
     src: zshenv
     dst: ~/.zshenv
@@ -44,42 +29,9 @@ dotfiles:
   f_clang-format:
     src: clang-format
     dst: ~/.clang-format
-  f_xinitrc:
-    src: xinitrc
-    dst: ~/.xinitrc
-  f_dmenu_colored:
-    src: config/scripts/dmenu_colored
-    dst: ~/.config/scripts/dmenu_colored
-  f_update_edited:
-    src: config/scripts/update_edited
-    dst: ~/.config/scripts/update_edited
   f_lfrc:
     src: config/lf/lfrc
     dst: ~/.config/lf/lfrc
-  f_config.ini:
-    src: config/polybar/config.ini
-    dst: ~/.config/polybar/config.ini
-  f_modules.ini:
-    src: config/polybar/modules.ini
-    dst: ~/.config/polybar/modules.ini
-  f_bspwm_resize:
-    src: config/scripts/bspwm_resize
-    dst: ~/.config/scripts/bspwm_resize
-  f_euclid_mover:
-    src: config/scripts/euclid_mover
-    dst: ~/.config/scripts/euclid_mover
-  f_wallpaper_changer:
-    src: config/scripts/wallpaper_changer
-    dst: ~/.config/scripts/wallpaper_changer
-  f_windowpromoter:
-    src: config/scripts/windowpromoter
-    dst: ~/.config/scripts/windowpromoter
-  f_dmenu_open_app:
-    src: config/scripts/dmenu_open_app
-    dst: ~/.config/scripts/dmenu_open_app
-  f_dmenu_open_site:
-    src: config/scripts/dmenu_open_site
-    dst: ~/.config/scripts/dmenu_open_site
   f_config:
     src: config/bat/config
     dst: ~/.config/bat/config
@@ -89,30 +41,9 @@ dotfiles:
   f_dunstrc:
     src: config/dunst/dunstrc
     dst: ~/.config/dunst/dunstrc
-  f_colors.ini:
-    src: config/polybar/colors.ini
-    dst: ~/.config/polybar/colors.ini
-  f_user_modules.ini:
-    src: config/polybar/user_modules.ini
-    dst: ~/.config/polybar/user_modules.ini
-  f_bars.ini:
-    src: config/polybar/bars.ini
-    dst: ~/.config/polybar/bars.ini
-  f_updates.sh:
-    src: config/polybar/scripts/updates.sh
-    dst: ~/.config/polybar/scripts/updates.sh
-    chmod: '755'
-  f_launch.sh:
-    src: config/polybar/launch.sh
-    dst: ~/.config/polybar/launch.sh
-    chmod: '755'
   f_alacritty.yml:
     src: config/alacritty/alacritty.yml
     dst: ~/.config/alacritty/alacritty.yml
-  f_bspwmrc:
-    src: config/bspwm/bspwmrc
-    dst: ~/.config/bspwm/bspwmrc
-    chmod: '755'
   f_gitsigns.lua:
     src: config/nvim/lua/config/gitsigns.lua
     dst: ~/.config/nvim/lua/config/gitsigns.lua
@@ -155,9 +86,9 @@ dotfiles:
   f_rust_analyzer.lua:
     src: config/nvim/lua/config/lsp_settings/rust_analyzer.lua
     dst: ~/.config/nvim/lua/config/lsp_settings/rust_analyzer.lua
-  f_sumneko_lua.lua:
-    src: config/nvim/lua/config/lsp_settings/sumneko_lua.lua
-    dst: ~/.config/nvim/lua/config/lsp_settings/sumneko_lua.lua
+  f_lua_ls.lua:
+    src: config/nvim/lua/config/lsp_settings/lua_ls.lua
+    dst: ~/.config/nvim/lua/config/lsp_settings/lua_ls.lua
   f_taplo.lua:
     src: config/nvim/lua/config/lsp_settings/taplo.lua
     dst: ~/.config/nvim/lua/config/lsp_settings/taplo.lua
@@ -176,61 +107,63 @@ dotfiles:
   f_toggleterm.lua:
     src: config/nvim/lua/config/toggleterm.lua
     dst: ~/.config/nvim/lua/config/toggleterm.lua
+  f_dap.lua:
+    src: config/nvim/lua/config/dap.lua
+    dst: ~/.config/nvim/lua/config/dap.lua
+  f_indent-o-matic.lua:
+    src: config/nvim/lua/config/indent-o-matic.lua
+    dst: ~/.config/nvim/lua/config/indent-o-matic.lua
+  f_kanagawa.lua:
+    src: config/nvim/lua/config/kanagawa.lua
+    dst: ~/.config/nvim/lua/config/kanagawa.lua
+  f_hyprland.conf:
+    src: config/hypr/hyprland.conf
+    dst: ~/.config/hypr/hyprland.conf
+  f_config.jsonc:
+    src: config/waybar/config.jsonc
+    dst: ~/.config/waybar/config.jsonc
+  f_style.css:
+    src: config/waybar/style.css
+    dst: ~/.config/waybar/style.css
 profiles:
   arch:
     dotfiles:
-    - f_profile
-    - f_bashrc
-    - f_xresources
-    - f_picom.conf
-    - f_autostart
-    - f_sxhkdrc
-    - f_zshenv
-    - f_zprofile
-    - f_zshrc
-    - f_aliases
-    - f_gitconfig
-    - f_clang-format
-    - f_xinitrc
-    - f_dmenu_colored
-    - f_update_edited
-    - f_lfrc
-    - f_config.ini
-    - f_modules.ini
-    - f_bspwm_resize
-    - f_euclid_mover
-    - f_wallpaper_changer
-    - f_windowpromoter
-    - f_dmenu_open_app
-    - f_dmenu_open_site
-    - f_config
-    - f_fonts.conf
-    - f_dunstrc
-    - f_colors.ini
-    - f_user_modules.ini
-    - f_bars.ini
-    - f_updates.sh
-    - f_launch.sh
-    - f_alacritty.yml
-    - f_bspwmrc
-    - f_gitsigns.lua
-    - f_lualine.lua
-    - f_augroups.lua
-    - f_keybindings.lua
-    - f_options.lua
-    - f_plugins.lua
-    - f_init.lua
-    - f_colors.lua
-    - f_indent_blankline.lua
-    - f_treesitter.lua
-    - f_telescope.lua
-    - f_cmp.lua
-    - f_lsp.lua
-    - f_rust_analyzer.lua
-    - f_sumneko_lua.lua
-    - f_taplo.lua
-    - f_null-ls.lua
-    - f_trouble.lua
-    - f_luasnip.lua
-    - f_stylua.toml
-    - f_toggleterm.lua
+      - f_profile
+      - f_zshenv
+      - f_zprofile
+      - f_zshrc
+      - f_aliases
+      - f_gitconfig
+      - f_clang-format
+      - f_lfrc
+      - f_config
+      - f_fonts.conf
+      - f_dunstrc
+      - f_alacritty.yml
+      - f_gitsigns.lua
+      - f_lualine.lua
+      - f_augroups.lua
+      - f_keybindings.lua
+      - f_options.lua
+      - f_plugins.lua
+      - f_init.lua
+      - f_colors.lua
+      - f_indent_blankline.lua
+      - f_treesitter.lua
+      - f_telescope.lua
+      - f_cmp.lua
+      - f_lsp.lua
+      - f_rust_analyzer.lua
+      - f_lua_ls.lua
+      - f_taplo.lua
+      - f_null-ls.lua
+      - f_trouble.lua
+      - f_luasnip.lua
+      - f_stylua.toml
+      - f_toggleterm.lua
+      - f_dap.lua
+      - f_indent-o-matic.lua
+      - f_kanagawa.lua
+      - f_hyprland.conf
+      - f_config.jsonc
+      - f_style.css
